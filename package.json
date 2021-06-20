@@ -1,0 +1,10 @@
+{
+  "name": "thinkful-grad-jobs",
+  "version": "0.1.0",
+  "description": "Illustrating Thinkful graduates' successful hiring process",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Thinkful-Ed/starter-restaurant-reservation"
+  }
+}
