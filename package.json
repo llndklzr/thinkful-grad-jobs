@@ -6,5 +6,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/llndklzr/thinkful-grad-jobs"
+  },
+  "scripts": {
+    "start": "npx concurrently 'npm run start:backend' 'npm run start:frontend'",
+    "start:backend": "npm --prefix ./back-end start",
+    "start:frontend": "npm --prefix ./front-end start"
   }
 }
