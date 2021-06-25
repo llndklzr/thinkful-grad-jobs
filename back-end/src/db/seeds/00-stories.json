@@ -1,0 +1,37 @@
+[
+  {
+    "graduate": "Frodo Baggins",
+    "employer": "Google",
+    "job_title": "Software Engineer"
+  },
+  {
+    "graduate": "Bilbo Baggins",
+    "employer": "Apple",
+    "job_title": "Front End Engineer"
+  },
+  {
+    "graduate": "Tom Bombadil",
+    "employer": "Microsoft",
+    "job_title": "Software Developer"
+  },
+  {
+    "graduate": "Aragorn II Elessar",
+    "employer": "Netflix",
+    "job_title": "Full-Stack Developer"
+  },
+  {
+    "graduate": "Meriadoc Brandybuck",
+    "employer": "Amazon",
+    "job_title": "Jr. Back End Engineer"
+  },
+  {
+    "graduate": "Peregrin Took",
+    "employer": "Snowflake",
+    "job_title": "Application Developer"
+  },
+  {
+    "graduate": "Samwise Gamgee",
+    "employer": "Palantir",
+    "job_title": "QA Engineer"
+  }
+]
