@@ -5,7 +5,7 @@ import "../styles/styles.scss";
 const KEY = process.env.GOOGLE_MAPS_API_KEY || "AIzaSyBgM-DPWbmr4-dmtU7ADIBANFdiL2XwgTI";
 console.log(KEY)
 
-
+// some change
 export function RenderMap(props){
   return (
     <Map google={props.google} zoom={12}>
