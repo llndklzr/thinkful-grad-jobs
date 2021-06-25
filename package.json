@@ -11,5 +11,9 @@
     "start": "npx concurrently 'npm run start:backend' 'npm run start:frontend'",
     "start:backend": "npm --prefix ./back-end start",
     "start:frontend": "npm --prefix ./front-end start"
+  },
+  "dependencies": {
+    "google-map-react": "^2.1.10",
+    "google-maps-react": "^2.0.6"
   }
 }
