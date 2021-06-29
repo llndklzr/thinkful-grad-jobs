@@ -1,3 +1,4 @@
+import "../styles/styles.scss"
 import { listStories } from "../utils/apiFetcher";
 import { useState, useEffect } from "react";
 
