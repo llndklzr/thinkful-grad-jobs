@@ -1,19 +1,19 @@
 import "./styles/styles.scss";
-import {Switch, Route} from "react-router-dom";
 import Router from "./components/Router";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <>
-      <div className="App">
-        <header className="App-header">
-          <h1>Thinkful Graduate Jobs</h1>
-        </header>
-      </div>
+      <header className="App-header">
+        <h1>Thinkful Graduate Stories</h1>
+      </header>
+      <nav className="navbar">
+        <Navbar />
+      </nav>
       <body>
-        <h2>Celebrating success, inspiring those who are up next</h2>
+        <Router />
       </body>
-      <Router />
     </>
   );
 }

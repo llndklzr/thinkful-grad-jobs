@@ -1,0 +1,10 @@
+.navbar{
+  background-color: #FE654F;
+  height: 30px;
+  display: flex;
+
+  &.nav-btn{
+    margin: 10px;
+    text-decoration: none;
+  }
+}

@@ -1,3 +1,12 @@
 .btn {
   background-color: aqua;
+  text-decoration: none;
+  border-radius: 5px;
+  border-color: rgb(207, 29, 29);
+  padding: 10px;
+  margin: 100px;
+
+  &:hover{
+    background-color: brown;
+  }
 }
