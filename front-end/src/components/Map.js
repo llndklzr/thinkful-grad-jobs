@@ -2,9 +2,10 @@ import React from "react";
 import {GoogleApiWrapper, Map} from "google-maps-react";
 import styles from "../styles/styles.scss";
 
-const KEY = process.env.GOOGLE_MAPS_API_KEY //|| "AIzaSyBgM-DPWbmr4-dmtU7ADIBANFdiL2XwgTI";
+const KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 console.log("NUM", KEY)
+console.log(process.env)
 
 
 export function RenderMap(props){
@@ -14,7 +15,7 @@ export function RenderMap(props){
       zoom={16} 
       initialCenter={{lat: 37.234332396, lng: -115.80666344}} 
       className="google-map"
-      style={{marginRight: "8px",height: "60vh"}} // may have to style it like this
+      style={{marginRight: "8px",height: "80vh"}} // may have to style it like this
     >
     </Map>
   );
