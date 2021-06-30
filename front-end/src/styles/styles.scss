@@ -5,7 +5,8 @@
 @import"./elements/_buttons.scss";
 @import"./elements/_map.scss";
 @import"./elements/_navbar.scss";
-
+@import"./elements/cards";
+@import"./elements/variables";
 
 
 
@@ -14,12 +15,12 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: $dark-shades;
   min-height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: $light-shades;
 }
