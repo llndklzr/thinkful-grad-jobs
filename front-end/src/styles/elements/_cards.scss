@@ -6,9 +6,6 @@
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  background: $light-accent;
-  border: .75em solid $main-brand;
-  padding: 2em;
   font-family: $font-sans-serif;
 
   .card {
@@ -21,8 +18,8 @@
     text-decoration: none;
     background: $light-shades;
     margin: 1em;
-    padding: 2.75em 2.75em;
-    box-shadow: 0 1.5em 2.5em -.5em rgba(#000000, .1);
+    padding: .75em .75em;
+    box-shadow: 0 1.5em 2.5em -.5em rgba($dark-shades, .5);
     transition: transform .45s ease, background .45s ease;
   
     .card-header{
@@ -31,7 +28,7 @@
       font-weight: 600;
       line-height: 1;
       padding-bottom: .5em;
-      margin: 0 0 0.142857143em;
+      margin: 20px;
       border-bottom: 2px solid $dark-accent;
       transition: color .45s ease, background .45s ease;
     }
