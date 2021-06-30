@@ -1,3 +1,5 @@
+@import"./variables";
+
 .navbar{
   background-color: #FE654F;
   padding: 8px;
@@ -6,13 +8,17 @@
 
   &.nav-btn{
     text-decoration: none;
-    background-color: #8f8f8f;
+    background-color: $light-accent;
     margin: 10px;
     border-radius: 5px;
     color: black;
+    font-family: $font-sans-serif;
+    border: 1px solid $dark-shades;
     
     &:hover{
-      background-color: rgb(54, 54, 54);
+      background-color:$dark-shades;
+      color: $dark-accent;
+      transform: scale(1.1);
     }
   }
 }
