@@ -2,9 +2,9 @@
 // syntax @import"path";
 // no need to export anything
 
-@import"./elements/_buttons.scss";
-@import"./elements/_map.scss";
-@import"./elements/_navbar.scss";
+@import"./elements/buttons";
+@import"./elements/map";
+@import"./elements/navbar";
 @import"./elements/cards";
 @import"./elements/variables";
 
