@@ -11,9 +11,7 @@ export default function Router(){
       <Route path="/" exact>
       </Route>
       <Route path="/map">
-        <section className="google-map">
-          <GoogleApiWrapper />
-        </section>
+        <GoogleApiWrapper />
       </Route>
       <Route path="/stories">
         <Stories />
