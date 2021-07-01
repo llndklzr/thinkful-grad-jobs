@@ -4,6 +4,7 @@ exports.up = function (knex) {
     table.string("graduate");
     table.string("employer");
     table.string("job_title");
+    table.integer("business_id").references("business_id").inTable("businesses");
   })
 };
 
