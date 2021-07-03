@@ -11,9 +11,9 @@ function App() {
       <nav className="navbar">
         <Navbar />
       </nav>
-      <body>
+      <section>
         <Router />
-      </body>
+      </section>
     </>
   );
 }
