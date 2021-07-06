@@ -1,4 +1,4 @@
-const stories = require("./00-stories.json");
+const stories = require("./02-stories.json");
 
 exports.seed = function (knex) {
   // Deletes ALL existing entries

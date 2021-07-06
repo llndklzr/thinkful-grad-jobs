@@ -1,0 +1,58 @@
+[
+  {
+    "graduate_id": 1,
+    "hire_date": "2021-03-14",
+    "story": "Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined",
+    "interview_count": 3,
+    "job_title": "Front End Developer",
+    "business_id": 1
+  },
+  {
+    "graduate_id": 2,
+    "hire_date": "2021-07-03",
+    "story": "shattered impressive tune crowned marshaling helps debt deny. Unfair Ringwraiths bottom nine. Mother's gathering blink list worry Sméag city anymore mad. Samwise Gamgee rallied drowned",
+    "interview_count": 7,
+    "job_title": "Software Engineer",
+    "business_id": 2
+  },
+  {
+    "graduate_id": 3,
+    "hire_date": "2021-06-12",
+    "story": "manage falling grace? Reward stirring lsengard embalmed cat high saw maiden remove cover Ecthelion. Avail ensnare outnumbered Hobbiton defied matters greatest worms looked.",
+    "interview_count": 13,
+    "job_title": "QA Developer",
+    "business_id": 3
+  },
+  {
+    "graduate_id": 4,
+    "hire_date": "2021-04-20",
+    "story": "Advantage lots Mithril patrol door antagonize lock. Tongue descend cellars edge living mice Elros liable suppressed bent warm approve? Faded smash Silvan defend. We beacon acorn Bill children's",
+    "interview_count": 1,
+    "job_title": "Application Developer",
+    "business_id": 3
+  },
+  {
+    "graduate_id": 5,
+    "hire_date": "2021-02-28",
+    "story": "eavesdropping? Carried ostler Dragon-Slayer instance age rubbish merchants trammel? Dwarf-city tasty depart dagger buttons fully? Pierced protected purge choose Narsil. Dwarf strong held",
+    "interview_count": 8,
+    "job_title": "Full Stack Developgineer",
+    "business_id": 4
+  },
+  {
+    "graduate_id": 6,
+    "hire_date": "2020-12-24",
+    "story": "Men appears river-folk Grima pleasure begged guts. My fortunate Fangorn bit count. Little memory Gibbets forests? Low Gondor plenty shine ill-tempered stolen. Regain sustained warned traveling",
+    "interview_count": 10,
+    "job_title": "CTO",
+    "business_id": 5
+  },
+  {
+    "graduate_id": 7,
+    "hire_date": "2021-05-19",
+    "story": "Ingrates. Mortality there's brings battle sniveling Fells how schemes unexpected niceties broken. There and Back Again. A Hobbit's Tale. Reckoning sake hardship picking track forward Elessar.",
+    "interview_count": 4,
+    "job_title": "Back End Development Engineer",
+    "business_id": 6
+  }
+]
