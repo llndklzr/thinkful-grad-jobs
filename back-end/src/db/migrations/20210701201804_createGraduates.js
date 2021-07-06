@@ -5,7 +5,6 @@ exports.up = function(knex) {
     table.string("last_name");
     table.string("graduation_date");
     table.string("graduate_email");
-    table.integer("story_id").references("story_id").inTable("stories");
   })
 };
 
