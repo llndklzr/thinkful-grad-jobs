@@ -8,6 +8,7 @@ export default function Navbar(){
       <Link className="navbar nav-btn" to="/">Home</Link>
       <Link className="navbar nav-btn" to="/map">Map</Link>
       <Link className="navbar nav-btn" to="/stories">Stories</Link>
+      <Link className="navbar nav-btn" to="/new-story">New Story</Link>
     </>
   )
 }

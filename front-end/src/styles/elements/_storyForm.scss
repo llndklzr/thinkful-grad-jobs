@@ -1,0 +1,40 @@
+.form-group {
+  margin: 2em;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-direction: column;
+
+  .form-label {
+    font-size: 1.5em;
+    font-weight: 1000;
+  }
+  .form-control {
+    padding: 0.5em;
+    border: none;
+    border-bottom: 2px solid $main-brand;
+    font-size: 1.5em;
+
+    & textarea{
+      rows: 10;
+    }
+
+    &:focus{
+      outline: none;
+    }
+  }
+}
+.form-button-row {
+  display: flex;
+  .grouped-buttons {
+    margin: auto;
+    .form-button {
+      padding: 0.5em;
+      font-size: 1.5em;
+      background: none;
+      margin: 10px;
+      border: none;
+      border-bottom: 2px solid $light-accent;
+      border-radius: 10px;
+    }
+  }
+}
