@@ -23,5 +23,8 @@
   font-family: $font-sans-serif;
   font-size: calc(10px + 2vmin);
   color: $light-shades;
-  margin: -8px -8px 0 -8px;
+}
+
+body{
+  margin: 0;
 }
