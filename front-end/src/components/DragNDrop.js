@@ -23,7 +23,6 @@ function DragNDrop() {
   const dragNode = useRef();
 
   const handleDragStart = (e, params) => {
-    console.log(e);
     dragItem.current = params;
     dragNode.current = e.target;
     dragNode.current.addEventListener("dragend", handleDragEnd);
