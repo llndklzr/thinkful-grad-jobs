@@ -16,7 +16,7 @@ export default function Router(){
       <Route path="/stories">
         <Stories />
       </Route>
-      <Route path="/new-story">
+      <Route path="/add-story">
         <StoryForm />
       </Route>
     </Switch>
