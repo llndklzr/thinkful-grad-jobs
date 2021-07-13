@@ -23,6 +23,7 @@ export function RenderMap(props){
   console.log("MAP STATE", mapState)
 
   const onMarkerClick = (props, marker, e) =>{
+    console.log(e)
     setMapState({
       showingInfoWindow: true,
       activeMarker: marker,
