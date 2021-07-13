@@ -4,6 +4,7 @@ import GoogleApiWrapper from "./Map";
 import "../styles/styles.scss";
 import Stories from "./Stories";
 import StoryForm from "./StoryForm";
+import DragNDrop from "./DragNDrop";
 
 export default function Router(){
   return(
@@ -18,6 +19,9 @@ export default function Router(){
       </Route>
       <Route path="/add-story">
         <StoryForm />
+      </Route>
+      <Route path="/drag-n-drop">
+        <DragNDrop />
       </Route>
     </Switch>
   )
