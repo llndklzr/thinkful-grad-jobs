@@ -5,12 +5,12 @@ function DragNDrop() {
     {
       title: "unsorted",
       items: [
-        "Networking",
-        "LinkedIn",
-        "Resume",
-        "Mentorship (from anyone)",
         "Cover Letter",
         "Interviewing",
+        "LinkedIn",
+        "Mentorship (from anyone)",
+        "Networking",
+        "Resume",
       ],
     },
     { title: "sorted", items: [] },
