@@ -64,3 +64,8 @@ export async function listBusinesses(signal){
   const url = new URL(`${API_BASE_URL}/businesses`);
   return await fetchJson(url, {headers, signal}, []);
 }
+
+export async function getGradsByBusinessId(businessId, signal){
+  const url = new URL(`${API_BASE_URL}/businesses/${businessId}/graduates`)
+  return await fetchJson(url, {headers, signal}, []);
+}

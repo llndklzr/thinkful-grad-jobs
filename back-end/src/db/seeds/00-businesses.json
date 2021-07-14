@@ -1,38 +1,62 @@
 [
   {
     "business_name": "Google",
-    "business_address": "1600 Amphitheatre Parkway, Mountain View, CA, 94043",
-    "business_lat": 37.423199,
-    "business_lng": -122.084068
+    "business_location":{
+      "address": "1600 Amphitheatre Parkway, Mountain View, CA, 94043",
+      "lat": 37.423199,
+      "lng": -122.084068,
+      "city": "Mountain View",
+      "state": "CA"
+    }
   },
   {
     "business_name": "Facebook",
-    "business_address": "1 Hacker Way, Menlo Park, CA, 94025",
-    "business_lat": 37.484928,
-    "business_lng": -122.148201
+    "business_location":{
+      "address": "1 Hacker Way, Menlo Park, CA, 94025",
+      "lat": 37.484928,
+      "lng": -122.148201,
+      "city": "Menlo Park",
+      "state": "CA"
+    } 
   },
   {
     "business_name": "Apple",
-    "business_address": "1 Apple Park Way. Cupertino, CA, 95014",
-    "business_lat": 37.332279,
-    "business_lng": -122.010979
+    "business_location":{
+      "address": "1 Apple Park Way. Cupertino, CA, 95014",
+      "lat": 37.332279,
+      "lng": -122.010979,
+      "city": "Cupertion",
+      "state": "CA"
+    } 
   },
   {
     "business_name": "Microsoft",
-    "business_address": "1 Microsoft Way, Redmond, WA, 98052",
-    "business_lat": 47.639622,
-    "business_lng": -122.130608
+    "business_location":{
+      "address": "1 Microsoft Way, Redmond, WA, 98052",
+      "lat": 47.639622,
+      "lng": -122.130608,
+      "city": "Redmond",
+      "state": "WA"
+    } 
   },
   {
     "business_name": "Comcast",
-    "business_address": "1701 JFK Boulevard Philadelphia, PA, 19103",
-    "business_lat": 39.954820,
-    "business_lng": -75.168700
+    "business_location":{
+      "address": "1701 JFK Boulevard , PA, 19103",
+      "lat": 39.954820,
+      "lng": -75.168700,
+      "city": "Philadelphia",
+      "state": "PA"
+    } 
   },
   {
     "business_name": "Texas Instruments",
-    "business_address": "12500 Ti Boulevard, Dallas, TX, 75243",
-    "business_lat": 32.910474,
-    "business_lng": -96.75815
+    "business_location":{
+      "address": "12500 Ti Boulevard, Dallas, TX, 75243",
+      "lat": 32.910474,
+      "lng": -96.75815,
+      "city": "Dallas",
+      "state": "TX"
+    } 
   }
 ]

@@ -23,3 +23,18 @@
     font-size: 1.3em;
   }
 }
+
+.map{
+  &.modal{
+    &.header{
+      margin: 3px 0 1px 0;
+      font-size: 14pt;
+    }
+    &.location{
+      margin: 1px 0 1px 0;
+    }
+    &.people{
+      font-size: 12pt;
+    }
+  }
+}

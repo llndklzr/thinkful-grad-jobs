@@ -1,12 +1,11 @@
-import React, {useState, useEffect} from "react";
-import {GoogleApiWrapper, Map, Marker, InfoWindow} from "google-maps-react";
-import { listBusinesses, listStories } from "../utils/apiFetcher";
+import React, { useState, useEffect } from "react";
+import { GoogleApiWrapper, Map, Marker, InfoWindow } from "google-maps-react";
+import { listBusinesses, getGradsByBusinessId } from "../utils/apiFetcher";
 import icons from "../styles/icons/icons";
 
 const KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 export function RenderMap(props){
-
   const initialState = {
     showingInfoWindow: false,
     activeMarker: {},
@@ -15,8 +14,10 @@ export function RenderMap(props){
   let [businesses, setBusinesses] = useState([]);
   let [errors, setErrors] = useState(null);
   let [mapState, setMapState] = useState({...initialState});
+  let [grads, setGrads] = useState([]);
 
-  const onMarkerClick = (props, marker, e) =>{
+  const onMarkerClick = async (props, marker, e) =>{
+    await getGradsByBusinessId(marker.id).then(r => setGrads(r));
     setMapState({
       showingInfoWindow: true,
       activeMarker: marker,
@@ -31,10 +32,11 @@ export function RenderMap(props){
         activeMarker: null,
         selectedPlace: {}
       })
+      setGrads([]);
     }
   };
 
-  useEffect(loadPage,[])
+  useEffect(loadPage,[]);
 
   async function loadPage(){
     const abortController = new AbortController();
@@ -47,8 +49,11 @@ export function RenderMap(props){
       <Marker 
         key={business.business_id}
         onClick={onMarkerClick}
-        position={{lat: business.business_lat, lng: business.business_lng}}
+        position={{lat: business.business_location.lat, lng: business.business_location.lng}}
         name={business.business_name}
+        id={business.business_id}
+        state={business.business_location.state}
+        city={business.business_location.city}
         icon={{
           url: icons.mapIcon,
           anchor: new props.google.maps.Point(32,32),
@@ -58,6 +63,14 @@ export function RenderMap(props){
       )
     }
   )
+
+  const gradsByBusiness = grads.map((grad)=>{
+    return(
+      <div key={grad.graduate_id}>
+        <a className="map modal people" href={`/graduates/${grad.graduate_id}`}>{grad.first_name} {grad.last_name}</a>
+      </div>
+    )
+  })
 
   return (
     <Map 
@@ -75,7 +88,10 @@ export function RenderMap(props){
           visible={mapState.showingInfoWindow}
         >
           <div>
-            <h4>{mapState.selectedPlace.name}</h4>
+            <h4 className="map modal header">{mapState.selectedPlace.name} ({grads.length})</h4>
+            <p className="map modal location">{mapState.selectedPlace.city}, {mapState.selectedPlace.state}</p>
+            <p>Grads that started here...</p>
+            {gradsByBusiness}
           </div>
         </InfoWindow>
     </Map>
