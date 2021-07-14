@@ -1,4 +1,4 @@
-const service = require("./stories.service");
+const service = require("./businesses.service");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 
 //! <<------- CRUDL ------->>
@@ -9,5 +9,5 @@ async function list(request, response) {
 }
 
 module.exports = {
-  list: [asyncErrorBoundary(list)]
+  list: [asyncErrorBoundary(list)],
 };

@@ -59,3 +59,8 @@ export async function listStories(params, signal) {
   );
   return await fetchJson(url, { headers, signal }, []);
 }
+
+export async function listBusinesses(signal){
+  const url = new URL(`${API_BASE_URL}/businesses`);
+  return await fetchJson(url, {headers, signal}, []);
+}
