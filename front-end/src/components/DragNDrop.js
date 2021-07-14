@@ -5,12 +5,12 @@ function DragNDrop() {
     {
       title: "unsorted",
       items: [
-        "Networking",
-        "LinkedIn",
-        "Resume",
-        "Mentorship (from anyone)",
         "Cover Letter",
         "Interviewing",
+        "LinkedIn",
+        "Mentorship (from anyone)",
+        "Networking",
+        "Resume",
       ],
     },
     { title: "sorted", items: [] },
@@ -70,7 +70,7 @@ function DragNDrop() {
   };
 
   return (
-    <div className="drag-n-drop">
+    <div className="drag-n-drop" onDragEnter={(e) => e.preventDefault()}>
       {list.map((group, groupIndex) => (
         <div
           key={group.title}
@@ -80,6 +80,7 @@ function DragNDrop() {
               ? (e) => handleDragEnter(e, { groupIndex, itemIndex: 0 })
               : null
           }
+          onDragOver={(e) => e.preventDefault()}
         >
           <h2 className="group-title">{group.title}</h2>
           {group.items.map((item, itemIndex) => (
