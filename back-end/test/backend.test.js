@@ -16,22 +16,30 @@ describe("List stories", () => {
   });
 
   afterAll(async () => {
-    return await knex.migrate.rollback(null, true).then(()=>knex.destroy())
+    return await knex.migrate.rollback(null, true).then(() => knex.destroy());
   });
 
-  describe('App', () => {
-    describe('not found handler', () => {
-      test('should return 404 for non-existent route', async () => {
+  describe("App", () => {
+    describe("not found handler", () => {
+      test("should return 404 for non-existent route", async () => {
         const response = await request(app)
-        .get("/pathlesstaken")
-        .set("Accept",  "application/json")
+          .get("/pathlesstaken")
+          .set("Accept", "application/json");
 
         expect(response.status).toBe(404);
-        expect(response.body.error).toBe("Path not found: /pathlesstaken")
-      })
-      
-    })
-    
-  })
-  
+        expect(response.body.error).toBe("Path not found: /pathlesstaken");
+      });
+    });
+
+    describe("GET /stories", () => {
+      test("returns all stories", async () => {
+        const response = await request(app)
+          .get("/stories")
+          .set("Accept", "application/json");
+
+        expect(response.body.data).toHaveLength(7);
+        expect(response.status).toBe(200);
+      });
+    });
+  });
 });
