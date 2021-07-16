@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {Link, useHistory} from "react-router-dom";
-import { userAuth } from '../utils/apiFetcher';
+import { registerUser } from '../utils/apiFetcher';
 import "../styles/styles.scss";
 
-export default function RegisterPage(){
+export default function RegisterUser(){
   const initialForm = {
     username: "",
     password: "",
@@ -55,11 +55,11 @@ export default function RegisterPage(){
     validateEmail(form.username) ? setIsError(false) : setIsError(true);
 
     if(form.password === confirmPassword && form.password!==""){
-      await userAuth(form, "register", abortController.signal)
+      await registerUser(form, abortController.signal)
         .catch(setErrors) // set some error component
       setConfirmPassword("");
       setPasswordError(false);
-      history.push(`/survey/${form.username}`)
+      // history.push(`/survey/${form.username}`)
       setForm({...initialForm});
 
     } else{

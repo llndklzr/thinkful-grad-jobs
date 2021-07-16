@@ -25,10 +25,11 @@ async function fetchJson(url, options, onCancel) {
   try {
     const response = await fetch(url, options);
 
+    console.log(response)
+
     if (response.status === 204) {
       return null;
     }
-
     const payload = await response.json();
 
     if (payload.error) {
@@ -74,22 +75,23 @@ export async function postStory(story, signal){
 
 }
 
-export async function registerUser(user, signal){
+export async function registerUser(credentials, signal){
   const url = new URL(`${API_BASE_URL}/graduates/register`);
   return await fetchJson(url, {
     signal,
     headers,
     method: "POST",
-    body: JSON.stringify(user)
+    body: JSON.stringify(credentials)
   }, []);
 }
 
-export async function loginUser(user, signal){
+export async function loginUser(credentials, signal){
   const url = new URL(`${API_BASE_URL}/graduates/login`);
   return await fetchJson(url, {
     signal,
+    credentials: 'same-origin', 
     headers,
     method: "POST",
-    body: JSON.stringify(user)
+    body: JSON.stringify(credentials)
   }, [])
 }

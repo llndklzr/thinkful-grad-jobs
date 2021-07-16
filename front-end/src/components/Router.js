@@ -1,10 +1,11 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import GoogleApiWrapper from "./Map";
-import "../styles/styles.scss";
 import Stories from "./Stories";
 import StoryForm from "./StoryForm";
 import DragNDrop from "./DragNDrop";
+import RegisterUser from "./RegisterUser";
+import LoginUser from "./LoginUser";
 
 export default function Router(){
   return(
@@ -23,6 +24,12 @@ export default function Router(){
       </Route>
       <Route path="/drag-n-drop">
         <DragNDrop />
+      </Route>
+      <Route path="/register">
+        <RegisterUser />
+      </Route>
+      <Route path="/login">
+        <LoginUser />
       </Route>
     </Switch>
   )

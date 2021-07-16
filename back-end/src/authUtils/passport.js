@@ -11,9 +11,10 @@ function _validatePassword(password, hash, salt){
 
 passport.use(new LocalStrategy(
     async function(username, password, done) {
-      const user = await service.getUserByUsername(username);
-      const isValid = user ? _validatePassword(password, user.hash, user.salt) : false;
+      const user = await service.getUserByEmail(username);
+      const isValid = user ? _validatePassword(password, user.graduate_hash, user.graduate_salt) : false;
       if(isValid){
+        console.log("WE MADE IT IN PASSPORT")
         return done(null, user);
       } else{
         return done(null, false);
@@ -22,10 +23,11 @@ passport.use(new LocalStrategy(
   ));
 
 passport.serializeUser((user, done) => {
-  done(null, user.user_id);
+  console.log("WE ARE SERIALIZING USER", user)
+  done(null, user.graduate_id)
 });
 
 passport.deserializeUser((userId, done) => {
-  const user = service.getUserByUserId(userId).catch(err => done(err));
+  const user = service.getUserById(userId).catch(err => done(err));
   done(null, user)
 });

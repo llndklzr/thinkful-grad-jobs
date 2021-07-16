@@ -7,6 +7,8 @@ module.exports = session({
   resave: false,
   saveUninitialized: true,
   cookie: {
-    maxAge: 1000*60*60*24 // sets cookie valid of 1 day
+    maxAge: 1000*60, // 1000*60*60*24, // sets cookie valid of 1 day
+    domain: "localhost",
   },
+  unset:"destroy",
 });
