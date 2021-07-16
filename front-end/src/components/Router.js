@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import GoogleApiWrapper from "./Map";
 import "../styles/styles.scss";
 import Stories from "./Stories";
@@ -10,6 +10,7 @@ export default function Router(){
   return(
     <Switch>
       <Route path="/" exact>
+        <Redirect to={"/map"} />
       </Route>
       <Route path="/map">
         <GoogleApiWrapper />
@@ -17,7 +18,7 @@ export default function Router(){
       <Route path="/stories">
         <Stories />
       </Route>
-      <Route path="/add-story">
+      <Route path="/new-story">
         <StoryForm />
       </Route>
       <Route path="/drag-n-drop">

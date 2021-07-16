@@ -21,9 +21,13 @@
   "homepage": "https://github.com/llndklzr/thinkful-grad-jobs#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-passport": "^0.1.0",
+    "express-session": "^1.17.2",
     "knex": "^0.95.6",
+    "passport-local": "^1.0.0",
     "pg": "^8.6.0"
   },
   "devDependencies": {

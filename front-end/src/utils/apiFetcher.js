@@ -69,3 +69,27 @@ export async function getGradsByBusinessId(businessId, signal){
   const url = new URL(`${API_BASE_URL}/businesses/${businessId}/graduates`)
   return await fetchJson(url, {headers, signal}, []);
 }
+
+export async function postStory(story, signal){
+
+}
+
+export async function registerUser(user, signal){
+  const url = new URL(`${API_BASE_URL}/graduates/register`);
+  return await fetchJson(url, {
+    signal,
+    headers,
+    method: "POST",
+    body: JSON.stringify(user)
+  }, []);
+}
+
+export async function loginUser(user, signal){
+  const url = new URL(`${API_BASE_URL}/graduates/login`);
+  return await fetchJson(url, {
+    signal,
+    headers,
+    method: "POST",
+    body: JSON.stringify(user)
+  }, [])
+}

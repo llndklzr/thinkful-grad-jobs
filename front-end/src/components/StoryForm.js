@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {postStory} from "../utils/apiFetcher";
 
 export default function StoryForm() {
   const [formData, setFormData] = useState({});
