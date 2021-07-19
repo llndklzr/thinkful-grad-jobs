@@ -6,6 +6,7 @@ import StoryForm from "./StoryForm";
 import DragNDrop from "./DragNDrop";
 import RegisterUser from "./RegisterUser";
 import LoginUser from "./LoginUser";
+import ListGrads from "./ListGrads";
 
 export default function Router(){
   return(
@@ -30,6 +31,9 @@ export default function Router(){
       </Route>
       <Route path="/login">
         <LoginUser />
+      </Route>
+      <Route path="/graduates">
+        <ListGrads />
       </Route>
     </Switch>
   )

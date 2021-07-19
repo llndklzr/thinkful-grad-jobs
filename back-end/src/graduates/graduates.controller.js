@@ -29,7 +29,7 @@ function _genPassword(password) {
   };
 }
 
-const authenticate = passport.authenticate("local", {successRedirect: "/success", failureRedirect: "/failure"});
+const authenticate = passport.authenticate("local", { failureRedirect: "/failure"});
 
 async function listGrads(req, res, next){
   const grads = await service.getAllGrads();

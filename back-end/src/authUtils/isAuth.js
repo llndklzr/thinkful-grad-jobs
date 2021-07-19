@@ -1,5 +1,6 @@
 module.exports = function isAuth(req, res, next){ 
   // pass into any protected route as middleware to verify user is authorized
+  console.log("SESSION OBJECT BEFORE HITTING IS AUTHENTICATED", req.session)
   if(req.isAuthenticated()){
     console.log("WE ARE LOGGED IN", req.session)
     next();

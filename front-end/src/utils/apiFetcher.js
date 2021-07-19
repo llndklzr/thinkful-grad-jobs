@@ -89,9 +89,14 @@ export async function loginUser(credentials, signal){
   const url = new URL(`${API_BASE_URL}/graduates/login`);
   return await fetchJson(url, {
     signal,
-    credentials: 'same-origin', 
+    credentials: 'include', 
     headers,
     method: "POST",
     body: JSON.stringify(credentials)
   }, [])
+}
+
+export async function listAllGrads(signal){
+  const url = new URL(`${API_BASE_URL}/graduates`);
+  return await fetchJson(url, {signal, headers, credentials: 'include'});
 }
