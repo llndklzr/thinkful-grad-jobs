@@ -17,6 +17,7 @@ module.exports = session({
     maxAge: 1000*60, // 1000*60*60*24, // sets cookie valid of 1 day
     domain: "localhost",
     sameSite: false,
+    httpOnly: false
   },
   unset:"destroy",
 });

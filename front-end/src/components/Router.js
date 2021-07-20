@@ -7,8 +7,10 @@ import DragNDrop from "./DragNDrop";
 import RegisterUser from "./RegisterUser";
 import LoginUser from "./LoginUser";
 import ListGrads from "./ListGrads";
+import ProtectedRoute from "./ProtectedRoute";
 
 export default function Router(){
+
   return(
     <Switch>
       <Route path="/" exact>
@@ -30,11 +32,9 @@ export default function Router(){
         <RegisterUser />
       </Route>
       <Route path="/login">
-        <LoginUser />
+        <LoginUser/>
       </Route>
-      <Route path="/graduates">
-        <ListGrads />
-      </Route>
+      <ProtectedRoute path="/graduates" component={ListGrads} />
     </Switch>
   )
 }

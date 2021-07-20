@@ -24,9 +24,13 @@ export default function LoginUser(){
     e.preventDefault();
     const abortController = new AbortController();
     await loginUser(form, abortController.signal)
+      .then(user =>{
+        sessionStorage.setItem("user", user.passport.user);
+        sessionStorage.setItem("expires", new Date(user.cookie.expires));
+      })
       .catch(setError) // set some error component
     if(!error){
-      //history.push(`/survey/${form.username}`);
+      history.push(`/graduates`);
     }
     return () => abortController.abort();
   }

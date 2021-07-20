@@ -31,6 +31,10 @@ function _genPassword(password) {
 
 const authenticate = passport.authenticate("local", { failureRedirect: "/failure"});
 
+function sendCredentials(req, res, next){
+  res.json({data: req.session});
+}
+
 async function listGrads(req, res, next){
   const grads = await service.getAllGrads();
   res.json({data: grads})
@@ -39,6 +43,6 @@ async function listGrads(req, res, next){
 
 module.exports = {
   register: [registerUser],
-  login: [authenticate],
+  login: [authenticate, sendCredentials],
   list: [isAuth, listGrads]
 }

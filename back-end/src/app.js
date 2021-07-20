@@ -7,25 +7,26 @@ const businessRouter = require("./businesses/businesses.router");
 const gradsRouter = require("./graduates/graduates.router");
 const isAuth = require("./authUtils/isAuth");
 
-const notFound = require("./errors/notFound")
+const notFound = require("./errors/notFound");
 const errorHandler = require("./errors/errorHandler");
 
-const app = express();
+const corsOptions = {
+  origin: "http://localhost:3000",
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Access-Control-Allow-Origin"]
+};
 
-app.use(cors());
+const app = express();
+app.options("*", cors(corsOptions));
+app.use(cors(corsOptions));
 app.use(express.json());
-// app.options("*", cors({
-//   origin: [
-//     "http://localhost:3000",
-//     "https://localhost:3000"
-//   ],
-//   credentials: true,
-//   exposedHeaders: ['set-cookie']
-// }));
+
 
 app.use(session);
 app.use(passport.initialize());
 app.use(passport.session());
+
+
 
 app.use("/stories", storiesRouter);
 app.use("/businesses", businessRouter);

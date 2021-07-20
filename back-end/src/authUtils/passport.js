@@ -14,7 +14,6 @@ passport.use(new LocalStrategy(
       const user = await service.getUserByEmail(username);
       const isValid = user ? _validatePassword(password, user.graduate_hash, user.graduate_salt) : false;
       if(isValid){
-        console.log("WE MADE IT IN PASSPORT")
         return done(null, user);
       } else{
         return done(null, false);
@@ -23,7 +22,6 @@ passport.use(new LocalStrategy(
   ));
 
 passport.serializeUser((user, done) => {
-  console.log("WE ARE SERIALIZING USER", user)
   done(null, user.graduate_id)
 });
 

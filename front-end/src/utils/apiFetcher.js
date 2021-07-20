@@ -4,6 +4,8 @@ const API_BASE_URL =
   process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
 const headers = new Headers();
 headers.append("Content-Type", "application/json");
+headers.append("Access-Control-Allow-Origin", "https://localhost:3000");
+
 
 /**
  * Fetch `json` from the specified URL and handle error status codes and ignore `AbortError`s
@@ -24,8 +26,6 @@ headers.append("Content-Type", "application/json");
 async function fetchJson(url, options, onCancel) {
   try {
     const response = await fetch(url, options);
-
-    console.log(response)
 
     if (response.status === 204) {
       return null;

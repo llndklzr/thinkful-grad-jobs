@@ -12,7 +12,6 @@ export default function ListGrads(){
       return await listAllGrads().then(grads => setGrads(grads)).catch(setErrors);
     }
     load();
-
   }, []);
 
   console.log("GRADS", grads);
