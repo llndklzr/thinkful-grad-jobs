@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/llndklzr/thinkful-grad-jobs#readme",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.22.0",
     "connect-session-knex": "^2.1.0",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
