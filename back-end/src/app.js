@@ -11,7 +11,7 @@ const notFound = require("./errors/notFound");
 const errorHandler = require("./errors/errorHandler");
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: ["http://localhost:3000", "https://thinkful-grad-jobs-backend.vercel.app/graduates/login"],
   credentials: true,
   allowedHeaders: ["Content-Type", "Access-Control-Allow-Origin"]
 };
