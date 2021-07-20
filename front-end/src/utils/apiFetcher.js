@@ -81,6 +81,7 @@ export async function registerUser(credentials, signal){
     signal,
     headers,
     method: "POST",
+    credentials: 'include',
     body: JSON.stringify(credentials)
   }, []);
 }

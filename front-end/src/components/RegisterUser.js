@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Link, useHistory} from "react-router-dom";
 import { registerUser } from '../utils/apiFetcher';
 import "../styles/styles.scss";
+import handleSessionStorage from '../utils/handleSessionStorage';
 
 export default function RegisterUser(){
   const initialForm = {
@@ -56,16 +57,19 @@ export default function RegisterUser(){
 
     if(form.password === confirmPassword && form.password!==""){
       await registerUser(form, abortController.signal)
-        .catch(setErrors) // set some error component
+        .then(user =>{
+          handleSessionStorage(user);
+        })
+        .catch(setErrors); // set some error component
       setConfirmPassword("");
       setPasswordError(false);
-      // history.push(`/survey/${form.username}`)
       setForm({...initialForm});
+      history.push(`/graduates`);
 
     } else{
       setPasswordError(true);
     }
-    
+    return ()=>abortController.abort();
   }
 
   return(
