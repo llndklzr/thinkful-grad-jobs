@@ -5,6 +5,7 @@ const passport = require("passport");
 const storiesRouter = require("./stories/stories.router");
 const businessRouter = require("./businesses/businesses.router");
 const gradsRouter = require("./graduates/graduates.router");
+const resumesRouter = require("./resumes/resumes.router")
 const isAuth = require("./authUtils/isAuth");
 
 const notFound = require("./errors/notFound");
@@ -31,6 +32,7 @@ app.use(passport.session());
 app.use("/stories", storiesRouter);
 app.use("/businesses", businessRouter);
 app.use("/graduates", gradsRouter);
+app.use("/resumes", resumesRouter)
 
 // testing only
 app.use("/success", isAuth, (req, res, next) =>{
