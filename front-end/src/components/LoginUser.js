@@ -1,7 +1,8 @@
 import React , {useState} from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { loginUser } from "../utils/apiFetcher";
 import "../styles/styles.scss";
+import handleSessionStorage from "../utils/handleSessionStorage";
 
 export default function LoginUser(){
   const initialForm = {
@@ -9,10 +10,11 @@ export default function LoginUser(){
     password: ""
   }
   const history = useHistory();
+
   let [form, setForm] = useState({...initialForm});
   let [error, setError] = useState(null);
 
-  const changeHandler= (e) => {
+  const changeHandler = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value
@@ -25,46 +27,56 @@ export default function LoginUser(){
     const abortController = new AbortController();
     await loginUser(form, abortController.signal)
       .then(user =>{
-        sessionStorage.setItem("user", user.passport.user);
-        sessionStorage.setItem("expires", new Date(user.cookie.expires));
+        handleSessionStorage(user)
       })
-      .catch(setError) // set some error component
-    if(!error){
+      .catch(err=>{
+        if(!err){
+          setError(null);
+        } else{
+          setError(err);
+        }
+      });
+    if(error===null){
       history.push(`/graduates`);
     }
     return () => abortController.abort();
   }
 
-  const errorMessage =<p className="error-msg top">Sorry, we couldn't find an account with those credentials. Please try again.</p>
+  const errorMessage =<p className="auth error-msg top">Sorry, we couldn't find an account with those credentials. Please try again.</p>
   
-
+  console.log("ERROR", error)
 
   return (
-    <div>
-      <h3 className="page-header">Sign In</h3>
-      <form onSubmit={submitHandler}>
+    <div >
+      <h3 className="auth page-header">Sign In</h3>
+      <form className="auth form-wrapper" onSubmit={submitHandler}>
         {error ? errorMessage : null}
-        <div className="input-wrapper">
+        <div className="auth input-wrapper">
           <label>Email</label>
           <br/>
           <input
-            className={error ? "failure" : "none"}
+            className={error ? "auth input failure" : "auth input"}
             name="username" 
             type="text"
             value={form.username}
             onChange={changeHandler}
           />
         </div>
-        <div className="input-wrapper">
+        <br />
+        <div className="auth input-wrapper">
           <label>Password</label>
           <br/>
           <input
-            className={error ? "failure" : "none"}
+            className={error ? "auth input failure" : "auth input"}
             name="password"
             type="password"
             value={form.password}
             onChange={changeHandler}
           />
+        </div>
+        <br />
+        <div>
+          Don't have an account? <Link to={"/register"}>Make one</Link>
         </div>
       </form>
       <div className="btn-wrapper">

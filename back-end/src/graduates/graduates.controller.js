@@ -4,8 +4,6 @@ const isAuth = require("../authUtils/isAuth");
 const service = require("./graduates.service");
 require("../authUtils/passport");
 
-// call this when registering user
-// make sure db can take salt and hash
 async function registerUser(req, res, next){
   const saltHash = _genPassword(req.body.password);
   const salt = saltHash.salt;
@@ -16,8 +14,9 @@ async function registerUser(req, res, next){
     graduate_hash: hash,
     graduate_salt: salt
   };
-  const result = await service.makeUser(newUser);
-  res.sendStatus(201);
+
+  await service.makeUser(newUser);
+  next();
 }
 
 function _genPassword(password) {
@@ -40,9 +39,8 @@ async function listGrads(req, res, next){
   res.json({data: grads})
 }
 
-
 module.exports = {
-  register: [registerUser],
+  register: [registerUser, authenticate, sendCredentials],
   login: [authenticate, sendCredentials],
   list: [isAuth, listGrads]
 }

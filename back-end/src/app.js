@@ -34,19 +34,12 @@ app.use("/businesses", businessRouter);
 app.use("/graduates", gradsRouter);
 app.use("/resumes", resumesRouter)
 
-// testing only
-app.use("/success", isAuth, (req, res, next) =>{
-  //console.log(req.session)
-  res.json({data: "we are logged in"})
+app.use("/failure", (req, res, next)=>{
+  next({
+    status: 401,
+    message: `Those credentials are invalid.`
+  })
 })
-
-// app.use("/logout", (req, res, next)=>{
-//   passport.deserializeUser((userId, done) => {
-//     const user = service.getUserById(userId).catch(err => done(err));
-//     done(null, user)
-//   });  
-//   res.json({data: "you are logged out"})
-// })
 
 app.use(notFound);
 app.use(errorHandler);
