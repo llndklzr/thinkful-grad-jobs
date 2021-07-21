@@ -1,12 +1,59 @@
-const { S3Client, getSignedUrl } = require("@aws-sdk/client-s3");
-const { S3_BUCKET, S3_READ_ONLY_KEY } = process.env;
+const AWS = require("aws-sdk");
+const { param } = require("./resumes.router");
+const { S3_BUCKET, accessKeyId, secretAccessKey } = process.env;
 
-async function readUrl(req, res, next) {
-  const params = { Bucket: S3_BUCKET, Key: S3_READ_ONLY_KEY, Expires: 60 };
-  const url = S3Client.getSignedUrl("getObject", params);
-  console.log("The URL is: ", url);
-}
+const s3 = new AWS.S3({
+  accessKeyId,
+  secretAccessKey,
+  Bucket: S3_BUCKET,
+  region: "us-west-2",
+});
+
+//! <<------- CRUD ------->>
+
+const readUploadUrl = async () => {
+  const params = {
+    Bucket: S3_BUCKET,
+    Key: "uploadResume.pdf",
+    Expires: 60 * 5,
+  };
+
+  try {
+    const url = await new Promise((resolve, reject) => {
+      s3.getSignedUrl("putObject", params, (err, url) => {
+        err ? reject(err) : resolve(url);
+      });
+    });
+    console.log(url);
+  } catch (err) {
+    if (err) {
+      console.log(err);
+    }
+  }
+};
+
+const readDownloadUrl = async () => {
+  const params = {
+    Bucket: S3_BUCKET,
+    Key: "dummy-resume.pdf",
+    Expires: 60 * 5,
+  };
+
+  try {
+    const url = await new Promise((resolve, reject) => {
+      s3.getSignedUrl("getObject", params, (err, url) => {
+        err ? reject(err) : resolve(url);
+      });
+    });
+    console.log(url);
+  } catch (err) {
+    if (err) {
+      console.log(err);
+    }
+  }
+};
 
 module.exports = {
-  readUrl,
+  readUploadUrl,
+  readDownloadUrl,
 };
