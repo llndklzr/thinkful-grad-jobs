@@ -17,7 +17,7 @@
   },
   "headers": [
     {
-      "source": "https://grad-story-documents-208846473586.s3-accesspoint.us-west-2.amazonaws.com/*",
+      "source": "/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
