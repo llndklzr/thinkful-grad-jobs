@@ -23,6 +23,8 @@ export default function RegisterUser(){
       ...form,
       [e.target.name]: e.target.value
     });
+    setIsError(null);
+    setPasswordError(null);
   }
 
   const conPassChangeHandler = (e) =>{
@@ -36,7 +38,7 @@ export default function RegisterUser(){
 
   function emailIsNotValid(){
     return(
-      <div className="error-msg">
+      <div className="auth error-msg">
         <p>Please enter a valid email address.</p>
       </div>
     )
@@ -44,7 +46,7 @@ export default function RegisterUser(){
 
   const passwordIsNotValid = () =>{
     return(
-      <div className="error-msg">
+      <div className="auth error-msg">
         <p>Passwords do not match.</p>
       </div>
     )
@@ -64,8 +66,9 @@ export default function RegisterUser(){
       setConfirmPassword("");
       setPasswordError(false);
       setForm({...initialForm});
-      history.push(`/graduates`);
-
+      if(isError===false){
+        history.go(-1);
+      }
     } else{
       setPasswordError(true);
     }
@@ -74,13 +77,13 @@ export default function RegisterUser(){
 
   return(
     <div>
-      <h3 className="page-header">Sign Up</h3>
-      <form onSubmit={submitHandler}>
-          <div className="input-wrapper">
+      <h3 className="auth page-header">Sign Up</h3>
+      <form className="auth form-wrapper" onSubmit={submitHandler}>
+          <div className="auth input-wrapper">
             <label>Email</label>
             <br/>
             <input 
-              className={isError ? "failure" : "none"}
+              className={isError ? "auth input failure" : "auth input"}
               name="username" 
               type="text"
               value={form.username}
@@ -88,11 +91,11 @@ export default function RegisterUser(){
             />
           </div>
           {isError ? emailIsNotValid() : null}
-          <div className="input-wrapper">
+          <div className="auth input-wrapper">
             <label>Password</label>
             <br/>
             <input
-              className={passwordError ? "failure" : "none"}
+              className={passwordError ? "auth input failure" : "auth input"}
               name="password"
               type="password"
               value={form.password}
@@ -102,11 +105,11 @@ export default function RegisterUser(){
           <div>
             {passwordError ? passwordIsNotValid() : null}
           </div>
-          <div className="input-wrapper">
+          <div className="auth input-wrapper">
             <label>Confirm Password</label>
             <br/>
             <input
-              className={passwordError ? "failure" : "none"}
+              className={passwordError ? "auth input failure" : "auth input"}
               name="confirmPassword"
               type="password"
               value={confirmPassword}
@@ -115,10 +118,10 @@ export default function RegisterUser(){
           </div>
         </form>
         <div className="btn-wrapper">
-          <button className="btn" onClick={submitHandler}>Submit</button>
+          <button className="btn auth" onClick={submitHandler}>Submit</button>
         </div>
         <br />
-        <div className="register-container">
+        <div className="auth register-container">
           Already have an account?&nbsp;
           <Link to="/login">Sign in</Link>
         </div>

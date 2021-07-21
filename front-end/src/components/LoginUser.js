@@ -19,8 +19,8 @@ export default function LoginUser(){
       ...form,
       [e.target.name]: e.target.value
     });
+    setError(null);
   }
-  
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -30,19 +30,16 @@ export default function LoginUser(){
         handleSessionStorage(user)
       })
       .catch(err=>{
-        if(!err){
-          setError(null);
-        } else{
-          setError(err);
-        }
-      });
-    if(error===null){
-      history.push(`/graduates`);
-    }
-    return () => abortController.abort();
+        console.log(err)
+        setError(err);
+      }).then(()=>{
+        if(error===null){
+          history.go(-2);
+         }
+      })    
   }
 
-  const errorMessage =<p className="auth error-msg top">Sorry, we couldn't find an account with those credentials. Please try again.</p>
+  const errorMessage =<p className="auth error-msg top">{error?.message}</p>
   
   console.log("ERROR", error)
 
@@ -75,12 +72,9 @@ export default function LoginUser(){
           />
         </div>
         <br />
-        <div>
-          Don't have an account? <Link to={"/register"}>Make one</Link>
-        </div>
       </form>
       <div className="btn-wrapper">
-        <button className="btn" onClick={submitHandler}>Submit</button>
+        <button className="btn auth" onClick={submitHandler}>Submit</button>
       </div>
     </div>
   );

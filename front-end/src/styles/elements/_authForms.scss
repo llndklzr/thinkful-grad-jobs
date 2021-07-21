@@ -1,3 +1,5 @@
+@import"./variables";
+
 .auth{
   &.form-wrapper{
     display: flex;
@@ -9,9 +11,9 @@
   &.page-header{
     display: flex;
     justify-content: center;
-    color: green;
+    color: $dark-shades;
     font-size: 36pt;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: $font-sans-serif;
     margin: 2px;
   }
 
@@ -24,7 +26,7 @@
     width: 100%;
     box-sizing: border-box;
     &.failure{
-      border: 1px solid red;
+      border: 1px solid $danger-red;
       font-size: 10pt;
     }
   }
@@ -32,21 +34,28 @@
   &.failure-wrapper{
     display: flex;
     justify-content: center;
+    align-items: flex-start;
   }
   &.failure{
-    color: red;
+    color: $danger-red;
   }
 
-  .error-msg{
-    color: red;
+  &.error-msg{
+    color: $danger-red;
     display: flex;
+    justify-content: start;
     font-size: 10pt;
     margin-top: -12px;
     overflow-wrap: normal;
-    max-width: 300px;
+    width: 300px;
     &.top{
       margin: 10px 0 0px 0;
     }
+  }
+
+  &.register-container{
+    display: flex;
+    justify-content: center;
   }
 }
 

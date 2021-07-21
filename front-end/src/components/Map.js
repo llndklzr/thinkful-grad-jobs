@@ -6,7 +6,6 @@ import icons from "../styles/icons/icons";
 const KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 export function RenderMap(props){
-  console.log(document.cookie)
   const initialState = {
     showingInfoWindow: false,
     activeMarker: {},

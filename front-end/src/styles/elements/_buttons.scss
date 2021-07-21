@@ -1,3 +1,5 @@
+@import"./variables";
+
 .btn-wrapper{
   display: flex;
   justify-content: center;
@@ -6,10 +8,15 @@
 .btn {
   text-decoration: none;
   border-radius: 5px;
-  border-color: rgb(207, 29, 29);
+  border-color: $dark-accent;
   padding: 10px;
+  background-color: $dark-accent;
+  font-family: $font-sans-serif;
+   &.auth{
+     width: 300px;
+   }
 
   &:hover{
-    background-color: brown;
+    background-color: $main-brand;
   }
 }
