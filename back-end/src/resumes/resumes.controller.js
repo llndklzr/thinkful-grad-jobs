@@ -10,51 +10,29 @@ const s3 = new AWS.S3({
 
 //! <<------- CRUD ------->>
 
-// GET /resumes/upload
-const readUploadUrl = async () => {
-  const params = {
-    Bucket: S3_BUCKET,
-    Key: "uploadResume.pdf",
-    Expires: 60 * 5,
-  };
-
-  try {
-    const url = await new Promise((resolve, reject) => {
-      s3.getSignedUrl("putObject", params, (err, url) => {
-        err ? reject(err) : resolve(url);
-      });
-    });
-    console.log(url);
-  } catch (err) {
-    if (err) {
-      console.log(err);
-    }
-  }
-};
-
 // GET /resumes
-const readDownloadUrl = async () => {
+const readUrl = async (req, res) => {
+  const { filename, awsMethod } = req.query;
+
   const params = {
     Bucket: S3_BUCKET,
-    Key: "dummy-resume.pdf",
+    Key: filename,
     Expires: 60 * 5,
   };
 
   try {
     const url = await new Promise((resolve, reject) => {
-      s3.getSignedUrl("getObject", params, (err, url) => {
+      s3.getSignedUrl(awsMethod, params, (err, url) => {
         err ? reject(err) : resolve(url);
       });
     });
     console.log(url);
+    res.status(200).json({ data: { url } });
   } catch (err) {
-    if (err) {
-      console.log(err);
-    }
+    res.status(404).json({ error: err });
   }
 };
 
 module.exports = {
-  readUploadUrl,
-  readDownloadUrl,
+  readUrl,
 };

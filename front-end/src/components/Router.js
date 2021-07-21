@@ -8,10 +8,10 @@ import RegisterUser from "./RegisterUser";
 import LoginUser from "./LoginUser";
 import ListGrads from "./ListGrads";
 import ProtectedRoute from "./ProtectedRoute";
+import ResumeDownload from "./ResumeDownload";
 
-export default function Router(){
-
-  return(
+export default function Router() {
+  return (
     <Switch>
       <Route path="/" exact>
         <Redirect to={"/map"} />
@@ -32,9 +32,12 @@ export default function Router(){
         <RegisterUser />
       </Route>
       <Route path="/login">
-        <LoginUser/>
+        <LoginUser />
+      </Route>
+      <Route path="/resumes">
+        <ResumeDownload />
       </Route>
       <ProtectedRoute path="/graduates" component={ListGrads} />
     </Switch>
-  )
+  );
 }
