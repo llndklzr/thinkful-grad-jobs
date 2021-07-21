@@ -58,15 +58,16 @@ export default function RegisterUser(){
     validateEmail(form.username) ? setIsError(false) : setIsError(true);
 
     if(form.password === confirmPassword && form.password!==""){
+      let err = false;
       await registerUser(form, abortController.signal)
         .then(user =>{
           handleSessionStorage(user);
         })
-        .catch(setErrors); // set some error component
+        .catch((res)=> {err = true; setErrors(res)});
       setConfirmPassword("");
       setPasswordError(false);
       setForm({...initialForm});
-      if(isError===false){
+      if(!err){
         history.go(-1);
       }
     } else{

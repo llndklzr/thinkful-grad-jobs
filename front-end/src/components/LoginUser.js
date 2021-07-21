@@ -1,5 +1,5 @@
 import React , {useState} from "react";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { loginUser } from "../utils/apiFetcher";
 import "../styles/styles.scss";
 import handleSessionStorage from "../utils/handleSessionStorage";
@@ -24,20 +24,22 @@ export default function LoginUser(){
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    let err = false;
     const abortController = new AbortController();
     await loginUser(form, abortController.signal)
       .then(user =>{
-        handleSessionStorage(user)
+        handleSessionStorage(user);
       })
-      .catch(err=>{
-        console.log(err)
-        setError(err);
-      }).then(()=>{
-        if(error===null){
-          history.go(-2);
-         }
-      })    
+      .catch(res=>{
+        setError(res);
+        err = true;
+      });
+
+    if(!err){
+      history.go(-2);
+    }
   }
+  
 
   const errorMessage =<p className="auth error-msg top">{error?.message}</p>
   

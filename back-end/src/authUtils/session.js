@@ -9,7 +9,7 @@ module.exports = session({
     tablename: 'sessions',
     sidfieldname: 'sid',
     createtable: true,
-    clearInterval: 1000 * 60 * 60
+    clearInterval: 1000 * 60 * 60 * 24
   }),
   resave: false,
   saveUninitialized: true,
