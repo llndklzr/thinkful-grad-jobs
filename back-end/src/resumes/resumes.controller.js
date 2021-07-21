@@ -1,5 +1,4 @@
 const AWS = require("aws-sdk");
-const { param } = require("./resumes.router");
 const { S3_BUCKET, accessKeyId, secretAccessKey } = process.env;
 
 const s3 = new AWS.S3({
@@ -11,6 +10,7 @@ const s3 = new AWS.S3({
 
 //! <<------- CRUD ------->>
 
+// GET /resumes/upload
 const readUploadUrl = async () => {
   const params = {
     Bucket: S3_BUCKET,
@@ -32,6 +32,7 @@ const readUploadUrl = async () => {
   }
 };
 
+// GET /resumes
 const readDownloadUrl = async () => {
   const params = {
     Bucket: S3_BUCKET,
