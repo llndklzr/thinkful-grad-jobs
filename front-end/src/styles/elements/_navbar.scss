@@ -2,19 +2,23 @@
 
 .navbar{
   background-color: #FE654F;
-  padding: 8px;
+  //padding: 8px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 7%;
+  
 
 
   &.nav-btn{
     text-decoration: none;
     background-color: $light-accent;
-    margin: 10px;
+    margin: 0 10px 0 10px;
     border-radius: 5px;
     color: black;
     font-family: $font-sans-serif;
     border: 1px solid $dark-shades;
+    padding: 15px;
     
     &:hover{
       background-color:$dark-shades;

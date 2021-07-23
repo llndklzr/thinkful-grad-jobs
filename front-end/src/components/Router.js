@@ -6,7 +6,6 @@ import StoryForm from "./StoryForm";
 import DragNDrop from "./DragNDrop";
 import RegisterUser from "./RegisterUser";
 import LoginUser from "./LoginUser";
-import ListGrads from "./ListGrads";
 import ProtectedRoute from "./ProtectedRoute";
 import ResumeDownload from "./ResumeDownload";
 
@@ -22,9 +21,10 @@ export default function Router() {
       <Route path="/stories">
         <Stories />
       </Route>
-      <Route path="/new-story">
+      <ProtectedRoute path="/new-story" component={StoryForm} />
+      {/* <Route path="/new-story">
         <StoryForm />
-      </Route>
+      </Route> */}
       <Route path="/drag-n-drop">
         <DragNDrop />
       </Route>
@@ -37,7 +37,6 @@ export default function Router() {
       <Route path="/resumes">
         <ResumeDownload />
       </Route>
-      <ProtectedRoute path="/graduates" component={ListGrads} />
     </Switch>
   );
 }

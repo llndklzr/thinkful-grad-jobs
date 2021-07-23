@@ -14,17 +14,21 @@
 .App {
   text-align: center;
 }
+.App-wrapper{
+  height: 100vh;
+}
 
 .App-header {
+  height: 10%;
   background-color: $dark-shades;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: $font-sans-serif;
   font-size: calc(10px + 2vmin);
   color: $light-shades;
 }
+
 
 body{
   margin: 0;
