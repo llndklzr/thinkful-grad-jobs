@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import GoogleApiWrapper from "./Map";
+import MapParent from "./map/MapParent";
 import Stories from "./Stories";
 import StoryForm from "./StoryForm";
 import DragNDrop from "./DragNDrop";
@@ -8,6 +8,7 @@ import RegisterUser from "./RegisterUser";
 import LoginUser from "./LoginUser";
 import ProtectedRoute from "./ProtectedRoute";
 import ResumeDownload from "./ResumeDownload";
+import SingleGrad from "./SingleGrad";
 
 export default function Router() {
   return (
@@ -16,7 +17,7 @@ export default function Router() {
         <Redirect to={"/map"} />
       </Route>
       <Route path="/map">
-        <GoogleApiWrapper />
+        <MapParent />
       </Route>
       <Route path="/stories">
         <Stories />
@@ -36,6 +37,9 @@ export default function Router() {
       </Route>
       <Route path="/resumes">
         <ResumeDownload />
+      </Route>
+      <Route path="/graduates/:graduate_id">
+        <SingleGrad />
       </Route>
     </Switch>
   );

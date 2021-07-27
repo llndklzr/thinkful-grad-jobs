@@ -2,6 +2,8 @@ const crypto = require("crypto");
 const passport = require("passport");
 const isAuth = require("../authUtils/isAuth");
 const service = require("./graduates.service");
+const bizService = require("../businesses/businesses.service");
+const storyService = require("../stories/stories.service");
 require("../authUtils/passport");
 
 async function registerUser(req, res, next){
@@ -36,11 +38,27 @@ function sendCredentials(req, res, next){
 
 async function listGrads(req, res, next){
   const grads = await service.getAllGrads();
-  res.json({data: grads})
+  res.json({data: grads});
+}
+
+async function getAllGradInfo(req, res){
+  const gradId = req.params.graduate_id;
+  const grad = await service.getUserById(gradId);
+  const biz = await bizService.getBizByGradId(gradId);
+  const story = await storyService.getStoryByGradId(gradId);
+  console.log("BIZ", biz);
+  console.log("STORY", story);
+  const allGradInfo = {
+    ...grad,
+    ...biz,
+    ...story
+  }
+  res.status(200).json({data: allGradInfo});
 }
 
 module.exports = {
   register: [registerUser, authenticate, sendCredentials],
   login: [authenticate, sendCredentials],
-  list: [isAuth, listGrads]
+  list: [isAuth, listGrads],
+  getAllGradInfo
 }

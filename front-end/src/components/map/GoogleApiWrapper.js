@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { GoogleApiWrapper, Map, Marker, InfoWindow } from "google-maps-react";
-import { listBusinesses, getGradsByBusinessId } from "../utils/apiFetcher";
-import icons from "../styles/icons/icons";
+import { listBusinesses, getGradsByBusinessId } from "../../utils/apiFetcher";
+import icons from "../../styles/icons/icons";
 
 const KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 

@@ -117,3 +117,8 @@ export async function getSignedUrl(filename, awsMethod, signal) {
     signal,
   });
 }
+
+export async function getGradById(id, signal){
+  const url = new URL(`${API_BASE_URL}/graduates/${id}`);
+  return await fetchJson(url, {headers, signal});
+}

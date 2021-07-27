@@ -13,7 +13,18 @@ function getGradsByBusinessId(id){
     .where("b.business_id", id);
 }
 
+function getBizByGradId(gradId){
+  return knex(`${tableName} as b`)
+    .select("*")
+    .join("stories as s", "b.business_id", "s.business_id")
+    .join("graduates as g", "s.graduate_id", "g.graduate_id")
+    .where("g.graduate_id", gradId)
+    .then(grad=>grad[0])
+
+}
+
 module.exports = {
   list,
-  getGradsByBusinessId
+  getGradsByBusinessId,
+  getBizByGradId
 }
