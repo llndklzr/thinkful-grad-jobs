@@ -56,6 +56,8 @@ export default function MapMenu(){
           <input />
         </form>
       : null}
+      <div className="bottom-spacer"/>
+
     </div>
   )
 }
