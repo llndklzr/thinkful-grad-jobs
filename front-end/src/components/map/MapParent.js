@@ -8,13 +8,13 @@ export default function MapParent(){
   let [fieldFilter, setFieldFilter] = useState(null);
 
   return(
-    <div>
-      <div>
+    <div className="absolute-map-wrapper">
+      <div className="map-filter-wrapper-in-parent">
         <MapMenu 
 
         />
       </div>
-      <div>
+      <div className="map-wrapper-in-parent">
         <GoogleApiWrapper 
           companyFilter={companyFilter} 
           locationFilter={locationFilter}

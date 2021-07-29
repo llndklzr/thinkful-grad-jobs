@@ -1,26 +1,45 @@
-// pulled from here https://github.com/ovieokeh/contact-page-with-google-maps/blob/add-map/src/components/map/map.css
-
-
-.google-map {
-  width: 100% !important;
-  height: 83% !important;
-  // margin-left: -16px;
-  // margin-right: 1px !important;
+.absolute-map-wrapper{
+  display: flex;
 }
 
-.pin {
+.map-filter-wrapper-in-parent{
   display: flex;
-  align-items: center;
-  width: 180px;
-  color: var(--main-blue);
+  justify-content: center;
+  width: 20%;
+}
 
-  &.icon{
-    font-size: 4rem;
-  }
+// .map-wrapper-in-parent{
+//   width: 80%;
+//   height: 100%;
+// }
 
-  &.text{
-    font-size: 1.3em;
-  }
+.map-filter{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 80vh;
+  border: 2px solid black;
+  margin: 10px;
+}
+
+.filter-option-container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.filter-label{
+  display: flex;
+  justify-content: center;
+}
+
+.filter-input{
+  content: "\a";
+}
+
+.google-map {
+  width: 80% !important;
+  height: 83% !important;
 }
 
 .map{
