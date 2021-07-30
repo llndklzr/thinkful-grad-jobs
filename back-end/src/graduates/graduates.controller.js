@@ -30,7 +30,7 @@ function _genPassword(password) {
   };
 }
 
-const authenticate = passport.authenticate("local", { failureRedirect: "/failure"});
+const authenticate = passport.authenticate("local");
 
 function sendCredentials(req, res, next){
   res.json({data: req.session});
