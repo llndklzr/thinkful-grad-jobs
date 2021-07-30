@@ -6,7 +6,6 @@ const storiesRouter = require("./stories/stories.router");
 const businessRouter = require("./businesses/businesses.router");
 const gradsRouter = require("./graduates/graduates.router");
 const resumesRouter = require("./resumes/resumes.router")
-const isAuth = require("./authUtils/isAuth");
 
 const notFound = require("./errors/notFound");
 const errorHandler = require("./errors/errorHandler");
