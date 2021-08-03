@@ -6,13 +6,12 @@ import icons from "../../styles/icons/icons";
 const KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 export function RenderMap(props){
+  console.log(props)
   const initialState = {
     showingInfoWindow: false,
     activeMarker: {},
     selectedPlace: {},
   }
-  let [businesses, setBusinesses] = useState([]);
-  let [errors, setErrors] = useState(null);
   let [mapState, setMapState] = useState({...initialState});
   let [grads, setGrads] = useState([]);
 
@@ -36,15 +35,7 @@ export function RenderMap(props){
     }
   };
 
-  useEffect(loadPage,[]);
-
-  async function loadPage(){
-    const abortController = new AbortController();
-    await listBusinesses(abortController.signal).then(setBusinesses).catch(setErrors);
-    return () => abortController.abort();
-  }
-
-  const mapPins = businesses.map((business) => {
+  const mapPins = props.businesses.map((business) => {
     return (
       <Marker 
         key={business.business_id}

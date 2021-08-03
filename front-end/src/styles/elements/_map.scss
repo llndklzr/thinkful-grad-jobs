@@ -9,8 +9,7 @@
 }
 
 // .map-wrapper-in-parent{
-//   width: 80%;
-//   height: 100%;
+  
 // }
 
 .map-filter{
@@ -19,30 +18,45 @@
   flex-direction: column;
   width: 100%;
   height: 80vh;
-  border: 2px solid black;
   margin: 10px;
-}
-
-.filter-option-container{
-  display: flex;
-  justify-content: space-around;
 }
 
 .filter-label{
   display: flex;
-  justify-content: center;
-}
-.bottom-spacer{
-  height: 30px;
+  justify-content: flex-start;
 }
 
+.filter-option-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.invisible-filter-option{
+  visibility: hidden;
+}
+
+.visible-filter-input{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 .filter-input{
-  content: "\a";
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.bottom-spacer{
+  height: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .google-map {
-  width: 80% !important;
-  height: 83% !important;
+  width: 78% !important;
+  height: 80% !important;
+  border: 2px solid black;
+  margin: 10px;
 }
 
 .map{
