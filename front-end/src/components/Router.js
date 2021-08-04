@@ -2,8 +2,7 @@ import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import MapParent from "./map/MapParent";
 import Stories from "./Stories";
-import StoryForm from "./StoryForm";
-import DragNDrop from "./DragNDrop";
+import CreateStory from "./CreateStory/CreateStory";
 import RegisterUser from "./RegisterUser";
 import LoginUser from "./LoginUser";
 import ProtectedRoute from "./ProtectedRoute";
@@ -22,13 +21,7 @@ export default function Router() {
       <Route path="/stories">
         <Stories />
       </Route>
-      <ProtectedRoute path="/new-story" component={StoryForm} />
-      {/* <Route path="/new-story">
-        <StoryForm />
-      </Route> */}
-      <Route path="/drag-n-drop">
-        <DragNDrop />
-      </Route>
+      <ProtectedRoute path="/new-story" component={CreateStory} />
       <Route path="/register">
         <RegisterUser />
       </Route>

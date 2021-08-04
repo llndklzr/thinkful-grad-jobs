@@ -1,21 +1,6 @@
 import { useState, useRef } from "react";
 
-function DragNDrop() {
-  const data = [
-    {
-      title: "unsorted",
-      items: [
-        "Cover Letter",
-        "Interviewing",
-        "LinkedIn",
-        "Mentorship (from anyone)",
-        "Networking",
-        "Resume",
-      ],
-    },
-    { title: "sorted", items: [] },
-  ];
-
+function DragNDrop({ data }) {
   const [list, setList] = useState(data);
   const [dragging, setDragging] = useState(false);
 

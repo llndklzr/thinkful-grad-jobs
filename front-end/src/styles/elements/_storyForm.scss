@@ -1,40 +1,66 @@
-.form-group {
-  margin: 2em;
-  font-family: "Courier New", Courier, monospace;
-  display: flex;
-  flex-direction: column;
-
-  .form-label {
-    font-size: 1.5em;
-    font-weight: 1000;
+.create-story-wrapper {
+  .create-story-title {
+    font-family: $font-sans-serif;
+    text-align: center;
   }
-  .form-control {
-    padding: 0.5em;
-    border: none;
-    border-bottom: 2px solid $main-brand;
-    font-size: 1.5em;
-
-    & textarea{
-      rows: 10;
+  .create-story-breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    .dot {
+      height: 25px;
+      width: 25px;
+      background-color: $light-accent;
+      border-radius: 50%;
+      display: inline-block;
+      margin-inline: 10px;
+      cursor: pointer;
     }
-
-    &:focus{
-      outline: none;
+    .dot-active {
+      background-color: $main-brand;
     }
   }
-}
-.form-button-row {
-  display: flex;
-  .grouped-buttons {
-    margin: auto;
+  .form-group {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: $font-sans-serif;
+    font-size: 18px;
+    max-width: 800px;
+    .form-grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      gap: 20px;
+      .form-grid-item {
+        label,
+        input {
+          display: block;
+        }
+        textarea {
+          float: left;
+          resize: none;
+          width: 100%;
+        }
+        .form-label {
+        }
+        .form-control {
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      .grid-item-full-width {
+        grid-column-start: 1;
+        grid-column-end: 5;
+      }
+    }
+    .character-count {
+      text-align: right;
+    }
     .form-button {
-      padding: 0.5em;
-      font-size: 1.5em;
-      background: none;
-      margin: 10px;
-      border: none;
-      border-bottom: 2px solid $light-accent;
-      border-radius: 10px;
+      float: right;
+      font-family: $font-sans-serif;
+      font-size: 18px;
     }
   }
 }
