@@ -10,13 +10,14 @@ export default function MapParent(){
   let [businesses, setBusinesses] = useState([]);
   let [errors, setErrors] = useState(null);
 
-  useEffect(loadPage,[]);
-
-  async function loadPage(){
-    const abortController = new AbortController();
-    await listBusinesses(abortController.signal).then(setBusinesses).catch(setErrors);
-    return () => abortController.abort();
-  }
+  useEffect(()=>{
+    async function loadBusinesses(){
+      const abortController = new AbortController();
+      await listBusinesses(abortController.signal).then(setBusinesses).catch(setErrors);
+      return () => abortController.abort();
+    }
+    loadBusinesses();
+  }, []);
 
   return(
     <div className="absolute-map-wrapper">

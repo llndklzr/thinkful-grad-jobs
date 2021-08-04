@@ -1,23 +1,21 @@
 @import"./variables";
 
 .navbar{
-  background-color: #FE654F;
-  //padding: 8px;
+  //background-color: insert color from DL;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   height: 7%;
-  
 
 
   &.nav-btn{
     text-decoration: none;
-    background-color: $light-accent;
+    //background-color: insert color from DL;
     margin: 0 10px 0 10px;
     border-radius: 5px;
     color: black;
     font-family: $font-sans-serif;
-    border: 1px solid $dark-shades;
+    //border: 1px solid $dark-shades;
     padding: 15px;
     
     &:hover{

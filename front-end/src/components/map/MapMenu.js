@@ -8,7 +8,7 @@ export default function MapMenu({props}){
   let [fieldToggle, setFieldToggle] = useState(false);
 
   function filterInputVisibility(boolean){
-    return boolean ? "visible-filter-input" : "invisible-filter-option"
+    return boolean ? "visible-filter-input" : "invisible-filter-option";
   }
 
   
