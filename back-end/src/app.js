@@ -5,7 +5,8 @@ const passport = require("passport");
 const storiesRouter = require("./stories/stories.router");
 const businessRouter = require("./businesses/businesses.router");
 const gradsRouter = require("./graduates/graduates.router");
-const resumesRouter = require("./resumes/resumes.router")
+const resumesRouter = require("./resumes/resumes.router");
+const filterRouter = require("./filters/filters.router");
 
 
 const notFound = require("./errors/notFound");
@@ -32,7 +33,8 @@ app.use(passport.session());
 app.use("/stories", storiesRouter);
 app.use("/businesses", businessRouter);
 app.use("/graduates", gradsRouter);
-app.use("/resumes", resumesRouter)
+app.use("/resumes", resumesRouter);
+app.use("/filters", filterRouter);
 
 app.use("/failure", (req, res, next)=>{
   next({

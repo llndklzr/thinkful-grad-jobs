@@ -71,7 +71,7 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
         </form>
       </div>
       <div className="bottom-spacer">
-        <button onClick={()=>retrieveFilters} className="btn">Apply Filters</button>
+        <button onClick={retrieveFilters} className="btn">Apply Filters</button>
       </div>
 
     </div>

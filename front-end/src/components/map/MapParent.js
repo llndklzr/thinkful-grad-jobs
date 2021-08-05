@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import GoogleApiWrapper from "./GoogleApiWrapper";
 import MapMenu from "./MapMenu";
-import { listBusinesses } from "../../utils/apiFetcher";
+import { listBusinesses, filterResultsForMap } from "../../utils/apiFetcher";
 
 export default function MapParent(){
 
@@ -13,14 +13,18 @@ export default function MapParent(){
   let [filters, setFilters] = useState({...initialFilterOptions});
   let [businesses, setBusinesses] = useState([]);
   let [errors, setErrors] = useState(null);
+  const abortController = new AbortController();
 
-  const retrieveFilters = (e)=> {
-
+  const retrieveFilters = async (e)=> {
+    return await filterResultsForMap(filters, abortController.signal)
+      .then(res =>{
+        setBusinesses(res);
+      })
+      .catch(setErrors);
   }
-
+  console.log("BUSINESSES", businesses)
   useEffect(()=>{
     async function loadBusinesses(){
-      const abortController = new AbortController();
       await listBusinesses(abortController.signal).then(setBusinesses).catch(setErrors);
       return () => abortController.abort();
     }
@@ -41,7 +45,6 @@ export default function MapParent(){
       <div className="map-wrapper-in-parent">
         {errors ? errorMsg : null}
         <GoogleApiWrapper 
-          filters={filters}
           businesses={businesses}
         />
       </div>

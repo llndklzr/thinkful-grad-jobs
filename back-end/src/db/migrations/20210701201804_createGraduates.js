@@ -5,6 +5,7 @@ exports.up = function(knex) {
     table.string("last_name");
     table.string("graduation_date");
     table.string("graduate_email");
+    table.string("graduate_career_field");
     table.string("graduate_hash");
     table.string("graduate_salt");
   })

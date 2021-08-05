@@ -2,9 +2,9 @@
 
 const API_BASE_URL =
   process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
-const headers = new Headers();
-headers.append("Content-Type", "application/json");
-headers.append("Access-Control-Allow-Origin", "https://localhost:3000");
+const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Access-Control-Allow-Origin", "http://localhost:3000");
 
 /**
  * Fetch `json` from the specified URL and handle error status codes and ignore `AbortError`s
@@ -57,17 +57,17 @@ export async function listStories(params, signal) {
   Object.entries(params).forEach(([key, value]) =>
     url.searchParams.append(key, value.toString())
   );
-  return await fetchJson(url, { headers, signal }, []);
+  return await fetchJson(url, { headers: myHeaders, signal }, []);
 }
 
 export async function listBusinesses(signal) {
   const url = new URL(`${API_BASE_URL}/businesses`);
-  return await fetchJson(url, { headers, signal }, []);
+  return await fetchJson(url, { headers: myHeaders, signal }, []);
 }
 
 export async function getGradsByBusinessId(businessId, signal) {
   const url = new URL(`${API_BASE_URL}/businesses/${businessId}/graduates`);
-  return await fetchJson(url, { headers, signal }, []);
+  return await fetchJson(url, { headers: myHeaders, signal }, []);
 }
 
 export async function postStory(story, signal) {}
@@ -78,7 +78,7 @@ export async function registerUser(credentials, signal) {
     url,
     {
       signal,
-      headers,
+      headers: myHeaders,
       method: "POST",
       credentials: "include",
       body: JSON.stringify(credentials),
@@ -94,7 +94,7 @@ export async function loginUser(credentials, signal) {
     {
       signal,
       credentials: "include",
-      headers,
+      headers: myHeaders,
       method: "POST",
       body: JSON.stringify(credentials),
     },
@@ -104,7 +104,7 @@ export async function loginUser(credentials, signal) {
 
 export async function listAllGrads(signal) {
   const url = new URL(`${API_BASE_URL}/graduates`);
-  return await fetchJson(url, { signal, headers, credentials: "include" });
+  return await fetchJson(url, { signal, headers: myHeaders, credentials: "include" });
 }
 
 export async function getSignedUrl(filename, awsMethod, signal) {
@@ -113,12 +113,28 @@ export async function getSignedUrl(filename, awsMethod, signal) {
   );
 
   return await fetchJson(url, {
-    headers,
+    headers: myHeaders,
     signal,
   });
 }
 
 export async function getGradById(id, signal){
   const url = new URL(`${API_BASE_URL}/graduates/${id}`);
-  return await fetchJson(url, {headers, signal});
+  return await fetchJson(url, {headers: myHeaders, signal});
+}
+
+export async function filterResultsForMap(filters, signal){
+  console.log("FILTERS IN API FETCHER", filters)
+  const url = new URL(`${API_BASE_URL}/filters/map`);
+  return await fetchJson(
+    url,
+    {
+      signal,
+      credentials: "include",
+      headers: myHeaders,
+      method: "POST",
+      body: JSON.stringify({data: filters}),
+    },
+    []
+  );
 }

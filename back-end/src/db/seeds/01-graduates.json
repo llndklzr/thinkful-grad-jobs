@@ -3,42 +3,50 @@
     "first_name": "Frodo",
     "last_name": "Baggins",
     "graduation_date": "2021-01-15",
-    "graduate_email": "fbaggins@placeholderemail.com"
+    "graduate_email": "fbaggins@placeholderemail.com",
+    "graduate_career_field": "ux/ui"
+
   },
   {
     "first_name": "Bilbo",
     "last_name": "Baggins",
     "graduation_date": "2021-06-20",
-    "graduate_email": "bbaggins@placeholderemail.com"
+    "graduate_email": "bbaggins@placeholderemail.com",
+    "graduate_career_field": "engineer"
   },
   {
     "first_name": "Tom",
     "last_name": "Bombadil",
     "graduation_date": "2021-05-12",
-    "graduate_email": "tbombadil@placeholderemail.com"
+    "graduate_email": "tbombadil@placeholderemail.com",
+    "graduate_career_field": "ux/ui"
   },
   {
     "first_name": "Aragorn II",
     "last_name": "Elessar",
     "graduation_date": "2021-01-15",
-    "graduate_email": "aragorn@placeholderemail.com"
+    "graduate_email": "aragorn@placeholderemail.com",
+    "graduate_career_field": "dataAnalytics"
   },
   {
     "first_name": "Meriadoc",
     "last_name": "Brandybuck",
     "graduation_date": "2020-11-15",
-    "graduate_email": "meribrandy@placeholderemail.com"
+    "graduate_email": "meribrandy@placeholderemail.com",
+    "graduate_career_field": "engineer"
   },
   {
     "first_name": "Peregrin",
     "last_name": "Took",
     "graduation_date": "2020-10-01",
-    "graduate_email": "foatook@placeholderemail.com"
+    "graduate_email": "foatook@placeholderemail.com",
+    "graduate_career_field": "engineer"
   },
   {
     "first_name": "Samwise",
     "last_name": "Gamgee",
     "graduation_date": "2021-03-20",
-    "graduate_email": "samgam@placeholderemail.com"
+    "graduate_email": "samgam@placeholderemail.com",
+    "graduate_career_field": "dataAnalystics"
   }
 ]
