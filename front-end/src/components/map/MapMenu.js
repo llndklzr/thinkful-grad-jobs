@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Toggle from "react-toggle";
 
 
-export default function MapMenu({props}){
+export default function MapMenu({filters, setFilters, retrieveFilters}){
   let [companyToggle, setCompanyToggle] = useState(false);
   let [locationToggle, setLocationToggle] = useState(false);
   let [fieldToggle, setFieldToggle] = useState(false);
@@ -26,7 +26,11 @@ export default function MapMenu({props}){
       </div>
       <div className={filterInputVisibility(companyToggle)}>
         <form >
-          <input className="filter-input"/>
+          <input 
+            value={filters.companyFilter}
+            onChange={(e)=>setFilters({...filters, companyFilter: e.target.value})}
+            className="filter-input"
+          />
         </form>
       </div>
       
@@ -41,7 +45,11 @@ export default function MapMenu({props}){
       </div>
       <div className={filterInputVisibility(locationToggle)}>
         <form >
-          <input className="filter-input"/>
+          <input 
+            value={filters.locationFilter}
+            onChange={(e)=>setFilters({...filters, locationFilter: e.target.value})}
+            className="filter-input"
+          />
         </form>
       </div>
       <div className="filter-option-container">
@@ -55,11 +63,15 @@ export default function MapMenu({props}){
       </div>
       <div className={filterInputVisibility(fieldToggle)}>
         <form >
-          <input className="filter-input"/>
+          <input 
+            value={filters.fieldFilter}
+            onChange={(e)=>setFilters({...filters, fieldFilter: e.target.value})}
+            className="filter-input"
+          />
         </form>
       </div>
       <div className="bottom-spacer">
-        <button className="btn">Apply Filters</button>
+        <button onClick={()=>retrieveFilters} className="btn">Apply Filters</button>
       </div>
 
     </div>

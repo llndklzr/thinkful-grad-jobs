@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { GoogleApiWrapper, Map, Marker, InfoWindow } from "google-maps-react";
-import { listBusinesses, getGradsByBusinessId } from "../../utils/apiFetcher";
+import { getGradsByBusinessId } from "../../utils/apiFetcher";
+import MarkerClusterer from '@googlemaps/markerclustererplus';
+
 import icons from "../../styles/icons/icons";
 
 const KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -55,6 +57,19 @@ export function RenderMap(props){
     }
   )
 
+  const map = (
+    <Map 
+      onClick={onMapClicked}
+      google={props.google} 
+      zoom={5} 
+      initialCenter={{lat: 39.833333, lng: -98.583333}}
+      className={"google-map"}
+      fullscreenControl={false}
+      streetViewControl={false}
+    />
+  )
+
+
   const gradsByBusiness = grads.map((grad)=>{
     return(
       <div key={grad.graduate_id}>
@@ -62,6 +77,8 @@ export function RenderMap(props){
       </div>
     )
   })
+
+  //const markerCluster = new MarkerClusterer(map, mapPins,{ imagePath:"https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",})
 
   return (
     <Map 

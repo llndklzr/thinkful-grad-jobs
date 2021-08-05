@@ -4,11 +4,19 @@ import MapMenu from "./MapMenu";
 import { listBusinesses } from "../../utils/apiFetcher";
 
 export default function MapParent(){
-  let [companyFilter, setCompanyFilter] = useState(null);
-  let [locationFilter, setLocationFilter] = useState(null);
-  let [fieldFilter, setFieldFilter] = useState(null);
+
+  const initialFilterOptions = {
+    companyFilter: "",
+    locationFilter: "",
+    fieldFilter: "",
+  }
+  let [filters, setFilters] = useState({...initialFilterOptions});
   let [businesses, setBusinesses] = useState([]);
   let [errors, setErrors] = useState(null);
+
+  const retrieveFilters = (e)=> {
+
+  }
 
   useEffect(()=>{
     async function loadBusinesses(){
@@ -19,23 +27,21 @@ export default function MapParent(){
     loadBusinesses();
   }, []);
 
+  const errorMsg = "Sorry, there was an error in getting the results!";
+
   return(
     <div className="absolute-map-wrapper">
       <div className="map-filter-wrapper-in-parent">
         <MapMenu 
-          companyFilter={companyFilter}
-          locationFilter={locationFilter}
-          fieldFilter={fieldFilter}
-          setCompanyFilter={setCompanyFilter}
-          setLocationFilter={setLocationFilter}
-          setFieldFilter={setFieldFilter}
+          filters={filters}
+          setFilters={setFilters}
+          retrieveFilters={retrieveFilters}
         />
       </div>
       <div className="map-wrapper-in-parent">
+        {errors ? errorMsg : null}
         <GoogleApiWrapper 
-          companyFilter={companyFilter} 
-          locationFilter={locationFilter}
-          fieldFilter={fieldFilter}
+          filters={filters}
           businesses={businesses}
         />
       </div>

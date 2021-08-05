@@ -24,12 +24,14 @@
 .filter-label{
   display: flex;
   justify-content: flex-start;
+  font-size: 20pt;
 }
 
 .filter-option-container{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  font-size: 15pt;
 }
 
 .invisible-filter-option{
@@ -54,7 +56,7 @@
 
 .google-map {
   width: 83% !important;
-  height: 80% !important;
+  height: 90% !important;
   border: 2px solid black;
   margin: 10px;
 }
