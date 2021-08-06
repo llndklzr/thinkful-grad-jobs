@@ -25,7 +25,7 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
         />
       </div>
       <div className={filterInputVisibility(companyToggle)}>
-        <form >
+        <form onSubmit={retrieveFilters}>
           <input 
             value={filters.companyFilter}
             onChange={(e)=>setFilters({...filters, companyFilter: e.target.value})}
@@ -44,7 +44,7 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
           />
       </div>
       <div className={filterInputVisibility(locationToggle)}>
-        <form >
+        <form onSubmit={retrieveFilters}>
           <input 
             value={filters.locationFilter}
             onChange={(e)=>setFilters({...filters, locationFilter: e.target.value})}
@@ -62,7 +62,7 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
           />
       </div>
       <div className={filterInputVisibility(fieldToggle)}>
-        <form >
+        <form onSubmit={retrieveFilters}>
           <input 
             value={filters.fieldFilter}
             onChange={(e)=>setFilters({...filters, fieldFilter: e.target.value})}

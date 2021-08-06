@@ -16,6 +16,7 @@ export default function MapParent(){
   const abortController = new AbortController();
 
   const retrieveFilters = async (e)=> {
+    e.preventDefault();
     return await filterResultsForMap(filters, abortController.signal)
       .then(res =>{
         setBusinesses(res);
@@ -25,7 +26,7 @@ export default function MapParent(){
   console.log("BUSINESSES", businesses)
   useEffect(()=>{
     async function loadBusinesses(){
-      await listBusinesses(abortController.signal).then(setBusinesses).catch(setErrors);
+      await filterResultsForMap(filters, abortController.signal).then(setBusinesses).catch(setErrors);
       return () => abortController.abort();
     }
     loadBusinesses();
