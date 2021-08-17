@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React, {useState} from "react";
 import { useHistory } from "react-router-dom";
 import { loginUser } from "../utils/apiFetcher";
 import "../styles/styles.scss";
@@ -76,7 +76,7 @@ export default function LoginUser(){
         <br />
       </form>
       <div className="btn-wrapper">
-        <button className="btn auth" onClick={submitHandler}>Submit</button>
+        <button className="btn auth" type="submit">Submit</button>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ exports.up = function (knex) {
       .inTable("graduates")
       .onDelete("cascade");
     table.date("hire_date");
-    table.string("story");
+    table.string("story", 2000);
     table.integer("interview_count");
     table.string("job_title");
     table.integer("business_id").unsigned().notNullable();
@@ -17,6 +17,7 @@ exports.up = function (knex) {
       .references("business_id")
       .inTable("businesses")
       .onDelete("cascade");
+    table.specificType("storyDetails", "json ARRAY");
   });
 };
 

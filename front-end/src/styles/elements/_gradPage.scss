@@ -1,0 +1,81 @@
+@import"./variables";
+section{
+  margin: 40px;
+  height: 100vh;
+}
+.grad-page{
+  display: flex;
+  justify-content: center;
+  &.grad-header-container{
+    display: inherit;
+    justify-content: inherit;
+  }
+  &.grad-header{
+    display: flex;
+    justify-content: center;
+    font-size: 48px;
+  }
+  &.grad-discription{
+    font-size: 36px;
+    margin-top: -20px;
+  }
+}
+.main-container{
+  display: flex;
+}
+
+.my-story-container{
+  width: 70%;
+  flex-direction: column;
+}
+
+.story{
+  &.story-block{
+    margin: 40px 40px 0 0;
+    font-size: 24px;
+  }
+  &.btn{
+    &.invisible{
+      visibility: hidden;
+    }
+  }
+  &.sub-details{
+    font-size: 30px;
+    margin: 10px 0 10px 0;
+  }
+  &.my-story-header{
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0;
+  }
+  &.date{
+    font-size: 24px;
+    &.hired{
+      padding-left: 146px;
+    }
+  }
+}
+.hiring-details-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.hiring-essentials{
+  width: 68%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  font-weight: 500;
+}
+a{
+  text-decoration: none;
+  color: black;
+  
+  &.disabled{
+    color: gray;
+    pointer-events: none;
+  }
+  &:hover{
+    color:red;
+  }
+}

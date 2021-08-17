@@ -63,11 +63,19 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
       </div>
       <div className={filterInputVisibility(fieldToggle)}>
         <form onSubmit={retrieveFilters}>
-          <input 
+          <select 
             value={filters.fieldFilter}
             onChange={(e)=>setFilters({...filters, fieldFilter: e.target.value})}
             className="filter-input"
-          />
+          >
+            <option value="">Career Field</option>
+            <option value="Full Stack Development">Engineering</option>
+            <option value="UX/UI"> UX/UI</option>
+            <option value="Data Analytics">Data Analytics</option>
+            <option value="Data Science"> Date Science</option>
+            <option value="Digital Marketing">Digital Marketing</option>
+            <option value="Project Management">Project Management</option>
+          </select>
         </form>
       </div>
       <div className="bottom-spacer">

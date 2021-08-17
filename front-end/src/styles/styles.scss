@@ -11,12 +11,14 @@
 @import"./elements/dragNDrop";
 @import"./elements/authForms";
 @import"./elements/toggle";
+@import"./elements/gradPage";
 
 .App {
   text-align: center;
 }
 .App-wrapper{
   height: 100vh;
+  font-family: $font-roboto;
 }
 
 .App-header {
