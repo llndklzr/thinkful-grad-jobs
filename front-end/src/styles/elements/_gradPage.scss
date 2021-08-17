@@ -1,5 +1,5 @@
 @import"./variables";
-section{
+.section-container{
   margin: 40px;
   height: 100vh;
 }
@@ -73,7 +73,10 @@ a{
   
   &.disabled{
     color: gray;
-    pointer-events: none;
+    cursor: not-allowed;
+    &:hover{
+      color: grey;
+    }
   }
   &:hover{
     color:red;

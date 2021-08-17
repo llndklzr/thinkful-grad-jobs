@@ -7,7 +7,7 @@ import RegisterUser from "./RegisterUser";
 import LoginUser from "./LoginUser";
 import ProtectedRoute from "./ProtectedRoute";
 import ResumeDownload from "./ResumeDownload";
-import SingleGrad from "./SingleGrad";
+import SingleGradDisplay from "./singleGrad/SingleGradDisplay";
 
 export default function Router() {
   return (
@@ -32,7 +32,7 @@ export default function Router() {
         <ResumeDownload />
       </Route>
       <Route path="/graduates/:graduate_id">
-        <SingleGrad />
+        <SingleGradDisplay />
       </Route>
     </Switch>
   );

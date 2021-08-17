@@ -6,64 +6,74 @@
     "interview_count": 3,
     "job_title": "Front End Developer",
     "business_id": 1,
-    "storyDetails": [ 
-      {
-        "category": "Location",
-        "willingToRelocate": "no"
-      },
-      {
+    "linkedInUrl": "https://www.linkedin.com/",
+    "resumeTitle": "",
+    "portfolioUrl": "",
+    "coverLetterTitle": "",
+    "enabled": ["Location", "Networking"],
+    "disabled": ["Coaching/Mentorship", "Tranfered Skills", "Interviewing"],
+    "storyDetails": {
+      "Location": {
         "category": "Interviewing",
         "numberOfInterviews": 123,
-        "behavioralInterviews": 120,
-        "technicalInterviews": 100 
+        "numberOfApps": 120,
+        "blurb":"Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands."
       },
-      {
-        "category": "Transfered Skills",
-        "skills": "Agents cover him don't lordship stars fox Buckland pass bellows. Calamity Celeborn sniff wasn't guess woodlands completely bait. Servant Mereth journeying warning entrance champ filth caretaker. Fly, you fools! Éomer far nameless became reserves tested debt during proof? Pippin's roaring half-wits fall verge rally owe covering moved upset. Usual Orcrist forth frightened cries unnoticed restored. Ravens escape mushrooms eh. Upon everything's yammer beings wring fabled Fundin woman. Ever-watchful Westfarthing beards intent rue mash could've. Handling possessions academic Anor! Twilight Ent equal slug pleasure we'd daughter introduce older oh. Trick Paladin garrison music rally midnight by! Midsummer's Eve trees bodyguard. Rubbish says cup mingled throat rods Hobbiton. Rogue forgetting lembas Arathorn. Fly, you fools! Pile climbs Dwarf-lords. You are full of surprises, Master Baggins. Upset knowing banished earth Bolg boned verge promises slight risking blind pouch. Delved Éothain swimming pierce robber garden correctly. Seasoning knife taller vest moaning Beorn. Meeting Bert don't poured mother exchange prisoners well merrier honorably? Lucky furnaces Thror always laddie actually riddle ago! Ha changes depend something's sakes hooks excuse Bill hangs rid chap canniest. King's lacerations referring threat? Skill fixed ish dragged root call unspoiled weep tinkers Dwarf-city dominion 13."
+      "Transfered Skills":{
+        "blurb": "Agents cover him don't lordship stars fox Buckland pass bellows. Calamity Celeborn sniff wasn't guess woodlands completely bait. Servant Mereth journeying warning entrance champ filth caretaker. Fly, you fools! Éomer far nameless became reserves tested debt during proof? Pippin's roaring half-wits fall verge rally owe covering moved upset. Usual Orcrist forth frightened cries unnoticed restored. Ravens escape mushrooms eh. Upon everything's yammer beings wring fabled Fundin woman. Ever-watchful Westfarthing beards intent rue mash could've. Handling possessions academic Anor! Twilight Ent equal slug pleasure we'd daughter introduce older oh. Trick Paladin garrison music rally midnight by! Midsummer's Eve trees bodyguard. Rubbish says cup mingled throat rods Hobbiton. Rogue forgetting lembas Arathorn. Fly, you fools! Pile climbs Dwarf-lords. You are full of surprises, Master Baggins. Upset knowing banished earth Bolg boned verge promises slight risking blind pouch. Delved Éothain swimming pierce robber garden correctly. Seasoning knife taller vest moaning Beorn. Meeting Bert don't poured mother exchange prisoners well merrier honorably? Lucky furnaces Thror always laddie actually riddle ago! Ha changes depend something's sakes hooks excuse Bill hangs rid chap canniest. King's lacerations referring threat? Skill fixed ish dragged root call unspoiled weep tinkers Dwarf-city dominion 13."
       },
-      {
-        "category": "Networking",
-        "meetUps": "Local Group"
+      "Networking": {
+        "blurb": "Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands.",
+        "hiredByNetworking": "yes"
       },
-      {
-        "category": "Mentorship/Coaching",
-        "coach": "Gandolf",
-        "hoursPerWeek": 90
+      "Coaching/Mentorship": {
+        "blurb": "Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful.\nCat fails rotten use unrest cave corrupt success domains Home lone-lands.",
+        "hiredAtMentorsCompany": "no"
+      },
+      "Interviewing": {
+        "numberOfInterviews": 123,
+        "numberOfApps": 120,
+        "blurb":"Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands."
       }
-    ]
+    }
   },  
   {
     "graduate_id": 2,
     "hire_date": "2021-07-03",
-    "story": "shattered impressive tune crowned marshaling helps debt deny. Unfair Ringwraiths bottom nine. Mother's gathering blink list worry Sméag city anymore mad. Samwise Gamgee rallied drowned",
+    "story": "Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined",
     "interview_count": 7,
     "job_title": "Software Engineer",
     "business_id": 2,
-    "storyDetails": [ 
-      {
-        "category": "Mentorship/Coaching",
-        "coach": "Gandolf",
-        "hoursPerWeek": 90
-      },
-      {
-        "category": "Networking",
-        "meetUps": "Local Group"
-      },
-      {
-        "category": "Location",
-        "willingToRelocate": "no"
-      },
-      {
+    "linkedInUrl": "https://www.linkedin.com/",
+    "resumeTitle": "",
+    "portfolioUrl": "",
+    "coverLetterTitle": "",
+    "enabled": ["Location", "Networking"],
+    "disabled": ["Coaching/Mentorship", "Tranfered Skills", "Interviewing"],
+    "storyDetails": {
+      "Location": {
         "category": "Interviewing",
         "numberOfInterviews": 123,
-        "behavioralInterviews": 120,
-        "technicalInterviews": 100 
+        "numberOfApps": 120,
+        "blurb":"Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands."
       },
-      {
-        "category": "Transfered Skills",
-        "skills": "Agents cover him don't lordship stars fox Buckland pass bellows. Calamity Celeborn sniff wasn't guess woodlands completely bait. Servant Mereth journeying warning entrance champ filth caretaker. Fly, you fools! Éomer far nameless became reserves tested debt during proof? Pippin's roaring half-wits fall verge rally owe covering moved upset. Usual Orcrist forth frightened cries unnoticed restored. Ravens escape mushrooms eh. Upon everything's yammer beings wring fabled Fundin woman. Ever-watchful Westfarthing beards intent rue mash could've. Handling possessions academic Anor! Twilight Ent equal slug pleasure we'd daughter introduce older oh. Trick Paladin garrison music rally midnight by! Midsummer's Eve trees bodyguard. Rubbish says cup mingled throat rods Hobbiton. Rogue forgetting lembas Arathorn. Fly, you fools! Pile climbs Dwarf-lords. You are full of surprises, Master Baggins. Upset knowing banished earth Bolg boned verge promises slight risking blind pouch. Delved Éothain swimming pierce robber garden correctly. Seasoning knife taller vest moaning Beorn. Meeting Bert don't poured mother exchange prisoners well merrier honorably? Lucky furnaces Thror always laddie actually riddle ago! Ha changes depend something's sakes hooks excuse Bill hangs rid chap canniest. King's lacerations referring threat? Skill fixed ish dragged root call unspoiled weep tinkers Dwarf-city dominion 13."
+      "Transfered Skills":{
+        "blurb": "Agents cover him don't lordship stars fox Buckland pass bellows. Calamity Celeborn sniff wasn't guess woodlands completely bait. Servant Mereth journeying warning entrance champ filth caretaker. Fly, you fools! Éomer far nameless became reserves tested debt during proof? Pippin's roaring half-wits fall verge rally owe covering moved upset. Usual Orcrist forth frightened cries unnoticed restored. Ravens escape mushrooms eh. Upon everything's yammer beings wring fabled Fundin woman. Ever-watchful Westfarthing beards intent rue mash could've. Handling possessions academic Anor! Twilight Ent equal slug pleasure we'd daughter introduce older oh. Trick Paladin garrison music rally midnight by! Midsummer's Eve trees bodyguard. Rubbish says cup mingled throat rods Hobbiton. Rogue forgetting lembas Arathorn. Fly, you fools! Pile climbs Dwarf-lords. You are full of surprises, Master Baggins. Upset knowing banished earth Bolg boned verge promises slight risking blind pouch. Delved Éothain swimming pierce robber garden correctly. Seasoning knife taller vest moaning Beorn. Meeting Bert don't poured mother exchange prisoners well merrier honorably? Lucky furnaces Thror always laddie actually riddle ago! Ha changes depend something's sakes hooks excuse Bill hangs rid chap canniest. King's lacerations referring threat? Skill fixed ish dragged root call unspoiled weep tinkers Dwarf-city dominion 13."
+      },
+      "Networking": {
+        "blurb": "Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands.",
+        "hiredByNetworking": "yes"
+      },
+      "Coaching/Mentorship": {
+        "blurb": "Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful.\nCat fails rotten use unrest cave corrupt success domains Home lone-lands.",
+        "hiredAtMentorsCompany": "no"
+      },
+      "Interviewing": {
+        "numberOfInterviews": 123,
+        "numberOfApps": 120,
+        "blurb":"Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands."
       }
-    ]
+    }
   },
   {
     "graduate_id": 3,
@@ -72,64 +82,74 @@
     "interview_count": 13,
     "job_title": "QA Developer",
     "business_id": 3,
-    "storyDetails": [ 
-      {
-        "category": "Location",
-        "willingToRelocate": "no"
-      },
-      {
+    "linkedInUrl": "https://www.linkedin.com/",
+    "resumeTitle": "",
+    "portfolioUrl": "",
+    "coverLetterTitle": "",
+    "enabled": ["Location", "Networking"],
+    "disabled": ["Coaching/Mentorship", "Tranfered Skills", "Interviewing"],
+    "storyDetails": {
+      "Location": {
         "category": "Interviewing",
         "numberOfInterviews": 123,
-        "behavioralInterviews": 120,
-        "technicalInterviews": 100 
+        "numberOfApps": 120,
+        "blurb":"Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands."
       },
-      {
-        "category": "Transfered Skills",
-        "skills": "Agents cover him don't lordship stars fox Buckland pass bellows. Calamity Celeborn sniff wasn't guess woodlands completely bait. Servant Mereth journeying warning entrance champ filth caretaker. Fly, you fools! Éomer far nameless became reserves tested debt during proof? Pippin's roaring half-wits fall verge rally owe covering moved upset. Usual Orcrist forth frightened cries unnoticed restored. Ravens escape mushrooms eh. Upon everything's yammer beings wring fabled Fundin woman. Ever-watchful Westfarthing beards intent rue mash could've. Handling possessions academic Anor! Twilight Ent equal slug pleasure we'd daughter introduce older oh. Trick Paladin garrison music rally midnight by! Midsummer's Eve trees bodyguard. Rubbish says cup mingled throat rods Hobbiton. Rogue forgetting lembas Arathorn. Fly, you fools! Pile climbs Dwarf-lords. You are full of surprises, Master Baggins. Upset knowing banished earth Bolg boned verge promises slight risking blind pouch. Delved Éothain swimming pierce robber garden correctly. Seasoning knife taller vest moaning Beorn. Meeting Bert don't poured mother exchange prisoners well merrier honorably? Lucky furnaces Thror always laddie actually riddle ago! Ha changes depend something's sakes hooks excuse Bill hangs rid chap canniest. King's lacerations referring threat? Skill fixed ish dragged root call unspoiled weep tinkers Dwarf-city dominion 13."
+      "Transfered Skills":{
+        "blurb": "Agents cover him don't lordship stars fox Buckland pass bellows. Calamity Celeborn sniff wasn't guess woodlands completely bait. Servant Mereth journeying warning entrance champ filth caretaker. Fly, you fools! Éomer far nameless became reserves tested debt during proof? Pippin's roaring half-wits fall verge rally owe covering moved upset. Usual Orcrist forth frightened cries unnoticed restored. Ravens escape mushrooms eh. Upon everything's yammer beings wring fabled Fundin woman. Ever-watchful Westfarthing beards intent rue mash could've. Handling possessions academic Anor! Twilight Ent equal slug pleasure we'd daughter introduce older oh. Trick Paladin garrison music rally midnight by! Midsummer's Eve trees bodyguard. Rubbish says cup mingled throat rods Hobbiton. Rogue forgetting lembas Arathorn. Fly, you fools! Pile climbs Dwarf-lords. You are full of surprises, Master Baggins. Upset knowing banished earth Bolg boned verge promises slight risking blind pouch. Delved Éothain swimming pierce robber garden correctly. Seasoning knife taller vest moaning Beorn. Meeting Bert don't poured mother exchange prisoners well merrier honorably? Lucky furnaces Thror always laddie actually riddle ago! Ha changes depend something's sakes hooks excuse Bill hangs rid chap canniest. King's lacerations referring threat? Skill fixed ish dragged root call unspoiled weep tinkers Dwarf-city dominion 13."
       },
-      {
-        "category": "Networking",
-        "meetUps": "Local Group"
+      "Networking": {
+        "blurb": "Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands.",
+        "hiredByNetworking": "yes"
       },
-      {
-        "category": "Mentorship/Coaching",
-        "coach": "Gandolf",
-        "hoursPerWeek": 90
+      "Coaching/Mentorship": {
+        "blurb": "Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful.\nCat fails rotten use unrest cave corrupt success domains Home lone-lands.",
+        "hiredAtMentorsCompany": "no"
+      },
+      "Interviewing": {
+        "numberOfInterviews": 123,
+        "numberOfApps": 120,
+        "blurb":"Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands."
       }
-    ]
+    }
   },
   {
     "graduate_id": 4,
     "hire_date": "2021-04-20",
-    "story": "Advantage lots Mithril patrol door antagonize lock. Tongue descend cellars edge living mice Elros liable suppressed bent warm approve? Faded smash Silvan defend. We beacon acorn Bill children's",
+    "story": "Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined Smoke brooded farms songs damage Bolger snaffle aren't. I will take the Ring to Mordor. Wing rocks afterwards yearns lighting wasting Ring-bearer impossible rather? Woodland facing determined",
     "interview_count": 1,
     "job_title": "Application Developer",
     "business_id": 3,
-    "storyDetails": [ 
-      {
-        "category": "Location",
-        "willingToRelocate": "no"
-      },
-      {
+    "linkedInUrl": "https://www.linkedin.com/",
+    "resumeTitle": "",
+    "portfolioUrl": "",
+    "coverLetterTitle": "",
+    "enabled": ["Location", "Networking"],
+    "disabled": ["Coaching/Mentorship", "Tranfered Skills", "Interviewing"],
+    "storyDetails": {
+      "Location": {
         "category": "Interviewing",
         "numberOfInterviews": 123,
-        "behavioralInterviews": 120,
-        "technicalInterviews": 100 
+        "numberOfApps": 120,
+        "blurb":"Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands."
       },
-      {
-        "category": "Transfered Skills",
-        "skills": "Agents cover him don't lordship stars fox Buckland pass bellows. Calamity Celeborn sniff wasn't guess woodlands completely bait. Servant Mereth journeying warning entrance champ filth caretaker. Fly, you fools! Éomer far nameless became reserves tested debt during proof? Pippin's roaring half-wits fall verge rally owe covering moved upset. Usual Orcrist forth frightened cries unnoticed restored. Ravens escape mushrooms eh. Upon everything's yammer beings wring fabled Fundin woman. Ever-watchful Westfarthing beards intent rue mash could've. Handling possessions academic Anor! Twilight Ent equal slug pleasure we'd daughter introduce older oh. Trick Paladin garrison music rally midnight by! Midsummer's Eve trees bodyguard. Rubbish says cup mingled throat rods Hobbiton. Rogue forgetting lembas Arathorn. Fly, you fools! Pile climbs Dwarf-lords. You are full of surprises, Master Baggins. Upset knowing banished earth Bolg boned verge promises slight risking blind pouch. Delved Éothain swimming pierce robber garden correctly. Seasoning knife taller vest moaning Beorn. Meeting Bert don't poured mother exchange prisoners well merrier honorably? Lucky furnaces Thror always laddie actually riddle ago! Ha changes depend something's sakes hooks excuse Bill hangs rid chap canniest. King's lacerations referring threat? Skill fixed ish dragged root call unspoiled weep tinkers Dwarf-city dominion 13."
+      "Transfered Skills":{
+        "blurb": "Agents cover him don't lordship stars fox Buckland pass bellows. Calamity Celeborn sniff wasn't guess woodlands completely bait. Servant Mereth journeying warning entrance champ filth caretaker. Fly, you fools! Éomer far nameless became reserves tested debt during proof? Pippin's roaring half-wits fall verge rally owe covering moved upset. Usual Orcrist forth frightened cries unnoticed restored. Ravens escape mushrooms eh. Upon everything's yammer beings wring fabled Fundin woman. Ever-watchful Westfarthing beards intent rue mash could've. Handling possessions academic Anor! Twilight Ent equal slug pleasure we'd daughter introduce older oh. Trick Paladin garrison music rally midnight by! Midsummer's Eve trees bodyguard. Rubbish says cup mingled throat rods Hobbiton. Rogue forgetting lembas Arathorn. Fly, you fools! Pile climbs Dwarf-lords. You are full of surprises, Master Baggins. Upset knowing banished earth Bolg boned verge promises slight risking blind pouch. Delved Éothain swimming pierce robber garden correctly. Seasoning knife taller vest moaning Beorn. Meeting Bert don't poured mother exchange prisoners well merrier honorably? Lucky furnaces Thror always laddie actually riddle ago! Ha changes depend something's sakes hooks excuse Bill hangs rid chap canniest. King's lacerations referring threat? Skill fixed ish dragged root call unspoiled weep tinkers Dwarf-city dominion 13."
       },
-      {
-        "category": "Networking",
-        "meetUps": "Local Group"
+      "Networking": {
+        "blurb": "Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands.",
+        "hiredByNetworking": "yes"
       },
-      {
-        "category": "Mentorship/Coaching",
-        "coach": "Gandolf",
-        "hoursPerWeek": 90
+      "Coaching/Mentorship": {
+        "blurb": "Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful.\nCat fails rotten use unrest cave corrupt success domains Home lone-lands.",
+        "hiredAtMentorsCompany": "no"
+      },
+      "Interviewing": {
+        "numberOfInterviews": 123,
+        "numberOfApps": 120,
+        "blurb":"Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands."
       }
-    ]
+    }
   },
   {
     "graduate_id": 5,
@@ -138,31 +158,36 @@
     "interview_count": 8,
     "job_title": "Full Stack Developgineer",
     "business_id": 4,
-    "storyDetails": [ 
-      {
-        "category": "Location",
-        "willingToRelocate": "no"
-      },
-      {
+    "linkedInUrl": "https://www.linkedin.com/",
+    "resumeTitle": "",
+    "portfolioUrl": "",
+    "coverLetterTitle": "",
+    "enabled": ["Location", "Networking"],
+    "disabled": ["Coaching/Mentorship", "Tranfered Skills", "Interviewing"],
+    "storyDetails": {
+      "Location": {
         "category": "Interviewing",
         "numberOfInterviews": 123,
-        "behavioralInterviews": 120,
-        "technicalInterviews": 100 
+        "numberOfApps": 120,
+        "blurb":"Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands."
       },
-      {
-        "category": "Transfered Skills",
-        "skills": "Agents cover him don't lordship stars fox Buckland pass bellows. Calamity Celeborn sniff wasn't guess woodlands completely bait. Servant Mereth journeying warning entrance champ filth caretaker. Fly, you fools! Éomer far nameless became reserves tested debt during proof? Pippin's roaring half-wits fall verge rally owe covering moved upset. Usual Orcrist forth frightened cries unnoticed restored. Ravens escape mushrooms eh. Upon everything's yammer beings wring fabled Fundin woman. Ever-watchful Westfarthing beards intent rue mash could've. Handling possessions academic Anor! Twilight Ent equal slug pleasure we'd daughter introduce older oh. Trick Paladin garrison music rally midnight by! Midsummer's Eve trees bodyguard. Rubbish says cup mingled throat rods Hobbiton. Rogue forgetting lembas Arathorn. Fly, you fools! Pile climbs Dwarf-lords. You are full of surprises, Master Baggins. Upset knowing banished earth Bolg boned verge promises slight risking blind pouch. Delved Éothain swimming pierce robber garden correctly. Seasoning knife taller vest moaning Beorn. Meeting Bert don't poured mother exchange prisoners well merrier honorably? Lucky furnaces Thror always laddie actually riddle ago! Ha changes depend something's sakes hooks excuse Bill hangs rid chap canniest. King's lacerations referring threat? Skill fixed ish dragged root call unspoiled weep tinkers Dwarf-city dominion 13."
+      "Transfered Skills":{
+        "blurb": "Agents cover him don't lordship stars fox Buckland pass bellows. Calamity Celeborn sniff wasn't guess woodlands completely bait. Servant Mereth journeying warning entrance champ filth caretaker. Fly, you fools! Éomer far nameless became reserves tested debt during proof? Pippin's roaring half-wits fall verge rally owe covering moved upset. Usual Orcrist forth frightened cries unnoticed restored. Ravens escape mushrooms eh. Upon everything's yammer beings wring fabled Fundin woman. Ever-watchful Westfarthing beards intent rue mash could've. Handling possessions academic Anor! Twilight Ent equal slug pleasure we'd daughter introduce older oh. Trick Paladin garrison music rally midnight by! Midsummer's Eve trees bodyguard. Rubbish says cup mingled throat rods Hobbiton. Rogue forgetting lembas Arathorn. Fly, you fools! Pile climbs Dwarf-lords. You are full of surprises, Master Baggins. Upset knowing banished earth Bolg boned verge promises slight risking blind pouch. Delved Éothain swimming pierce robber garden correctly. Seasoning knife taller vest moaning Beorn. Meeting Bert don't poured mother exchange prisoners well merrier honorably? Lucky furnaces Thror always laddie actually riddle ago! Ha changes depend something's sakes hooks excuse Bill hangs rid chap canniest. King's lacerations referring threat? Skill fixed ish dragged root call unspoiled weep tinkers Dwarf-city dominion 13."
       },
-      {
-        "category": "Networking",
-        "meetUps": "Local Group"
+      "Networking": {
+        "blurb": "Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands.",
+        "hiredByNetworking": "yes"
       },
-      {
-        "category": "Mentorship/Coaching",
-        "coach": "Gandolf",
-        "hoursPerWeek": 90
+      "Coaching/Mentorship": {
+        "blurb": "Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful.\nCat fails rotten use unrest cave corrupt success domains Home lone-lands.",
+        "hiredAtMentorsCompany": "no"
+      },
+      "Interviewing": {
+        "numberOfInterviews": 123,
+        "numberOfApps": 120,
+        "blurb":"Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands."
       }
-    ]
+    }
   },
   {
     "graduate_id": 6,
@@ -171,31 +196,36 @@
     "interview_count": 10,
     "job_title": "CTO",
     "business_id": 5,
-    "storyDetails": [ 
-      {
-        "category": "Location",
-        "willingToRelocate": "no"
-      },
-      {
+    "linkedInUrl": "https://www.linkedin.com/",
+    "resumeTitle": "",
+    "portfolioUrl": "",
+    "coverLetterTitle": "",
+    "enabled": ["Location", "Networking"],
+    "disabled": ["Coaching/Mentorship", "Tranfered Skills", "Interviewing"],
+    "storyDetails": {
+      "Location": {
         "category": "Interviewing",
         "numberOfInterviews": 123,
-        "behavioralInterviews": 120,
-        "technicalInterviews": 100 
+        "numberOfApps": 120,
+        "blurb":"Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands."
       },
-      {
-        "category": "Transfered Skills",
-        "skills": "Agents cover him don't lordship stars fox Buckland pass bellows. Calamity Celeborn sniff wasn't guess woodlands completely bait. Servant Mereth journeying warning entrance champ filth caretaker. Fly, you fools! Éomer far nameless became reserves tested debt during proof? Pippin's roaring half-wits fall verge rally owe covering moved upset. Usual Orcrist forth frightened cries unnoticed restored. Ravens escape mushrooms eh. Upon everything's yammer beings wring fabled Fundin woman. Ever-watchful Westfarthing beards intent rue mash could've. Handling possessions academic Anor! Twilight Ent equal slug pleasure we'd daughter introduce older oh. Trick Paladin garrison music rally midnight by! Midsummer's Eve trees bodyguard. Rubbish says cup mingled throat rods Hobbiton. Rogue forgetting lembas Arathorn. Fly, you fools! Pile climbs Dwarf-lords. You are full of surprises, Master Baggins. Upset knowing banished earth Bolg boned verge promises slight risking blind pouch. Delved Éothain swimming pierce robber garden correctly. Seasoning knife taller vest moaning Beorn. Meeting Bert don't poured mother exchange prisoners well merrier honorably? Lucky furnaces Thror always laddie actually riddle ago! Ha changes depend something's sakes hooks excuse Bill hangs rid chap canniest. King's lacerations referring threat? Skill fixed ish dragged root call unspoiled weep tinkers Dwarf-city dominion 13."
+      "Transfered Skills":{
+        "blurb": "Agents cover him don't lordship stars fox Buckland pass bellows. Calamity Celeborn sniff wasn't guess woodlands completely bait. Servant Mereth journeying warning entrance champ filth caretaker. Fly, you fools! Éomer far nameless became reserves tested debt during proof? Pippin's roaring half-wits fall verge rally owe covering moved upset. Usual Orcrist forth frightened cries unnoticed restored. Ravens escape mushrooms eh. Upon everything's yammer beings wring fabled Fundin woman. Ever-watchful Westfarthing beards intent rue mash could've. Handling possessions academic Anor! Twilight Ent equal slug pleasure we'd daughter introduce older oh. Trick Paladin garrison music rally midnight by! Midsummer's Eve trees bodyguard. Rubbish says cup mingled throat rods Hobbiton. Rogue forgetting lembas Arathorn. Fly, you fools! Pile climbs Dwarf-lords. You are full of surprises, Master Baggins. Upset knowing banished earth Bolg boned verge promises slight risking blind pouch. Delved Éothain swimming pierce robber garden correctly. Seasoning knife taller vest moaning Beorn. Meeting Bert don't poured mother exchange prisoners well merrier honorably? Lucky furnaces Thror always laddie actually riddle ago! Ha changes depend something's sakes hooks excuse Bill hangs rid chap canniest. King's lacerations referring threat? Skill fixed ish dragged root call unspoiled weep tinkers Dwarf-city dominion 13."
       },
-      {
-        "category": "Networking",
-        "meetUps": "Local Group"
+      "Networking": {
+        "blurb": "Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands.",
+        "hiredByNetworking": "yes"
       },
-      {
-        "category": "Mentorship/Coaching",
-        "coach": "Gandolf",
-        "hoursPerWeek": 90
+      "Coaching/Mentorship": {
+        "blurb": "Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful.\nCat fails rotten use unrest cave corrupt success domains Home lone-lands.",
+        "hiredAtMentorsCompany": "no"
+      },
+      "Interviewing": {
+        "numberOfInterviews": 123,
+        "numberOfApps": 120,
+        "blurb":"Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands."
       }
-    ]
+    }
   },
   {
     "graduate_id": 7,
@@ -204,31 +234,35 @@
     "interview_count": 4,
     "job_title": "Back End Development Engineer",
     "business_id": 6,
-    "storyDetails": [ 
-      {
-        "category": "Location",
-        "willingToRelocate": "no",
-        "disabled": "false"
-      },
-      {
+    "linkedInUrl": "https://www.linkedin.com/",
+    "resumeTitle": "",
+    "portfolioUrl": "",
+    "coverLetterTitle": "",
+    "enabled": ["Location", "Networking"],
+    "disabled": ["Coaching/Mentorship", "Tranfered Skills", "Interviewing"],
+    "storyDetails": {
+      "Location": {
         "category": "Interviewing",
         "numberOfInterviews": 123,
-        "behavioralInterviews": 120,
-        "technicalInterviews": 100 
+        "numberOfApps": 120,
+        "blurb":"Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands."
       },
-      {
-        "category": "Transfered Skills",
-        "skills": "Agents cover him don't lordship stars fox Buckland pass bellows. Calamity Celeborn sniff wasn't guess woodlands completely bait. Servant Mereth journeying warning entrance champ filth caretaker. Fly, you fools! Éomer far nameless became reserves tested debt during proof? Pippin's roaring half-wits fall verge rally owe covering moved upset. Usual Orcrist forth frightened cries unnoticed restored. Ravens escape mushrooms eh. Upon everything's yammer beings wring fabled Fundin woman. Ever-watchful Westfarthing beards intent rue mash could've. Handling possessions academic Anor! Twilight Ent equal slug pleasure we'd daughter introduce older oh. Trick Paladin garrison music rally midnight by! Midsummer's Eve trees bodyguard. Rubbish says cup mingled throat rods Hobbiton. Rogue forgetting lembas Arathorn. Fly, you fools! Pile climbs Dwarf-lords. You are full of surprises, Master Baggins. Upset knowing banished earth Bolg boned verge promises slight risking blind pouch. Delved Éothain swimming pierce robber garden correctly. Seasoning knife taller vest moaning Beorn. Meeting Bert don't poured mother exchange prisoners well merrier honorably? Lucky furnaces Thror always laddie actually riddle ago! Ha changes depend something's sakes hooks excuse Bill hangs rid chap canniest. King's lacerations referring threat? Skill fixed ish dragged root call unspoiled weep tinkers Dwarf-city dominion 13."
+      "Transfered Skills":{
+        "blurb": "Agents cover him don't lordship stars fox Buckland pass bellows. Calamity Celeborn sniff wasn't guess woodlands completely bait. Servant Mereth journeying warning entrance champ filth caretaker. Fly, you fools! Éomer far nameless became reserves tested debt during proof? Pippin's roaring half-wits fall verge rally owe covering moved upset. Usual Orcrist forth frightened cries unnoticed restored. Ravens escape mushrooms eh. Upon everything's yammer beings wring fabled Fundin woman. Ever-watchful Westfarthing beards intent rue mash could've. Handling possessions academic Anor! Twilight Ent equal slug pleasure we'd daughter introduce older oh. Trick Paladin garrison music rally midnight by! Midsummer's Eve trees bodyguard. Rubbish says cup mingled throat rods Hobbiton. Rogue forgetting lembas Arathorn. Fly, you fools! Pile climbs Dwarf-lords. You are full of surprises, Master Baggins. Upset knowing banished earth Bolg boned verge promises slight risking blind pouch. Delved Éothain swimming pierce robber garden correctly. Seasoning knife taller vest moaning Beorn. Meeting Bert don't poured mother exchange prisoners well merrier honorably? Lucky furnaces Thror always laddie actually riddle ago! Ha changes depend something's sakes hooks excuse Bill hangs rid chap canniest. King's lacerations referring threat? Skill fixed ish dragged root call unspoiled weep tinkers Dwarf-city dominion 13."
       },
-      {
-        "category": "Networking",
-        "meetUps": "Local Group"
+      "Networking": {
+        "blurb": "Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands.",
+        "hiredByNetworking": "yes"
       },
-      {
-        "category": "Mentorship/Coaching",
-        "coach": "Gandolf",
-        "hoursPerWeek": 90
+      "Coaching/Mentorship": {
+        "blurb": "Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful.\nCat fails rotten use unrest cave corrupt success domains Home lone-lands.",
+        "hiredAtMentorsCompany": "no"
+      },
+      "Interviewing": {
+        "numberOfInterviews": 123,
+        "numberOfApps": 120,
+        "blurb":"Shorter preparing Treebeard banner times? Intelligence ting broken Uruks hand markets. Bar-hrum remains started fox wound grief ax secrecy grieve tracks? One does not simply walk into Mordor. Dignity amaze Grubbs. Club bouquet remain Probably covet follows. Bru-ra-hroom merely fisherman burning uncle sewer changing beautiful. Cat fails rotten use unrest cave corrupt success domains Home lone-lands."
       }
-    ]
+    }
   }
 ]

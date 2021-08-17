@@ -1,3 +1,5 @@
+const { Translate } = require("aws-sdk");
+
 exports.up = function (knex) {
   return knex.schema.createTable("stories", (table) => {
     table.increments("story_id").primary();
@@ -17,7 +19,13 @@ exports.up = function (knex) {
       .references("business_id")
       .inTable("businesses")
       .onDelete("cascade");
-    table.specificType("storyDetails", "json ARRAY");
+    table.json("storyDetails");
+    table.specificType("enabled", "text ARRAY");
+    table.specificType("disabled", "text ARRAY");
+    table.string("linkedInUrl");
+    table.string("resumeTitle");
+    table.string("portfolioUrl");
+    table.string("coverLetterTitle");
   });
 };
 

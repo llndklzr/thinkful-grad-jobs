@@ -1,27 +1,19 @@
-import React, {useState, useEffect} from "react";
-import {useParams} from "react-router-dom";
-import { getGradById } from "../utils/apiFetcher";
-import { shortMonthYear } from "../utils/dateHandler";
+import React from "react";
+import {shortMonthYear} from "../../utils/dateHandler";
+import Button from "../Button";
+import { Link } from "react-router-dom";
 
 
-export default function SingleGrad(){
-  const [grad, setGrad] = useState({});
-  const [error, setError] = useState(null);
-  const gradId = useParams().graduate_id;
-  const [showLoader, setLoader] = useState(true);
-  console.log(grad);
-  
-  useEffect(()=>{
-    async function loadGrad(id){
-      return await getGradById(id).then(setGrad).catch(setError).then(()=>setLoader(false));
-    }
-
-    loadGrad(gradId);
-  }, [gradId])
-  
-  const details = grad.storyDetails?.map((detail, index) =>{
+export default function SingleGradHTML({grad}){
+  const enabledDetails = grad.enabled?.map((detail, index) =>{
     return(
-      <a href="" className="story sub-details" key={index}>{detail.category}</a>
+      <a href="" className="story sub-details" key={index}>{detail}</a>
+    )
+  })
+
+  const disabledDetails = grad.disabled?.map((detail, index) =>{
+    return(
+      <a href="" className="story sub-details disabled" key={index}>{detail}</a>
     )
   })
 
@@ -39,11 +31,12 @@ export default function SingleGrad(){
     }
   }
 
-  const loading = <h3>Loading...</h3>
+  function disableAnchor(string){
+    return !string ? "disabled" : null;
+  }
   
-  
-  const result = (
-    <section>
+  return (
+    <section className="section-container">
       <div>
         <h3 className="grad-page grad-header">{grad.first_name} {grad.last_name}</h3>
         <p className=" grad-page grad-discription">{grad.job_title}, {grad.business_name}</p>
@@ -55,23 +48,22 @@ export default function SingleGrad(){
           <br/>
           <span className="story date hired">Hired In Field - {shortMonthYear(grad.hire_date)}</span>
           <p className="story story-block">&nbsp;&nbsp;&nbsp;&nbsp;{trimStory(grad.story)}</p>
-          <button className={`story btn ${readMoreVisibility()}`}>Read More</button>
+          <Button clickHandler={()=>console.log("clicked")} text="Read More" className={`story btn ${readMoreVisibility()}`} />
         </div>
         <div className="hiring-details-container">
           <p className="story my-story-header">My Hiring Details</p>
-          {details}
+          {enabledDetails}
+          {disabledDetails}
         </div>
       </div>
       <div>
         <p className="story my-story-header">My Hiring Essentials</p>
         <div className="hiring-essentials">
-          <a href="" className="disabled">My Resume</a>
-          <a href="">My Portfolio/Projects</a>
-          <a href="">My Cover Letter</a>
+          <a href={grad.resumeUrl} className={disableAnchor(grad.resumeUrl)}>My Resume</a>
+          <a href={grad.portfolioUrl} className={disableAnchor(grad.portfolioUrl)}>My Portfolio/Projects</a>
+          <a href={grad.coverLetterUrl} className={disableAnchor(grad.coverLetterUrl)}>My Cover Letter</a>
         </div>
       </div>
     </section> 
   )
-
-  return showLoader ? loading : result;
 }
