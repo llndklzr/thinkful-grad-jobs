@@ -4,10 +4,12 @@ import Button from "../Button";
 import { Link } from "react-router-dom";
 
 
-export default function SingleGradHTML({grad}){
+export default function SingleGradHTML({grad, setWhichModal}){
+
+  
   const enabledDetails = grad.enabled?.map((detail, index) =>{
     return(
-      <a href="" className="story sub-details" key={index}>{detail}</a>
+      <a onClick={()=>setWhichModal(detail.toLowerCase())} className="story sub-details" key={index}>{detail}</a>
     )
   })
 
@@ -48,7 +50,7 @@ export default function SingleGradHTML({grad}){
           <br/>
           <span className="story date hired">Hired In Field - {shortMonthYear(grad.hire_date)}</span>
           <p className="story story-block">&nbsp;&nbsp;&nbsp;&nbsp;{trimStory(grad.story)}</p>
-          <Button clickHandler={()=>console.log("clicked")} text="Read More" classname={`${readMoreVisibility()}`} />
+          <Button clickHandler={()=>setWhichModal("fullStory")} modal="fullStory" text="Read More" classname={`${readMoreVisibility()}`} />
         </div>
         <div className="hiring-details-container">
           <p className="story my-story-header">My Hiring Details</p>
@@ -59,9 +61,9 @@ export default function SingleGradHTML({grad}){
       <div>
         <p className="story my-story-header">My Hiring Essentials</p>
         <div className="hiring-essentials">
-          <a href={grad.resumeUrl} className={disableAnchor(grad.resumeUrl)}>My Resume</a>
+          <a onClick={() => setWhichModal("resume")} className={disableAnchor(grad.resumeTitle)}>My Resume</a>
           <a href={grad.portfolioUrl} className={disableAnchor(grad.portfolioUrl)}>My Portfolio/Projects</a>
-          <a href={grad.coverLetterUrl} className={disableAnchor(grad.coverLetterUrl)}>My Cover Letter</a>
+          <a href={grad.coverLetterTitle} className={disableAnchor(grad.coverLetterTitle)}>My Cover Letter</a>
         </div>
       </div>
     </section> 
