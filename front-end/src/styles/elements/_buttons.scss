@@ -7,15 +7,31 @@
 
 .btn {
   text-decoration: none;
-  border-radius: 5px;
   border-color: $dark-accent;
-  //padding: 10px;
-  background-color: $dark-accent;
-  font-family: $font-sans-serif;
-   &.auth{
-     width: 300px;
-   }
-
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  float: left;
+  &.invisible{
+    visibility: hidden;
+  }
+  &.text{
+    font-weight: 500;
+    font-size: 30px;
+  }
+  &.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    border: 2px solid black;
+    width: 50px;
+    height: 28px;
+    font-size: 24px;
+  }
+  &.auth{
+    width: 300px;
+  }
   &:hover{
     background-color: $main-brand;
   }

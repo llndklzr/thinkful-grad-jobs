@@ -48,7 +48,7 @@ export default function SingleGradHTML({grad}){
           <br/>
           <span className="story date hired">Hired In Field - {shortMonthYear(grad.hire_date)}</span>
           <p className="story story-block">&nbsp;&nbsp;&nbsp;&nbsp;{trimStory(grad.story)}</p>
-          <Button clickHandler={()=>console.log("clicked")} text="Read More" className={`story btn ${readMoreVisibility()}`} />
+          <Button clickHandler={()=>console.log("clicked")} text="Read More" classname={`${readMoreVisibility()}`} />
         </div>
         <div className="hiring-details-container">
           <p className="story my-story-header">My Hiring Details</p>
