@@ -7,7 +7,6 @@
 
 .btn {
   text-decoration: none;
-  border-color: $dark-accent;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -31,5 +30,32 @@
   }
   &.auth{
     width: 300px;
+  }
+  &:hover{
+    color: $on-hover;
+    .icon{
+      border: 2px solid $on-hover;
+    }
+  }
+}
+
+.modal-btn{
+  border-radius: 50%;
+  border: 0;
+  height: 50px;
+  width: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  &:hover{
+    background-color: $on-hover;
+  }
+}
+
+.linkedin{
+  width: 30px;
+  height: 30px;
+  &.btn{
+    border: 0;
+    background-color: white;
   }
 }

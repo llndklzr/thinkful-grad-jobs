@@ -1,11 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import {shortMonthYear} from "../../utils/dateHandler";
 import Button from "../Button";
-import { Link } from "react-router-dom";
-
+import icons from "../../styles/icons/icons";
 
 export default function SingleGradHTML({grad, setWhichModal}){
-
+  const [renderMainBlock, setMainBlock] = useState(true);
   
   const enabledDetails = grad.enabled?.map((detail, index) =>{
     return(
@@ -36,13 +35,9 @@ export default function SingleGradHTML({grad, setWhichModal}){
   function disableAnchor(string){
     return !string ? "disabled" : null;
   }
-  
-  return (
-    <section className="section-container">
-      <div>
-        <h3 className="grad-page grad-header">{grad.first_name} {grad.last_name}</h3>
-        <p className=" grad-page grad-discription">{grad.job_title}, {grad.business_name}</p>
-      </div>
+
+  const mainBlock = (
+    <>
       <div className="main-container">
         <div className="my-story-container">
           <span className="story my-story-header">My Story </span>
@@ -50,7 +45,7 @@ export default function SingleGradHTML({grad, setWhichModal}){
           <br/>
           <span className="story date hired">Hired In Field - {shortMonthYear(grad.hire_date)}</span>
           <p className="story story-block">&nbsp;&nbsp;&nbsp;&nbsp;{trimStory(grad.story)}</p>
-          <Button clickHandler={()=>setWhichModal("fullStory")} modal="fullStory" text="Read More" classname={`${readMoreVisibility()}`} />
+          <Button clickHandler={()=>setMainBlock(false)} modal="fullStory" text="Read More" classname={`${readMoreVisibility()}`} />
         </div>
         <div className="hiring-details-container">
           <p className="story my-story-header">My Hiring Details</p>
@@ -66,6 +61,30 @@ export default function SingleGradHTML({grad, setWhichModal}){
           <a href={grad.coverLetterTitle} className={disableAnchor(grad.coverLetterTitle)}>My Cover Letter</a>
         </div>
       </div>
+    </>
+  )
+
+  const fullStory = (
+    <div className="full-story">
+      <div className="modal-btn-container">
+        <button className="modal-btn" onClick={()=>setMainBlock(true)}>X</button>
+      </div>
+      <p>{grad.story}</p>
+    </div>
+  )
+  
+  return (
+    <section className="section-container">
+      <div>
+        <div className="name-linkedin-wrapper">
+          <h3 className="grad-page grad-header">{grad.first_name} {grad.last_name} &nbsp;</h3>
+          <a target="blank" href={grad.linkedInUrl} className="linkedin btn">
+            <img className="linkedin img"  src={icons.linkedInIcon}/>
+          </a>
+        </div>
+        <p className=" grad-page grad-discription">{grad.job_title}, {grad.business_name}</p>
+      </div>
+      {renderMainBlock ? mainBlock : fullStory}
     </section> 
   )
 }
