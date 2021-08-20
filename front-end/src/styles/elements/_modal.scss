@@ -7,7 +7,7 @@
   transform: translate(-50%, -70%);
   background-color: $modal-background;
   padding: 20px;
-  width: 92%;
+  width: 70%;
   height: auto;
   z-index: 1000;
   border-radius: 20px;
@@ -26,4 +26,34 @@
 .modal-btn-container{
   display: flex;
   justify-content: flex-end;
+}
+
+.modal-header{
+  display: flex;
+  justify-content: center;
+  font-size: 36px;
+  margin-top: 0;
+}
+
+.modal-blurb{
+  font-size: 24px;
+}
+
+.topic-parent{
+  display: flex;
+  justify-content: space-around;
+}
+
+.topic-wrapper{
+  width: 50%;
+}
+
+.topic-label{
+  display: flex;
+  justify-content: center;
+}
+
+.radio-wrapper{
+  display: flex;
+  justify-content: space-around;
 }

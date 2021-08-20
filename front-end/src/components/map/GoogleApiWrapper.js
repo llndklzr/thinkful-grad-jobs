@@ -20,7 +20,7 @@ export function RenderMap(props){
     setGrads(businesses[marker.index].grads.map((grad)=>{
         return(
           <div key={grad.graduate_id}>
-            <a className="map modal people" href={`/graduates/${grad.graduate_id}`}>{grad.first_name} {grad.last_name}</a>
+            <a className="map map-modal people" href={`/graduates/${grad.graduate_id}`}>{grad.first_name} {grad.last_name}</a>
           </div>
         )
       })
@@ -93,8 +93,8 @@ export function RenderMap(props){
           visible={mapState.showingInfoWindow}
         >
           <div>
-            <h4 className="map modal header">{mapState.selectedPlace.name} ({grads.length})</h4>
-            <p className="map modal location">{mapState.selectedPlace.city}, {mapState.selectedPlace.state}</p>
+            <h4 className="map map-modal header">{mapState.selectedPlace.name} ({grads.length})</h4>
+            <p className="map map-modal location">{mapState.selectedPlace.city}, {mapState.selectedPlace.state}</p>
             <p>Grads that started here...</p>
             {grads}
           </div>
