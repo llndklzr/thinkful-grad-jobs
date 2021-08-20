@@ -9,33 +9,35 @@ export default function LocationModal({grad}){
       <p className="modal-blurb">
         {grad.storyDetails.Location.blurb}
       </p>
-      <div className="topic-parent">
-        <div className="topic-wrapper">
-          <h4 className="topic-label">Type of Work</h4>
-          <div className="radio-wrapper">
-            <label>Remote
-              <input type="radio" value={grad.storyDetails.Location.typeOfWork} name="remote" checked={"remote"===grad.storyDetails.Location.typeOfWork}/>
-            </label>
-            <label>Hybrid
-              <input type="radio" value={grad.storyDetails.Location.typeOfWork} name="hybrid" checked={"hybird"===grad.storyDetails.Location.typeOfWork}/>
-            </label>
-            <label>Home
-              <input type="radio" value={grad.storyDetails.Location.typeOfWork} name="home" checked={"home"===grad.storyDetails.Location.typeOfWork}/>
-            </label>
+      <form>
+        <div className="topic-parent">
+          <div className="topic-wrapper">
+            <h4 className="topic-label">Type of Work</h4>
+            <div className="radio-wrapper">
+              <label className="radio-label">Remote
+                <input className="radio-btn" type="radio" value={grad.storyDetails.Location.typeOfWork} name="remote" checked={"remote"===grad.storyDetails.Location.typeOfWork}/>
+              </label>
+              <label className="radio-label">Hybrid
+                <input className="radio-btn" type="radio" value={grad.storyDetails.Location.typeOfWork} name="hybrid" checked={"hybird"===grad.storyDetails.Location.typeOfWork}/>
+              </label>
+              <label className="radio-label">Home
+                <input className="radio-btn" type="radio" value={grad.storyDetails.Location.typeOfWork} name="home" checked={"home"===grad.storyDetails.Location.typeOfWork}/>
+              </label>
+            </div>
+          </div>
+          <div className="topic-wrapper">
+            <h4 className="topic-label">Willing To Relocate</h4>
+            <div className="radio-wrapper">
+              <label className="radio-label">Yes
+                <input className="radio-btn" type="radio" value="yes" name="yes" checked={"yes"===grad.storyDetails.Location.willingToRelocate}/>
+              </label>
+              <label className="radio-label">No
+                <input className="radio-btn" type="radio" value="no" name="no" checked={"no"===grad.storyDetails.Location.willingToRelocate} />
+              </label>
+            </div>
           </div>
         </div>
-        <div className="topic-wrapper">
-          <h4 className="topic-label">Willing To Relocate</h4>
-          <div className="radio-wrapper">
-            <label>Yes
-              <input type="radio" value="yes" name="yes" checked={"yes"===grad.storyDetails.Location.willingToRelocate}/>
-            </label>
-            <label>No
-              <input type="radio" value="no" name="no" checked={"no"===grad.storyDetails.Location.willingToRelocate} />
-            </label>
-          </div>
-        </div>
-      </div>
+      </form>
     </>
   )
 }
