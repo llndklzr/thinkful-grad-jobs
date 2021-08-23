@@ -13,9 +13,17 @@ export default function CreateStory() {
     graduationDate: "",
     hireDate: "",
     storyAbstract: "",
+    enabled: [],
+    disabled: [
+      "Coaching/Mentoring",
+      "Location",
+      "Networking",
+      "Transferred Skills",
+      "Interviewing",
+    ],
   };
 
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState(initialFormData);
   const [formPage, setFormPage] = useState(1);
 
   const handleChange = ({ target }) => {
@@ -68,6 +76,7 @@ export default function CreateStory() {
           <StoryFormPage3
             handleChange={handleChange}
             formData={formData}
+            setFormData={setFormData}
             setFormPage={setFormPage}
           />
         </div>

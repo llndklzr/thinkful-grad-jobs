@@ -1,25 +1,30 @@
-import React from "react";
+import { useState } from "react";
 import DragNDrop from "./DragNDrop";
 
-export default function StoryFormPage3({ setFormPage }) {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormPage((prev) => prev + 1);
-  };
-
-  const aspects = [
+export default function StoryFormPage3({ setFormPage, formData, setFormData }) {
+  const initialList = [
     {
       title: "",
-      items: [
-        "Coaching/Mentoring",
-        "Location",
-        "Networking",
-        "Transferred Skills",
-        "Interviewing",
-      ],
+      items: formData.disabled,
     },
-    { title: "most to least important (top to bottom)", items: [] },
+    {
+      title: "most to least important (top to bottom)",
+      items: formData.enabled,
+    },
   ];
+  const [list, setList] = useState(initialList);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newDisabled = list[0].items;
+    const newEnabled = list[1].items;
+    setFormData({
+      ...formData,
+      enabled: newEnabled,
+      disabled: newDisabled,
+    });
+    console.log(formData);
+    setFormPage((prev) => prev + 1);
+  };
 
   return (
     <div className="form-group">
@@ -29,8 +34,10 @@ export default function StoryFormPage3({ setFormPage }) {
         the tabs in order of importance (top to bottom); you don't have to use
         all the tabs.
       </p>
-      <DragNDrop data={aspects} />
-      <button className="form-button" onClick={handleSubmit}>next ></button>
+      <DragNDrop list={list} setList={setList} />
+      <button className="form-button" onClick={handleSubmit}>
+        next
+      </button>
     </div>
   );
 }

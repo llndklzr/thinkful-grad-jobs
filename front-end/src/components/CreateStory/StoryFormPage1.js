@@ -13,7 +13,7 @@ export default function StoryFormPage1({
 
   return (
     <div className="form-group">
-      <form onSubmit={handleSubmit} >
+      <form onSubmit={handleSubmit}>
         <div className="form-grid-container">
           <div className="form-grid-item">
             <label className="form-label" htmlFor="name">
@@ -27,11 +27,12 @@ export default function StoryFormPage1({
               value={formData.name || ""}
               onChange={handleChange}
               autoFocus
+              required
             />
           </div>
           <div className="form-grid-item">
             <label className="form-label" htmlFor="course">
-              Thinkful Course
+              Career Field
             </label>
             <select
               className="form-control"
@@ -39,20 +40,17 @@ export default function StoryFormPage1({
               name="course"
               value={formData.course || ""}
               onChange={handleChange}
+              required
             >
               <option value="none" selected hidden>
-                Thinkful Course
+                Career Field
               </option>
-              <option value="seFlex">Engineering Flex</option>
-              <option value="seImmersion">Engineering Immersion</option>
-              <option value="ds">Data Science</option>
-              <option value="daFlex">Data Analytics Flex</option>
-              <option value="daImmersion">Data Analytics Immersion</option>
-              <option value="uxFlex">UX/UI Design Flex</option>
-              <option value="uxImmersion">UX/UI Design Immersion</option>
-              <option value="dm">Digital Marketing</option>
-              <option value="pmFlex">Project Management Flex</option>
-              <option value="pmImmersion">Project Management Immersion</option>
+              <option value="Full Stack Development">Engineering</option>
+              <option value="UX/UI"> UX/UI</option>
+              <option value="Data Analytics">Data Analytics</option>
+              <option value="Data Science"> Date Science</option>
+              <option value="Digital Marketing">Digital Marketing</option>
+              <option value="Project Management">Project Management</option>
             </select>
           </div>
           <div className="form-grid-item">
@@ -143,7 +141,7 @@ export default function StoryFormPage1({
           </div>
         </div>
         <button className="form-button" type="submit">
-          next >
+          next
         </button>
       </form>
     </div>

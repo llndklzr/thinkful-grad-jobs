@@ -50,7 +50,7 @@ export default function StoryFormPage2({ setFormPage }) {
           </div>
         </div>
         <button className="form-button" type="submit">
-          next >
+          next
         </button>
       </form>
     </div>
