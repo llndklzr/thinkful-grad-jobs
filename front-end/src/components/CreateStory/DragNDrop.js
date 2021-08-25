@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 
-function DragNDrop({ data }) {
-  const [list, setList] = useState(data);
+function DragNDrop({ list, setList }) {
+  // const [list, setList] = useState(data);
   const [dragging, setDragging] = useState(false);
 
   const dragItem = useRef();

@@ -2,20 +2,51 @@ import React, { useState } from "react";
 import StoryFormPage1 from "./StoryFormPage1";
 import StoryFormPage2 from "./StoryFormPage2";
 import StoryFormPage3 from "./StoryFormPage3";
+import StoryFormPage4 from "./StoryFormPage4";
 
 export default function CreateStory() {
   const initialFormData = {
     name: "",
     course: "",
     jobTitle: "",
-    location: "",
+    storyDetails: {
+      Location: {
+        willingToRelocate: "",
+        typeOfWork: "",
+        blurb: "",
+      },
+      "Transfered Skills": {
+        blurb: "",
+      },
+      Networking: {
+        blurb: "",
+        hiredByNetworking: "",
+      },
+      "Coaching/Mentorship": {
+        blurb: "",
+        hiredAtMentorsCompany: "",
+      },
+      Interviewing: {
+        numberOfInterviews: 0,
+        numberOfApps: 0,
+        blurb: "",
+      },
+    },
     linkedInUrl: "",
     graduationDate: "",
     hireDate: "",
     storyAbstract: "",
+    enabled: [],
+    disabled: [
+      "Coaching/Mentoring",
+      "Location",
+      "Networking",
+      "Transferred Skills",
+      "Interviewing",
+    ],
   };
 
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState(initialFormData);
   const [formPage, setFormPage] = useState(1);
 
   const handleChange = ({ target }) => {
@@ -66,6 +97,16 @@ export default function CreateStory() {
       {formPage === 3 && (
         <div>
           <StoryFormPage3
+            handleChange={handleChange}
+            formData={formData}
+            setFormData={setFormData}
+            setFormPage={setFormPage}
+          />
+        </div>
+      )}
+      {formPage === 4 && (
+        <div>
+          <StoryFormPage4
             handleChange={handleChange}
             formData={formData}
             setFormPage={setFormPage}
