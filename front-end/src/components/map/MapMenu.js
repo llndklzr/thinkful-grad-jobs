@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Toggle from "react-toggle";
-import Button from "../Button";
+import DLBtn from "../DLBtn";
 
 
 export default function MapMenu({filters, setFilters, retrieveFilters}){
@@ -80,7 +80,7 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
         </form>
       </div>
       <div className="bottom-spacer">
-        <Button text="Apply Filters" clickHandler={retrieveFilters} />
+        <DLBtn text="Apply Filters" clickHandler={retrieveFilters} />
       </div>
 
     </div>

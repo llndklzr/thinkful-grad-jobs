@@ -143,7 +143,7 @@ export default function StoryFormPage1({
           </div>
         </div>
         <button className="form-button" type="submit">
-          next >
+          next
         </button>
       </form>
     </div>

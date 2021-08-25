@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {shortMonthYear} from "../../utils/dateHandler";
-import Button from "../Button";
+import DLBtn from "../DLBtn";
 import icons from "../../styles/icons/icons";
 
 export default function SingleGradHTML({grad, setWhichModal}){
@@ -45,7 +45,7 @@ export default function SingleGradHTML({grad, setWhichModal}){
           <br/>
           <span className="story date hired">Hired In Field - {shortMonthYear(grad.hire_date)}</span>
           <p className="story story-block">&nbsp;&nbsp;&nbsp;&nbsp;{trimStory(grad.story)}</p>
-          <Button clickHandler={()=>setMainBlock(false)} modal="fullStory" text="Read More" classname={`${readMoreVisibility()}`} />
+          <DLBtn clickHandler={()=>setMainBlock(false)} modal="fullStory" text="Read More" classname={`${readMoreVisibility()}`} />
         </div>
         <div className="hiring-details-container">
           <p className="story my-story-header">My Hiring Details</p>
