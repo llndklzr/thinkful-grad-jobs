@@ -124,8 +124,22 @@ export async function getGradById(id, signal){
 }
 
 export async function filterResultsForMap(filters, signal){
-  console.log("FILTERS IN API FETCHER", filters)
   const url = new URL(`${API_BASE_URL}/filters/map`);
+  return await fetchJson(
+    url,
+    {
+      signal,
+      credentials: "include",
+      headers: myHeaders,
+      method: "POST",
+      body: JSON.stringify({data: filters}),
+    },
+    []
+  );
+}
+
+export async function filterResultsForStories(filters, signal){
+  const url = new URL(`${API_BASE_URL}/filters/stories`);
   return await fetchJson(
     url,
     {

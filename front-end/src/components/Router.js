@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import MapParent from "./map/MapParent";
-import Stories from "./Stories";
+import StoriesParent from "./ViewStories/StoriesParent";
 import CreateStory from "./CreateStory/CreateStory";
 import RegisterUser from "./RegisterUser";
 import LoginUser from "./LoginUser";
@@ -19,7 +19,7 @@ export default function Router() {
         <MapParent />
       </Route>
       <Route path="/stories">
-        <Stories />
+        <StoriesParent />
       </Route>
       <ProtectedRoute path="/new-story" component={CreateStory} />
       <Route path="/register">

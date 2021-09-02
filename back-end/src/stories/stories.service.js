@@ -3,7 +3,13 @@ const tableName = "stories";
 
 //! <<------- CRUDL ------->>
 function list() {
-  return knex("stories");
+  return knex(tableName);
+}
+
+function listWithGrads(){
+  return knex(`${tableName} as s`)
+    .join("graduates as g", "s.graduate_id", "g.graduate_id")
+    .orderBy("s.created_at")
 }
 
 function getStoryByGradId(gradId){
@@ -16,5 +22,6 @@ function getStoryByGradId(gradId){
 
 module.exports = {
   list,
-  getStoryByGradId
+  getStoryByGradId,
+  listWithGrads
 };

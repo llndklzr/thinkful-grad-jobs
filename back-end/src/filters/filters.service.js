@@ -19,4 +19,18 @@ function filterFromMap(filters){
     )
 }
 
-module.exports = {filterFromMap}
+function filterFromStories(filters){
+  return knex("businesses as b")
+    .join("stories as s", "s.business_id", "b.business_id")
+    .join("graduates as g", "g.graduate_id", "s.graduate_id")
+    .where("business_name", "ilike", `%${filters.company}%`)
+    .andWhere("g.first_name", "ilike", `%${filters.name}%`)
+    .andWhere("g.graduate_career_field", "ilike", `%${filters.field}%`)
+    .select(
+      "b.business_name",
+      "g.*",
+      "s.*"
+    )
+}
+
+module.exports = {filterFromMap, filterFromStories}

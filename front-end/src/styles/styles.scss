@@ -13,13 +13,14 @@
 @import"./elements/toggle";
 @import"./elements/gradPage";
 @import"./elements/modal";
+@import"./elements/viewStories";
 
 .App {
   text-align: center;
 }
 .App-wrapper{
   height: 100vh;
-  font-family: $font-roboto;
+  font-family: $font-noto;
 }
 
 .App-header {
