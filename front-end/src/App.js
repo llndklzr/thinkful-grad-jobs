@@ -5,11 +5,6 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <div className="App-wrapper">
-      {/* leaving header because i feel this will be refactored
-        <header className="App-header">
-          <h1>Thinkful Graduate Stories</h1>
-        </header> 
-      */}
       <nav className="navbar">
         <Navbar />
       </nav>

@@ -27,7 +27,7 @@ export default function StoriesParent(){
       <div className="stories-filter-wrapper-in-parent">
         <StoriesFilter filters={filters} setFilters={setFiters}/>
       </div>
-      <div>
+      <div className="stories-wrapper-in-parent">
         <Stories stories={stories} />
       </div>
     </div>

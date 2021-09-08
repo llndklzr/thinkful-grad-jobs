@@ -1,5 +1,6 @@
 .absolute-story-wrapper{
   display: flex;
+  background-color: $background;
 }
 
 .stories-filter{
@@ -8,6 +9,8 @@
   width: 100%;
   height: 80vh;
   margin: 10px;
+  background-color: $background;
+
 }
 
 .stories-filter-wrapper-in-parent{
@@ -23,3 +26,18 @@
 .grad-div{
   display: flex;
 }
+
+.recent-stories{
+  display: flex;
+  justify-content: center;
+}
+
+.stories-wrapper{
+  background-color: $whyte;
+  border: 2px solid $blaq;
+  border-radius: 20px;
+}
+
+// .stories-wrapper-in-parent{
+//   width: 100%;
+// }

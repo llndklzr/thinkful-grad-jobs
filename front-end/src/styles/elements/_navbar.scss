@@ -1,7 +1,6 @@
 @import"./variables";
 
 .navbar{
-  //background-color: insert color from DL;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -9,19 +8,21 @@
 
 
   &.nav-btn{
+    font-family: $font-roboto;
     text-decoration: none;
-    //background-color: insert color from DL;
     margin: 0 10px 0 10px;
     border-radius: 5px;
-    color: black;
-    font-family: $font-sans-serif;
-    //border: 1px solid $dark-shades;
+    color: $cool-purp;
     padding: 15px;
+    font-size: 18px;
+    font-weight: 500;
     
     &:hover{
-      background-color:$dark-shades;
-      color: $dark-accent;
-      transform: scale(1.1);
+      //transform: scale(1.1);
+      color: $blaq;
+    }
+    &.current{
+      color: $disabled
     }
   }
 }

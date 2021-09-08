@@ -5,7 +5,7 @@
 @import"./elements/buttons";
 @import"./elements/map";
 @import"./elements/navbar";
-@import"./elements/cards";
+//@import"./elements/cards";
 @import"./elements/variables";
 @import"./elements/storyForm";
 @import"./elements/dragNDrop";
@@ -14,6 +14,7 @@
 @import"./elements/gradPage";
 @import"./elements/modal";
 @import"./elements/viewStories";
+@import"./elements/searchInputs";
 
 .App {
   text-align: center;
@@ -23,16 +24,6 @@
   font-family: $font-noto;
 }
 
-.App-header {
-  height: 10%;
-  background-color: $dark-shades;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: $font-sans-serif;
-  font-size: calc(10px + 2vmin);
-  color: $light-shades;
-}
 .loading{
   display: flex;
   justify-content: center;
@@ -43,4 +34,5 @@
 
 body{
   margin: 0;
+  background-color: $background;
 } // body element comes with default margins. this gets rid of those
