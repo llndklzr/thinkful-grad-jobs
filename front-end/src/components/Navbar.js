@@ -23,7 +23,7 @@ export default function Navbar() {
         Create Story
       </Link>
       <Link className={`navbar nav-btn ${determineStyling("/map")}`} to="/map">
-        Map
+        Map Search
       </Link>
     </>
   );

@@ -1,0 +1,31 @@
+.search{
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid $blaq;
+  border-radius: 16px;
+  height: 40px;
+  width: 200px;
+  background-color: $whyte;
+  &.input{
+    border: none;
+    border-radius: 0px;
+    margin: 0;
+    padding: 0;
+  }
+  &.select{
+    border-radius: 4px;
+  }
+}
+
+.icon-wrapper{
+  display: flex;
+  align-items: center;
+  padding: 0 5px 0 5px;
+  width: 10%;
+  cursor: pointer;
+  &.cancel{
+    transform: scale(1.4);
+    padding: 0 10px 0 0;
+  }
+}
+

@@ -8,12 +8,13 @@ import LoginUser from "./LoginUser";
 import ProtectedRoute from "./ProtectedRoute";
 import ResumeDownload from "./ResumeDownload";
 import SingleGradDisplay from "./singleGrad/SingleGradDisplay";
+import HomePage from "./HomePage";
 
 export default function Router() {
   return (
     <Switch>
       <Route path="/" exact>
-        <Redirect to={"/map"} />
+        <HomePage />
       </Route>
       <Route path="/map">
         <MapParent />

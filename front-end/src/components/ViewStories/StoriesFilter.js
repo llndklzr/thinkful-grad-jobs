@@ -1,16 +1,17 @@
 import React from "react";
+import { BsSearch, BsX } from "react-icons/bs";
 
-export default function StoriesFilter({filters, setFilters}){
+export default function StoriesFilter({filters, setFilters, retrieveGrads}){
 
   return (
-    <form className="stories-filter">
+    <form className="stories-filter" onSubmit={retrieveGrads}>
       <label className="story-filter-labels">
         Search by field
         <br/>
         <select 
             value={filters.fieldFilter}
             onChange={(e)=>setFilters({...filters, field: e.target.value})}
-            className="filter-input"
+            className="search select"
           >
             <option value="">Career Field</option>
             <option value="Full Stack Development">Engineering</option>
@@ -25,16 +26,28 @@ export default function StoriesFilter({filters, setFilters}){
       <label className="story-filter-labels">
         Search by company
         <br/>
-        <input
-
-        />
+        <div className="search">
+        <div onClick={()=>retrieveGrads} className="icon-wrapper">
+          <BsSearch />
+        </div>
+          <input
+            className="search input"
+            onChange={(e)=>setFilters({...filters, company: e.target.value})}
+            value={filters.company}
+          />
+          <div className="icon-wrapper cancel" onClick={()=>setFilters({...filters, company: ""})}>
+            <BsX />
+          </div>
+        </div>
       </label>
       <br/>
       <label className="story-filter-labels">
         Search by name
         <br/>
         <input 
-
+          className="search input"
+          onChange={(e)=>setFilters({...filters, name: e.target.value})}
+          value={filters.name}
         />
       </label>
     </form>

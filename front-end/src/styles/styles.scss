@@ -15,6 +15,7 @@
 @import"./elements/modal";
 @import"./elements/viewStories";
 @import"./elements/searchInputs";
+@import"./elements/homePage";
 
 .App {
   text-align: center;
@@ -29,6 +30,10 @@
   justify-content: center;
   align-items: center;
   height: 93vh;
+}
+
+footer{
+  height: 50px;
 }
 
 

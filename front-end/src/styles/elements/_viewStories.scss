@@ -1,33 +1,50 @@
 .absolute-story-wrapper{
   display: flex;
   background-color: $background;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 0 40px 0;
 }
+
+.stories-wrapper-in-parent{
+  width: 60%;
+}
+
+.stories-filter-wrapper-in-parent{
+  display: flex;
+  justify-content: center;
+  width: 20%;
+}
+
+.stories-spacer-wrapper-in-parent{
+  width: 20%;
+}
+
+///////////////////////////
 
 .stories-filter{
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 80vh;
-  margin: 10px;
+  margin: 0 0 0 20px;
   background-color: $background;
-
-}
-
-.stories-filter-wrapper-in-parent{
-  display: flex;
-  justify-content: center;
-  width: 15%;
 }
 
 .story-filter-labels{
-  margin: 20px 0 20px 0;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 0 40px 0;
 }
 
 .grad-div{
   display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  font-size: 24px;
 }
 
-.recent-stories{
+.recent-stories-title{
   display: flex;
   justify-content: center;
 }
@@ -36,8 +53,14 @@
   background-color: $whyte;
   border: 2px solid $blaq;
   border-radius: 20px;
+  min-height: 400px;
+  min-width: 40%;
+}
+.story-name{
+  font-weight: 500;
 }
 
-// .stories-wrapper-in-parent{
-//   width: 100%;
-// }
+.story-grad-job-details{
+  display: flex;
+  justify-content: space-between;
+}

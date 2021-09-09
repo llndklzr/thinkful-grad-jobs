@@ -10,26 +10,37 @@ export default function StoriesParent(){
     name: "",
   }
 
+  const abortController = new AbortController();
+
+
   const [filters, setFiters] = useState({...intitialFilters});
   const [stories, setStories] = useState([]);
 
   useEffect(()=>{
     async function loadStories(){
-      const abortController = new AbortController();
       return await filterResultsForStories(filters, abortController.signal).then(setStories)
     }
 
     loadStories();
   },[])
 
+  async function retrieveGrads(){
+    console.log('WE GOT CALLED')
+    await filterResultsForStories(filters, abortController.signal).then(setStories);
+  }
+
   return (
-    <div className="absolute-story-wrapper">
-      <div className="stories-filter-wrapper-in-parent">
-        <StoriesFilter filters={filters} setFilters={setFiters}/>
+    <>
+      <h2 className="header">Stories</h2>
+      <div className="absolute-story-wrapper">
+        <div className="stories-filter-wrapper-in-parent">
+          <StoriesFilter filters={filters} setFilters={setFiters} retrieveGrads={retrieveGrads}/>
+        </div>
+        <div className="stories-wrapper-in-parent">
+          <Stories stories={stories} />
+        </div>
+        <div className="stories-spacer-wrapper-in-parent"></div>
       </div>
-      <div className="stories-wrapper-in-parent">
-        <Stories stories={stories} />
-      </div>
-    </div>
+    </>
   )
 }
