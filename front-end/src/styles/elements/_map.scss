@@ -5,7 +5,7 @@
 .map-filter-wrapper-in-parent{
   display: flex;
   justify-content: center;
-  width: 15%;
+  width: 18%;
 }
 
 
@@ -24,10 +24,15 @@
   font-size: 20pt;
 }
 
+.map-filter-label{
+  font-size: 30px;
+  font-weight: 500;
+}
+
 .filter-option-container{
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   font-size: 15pt;
 }
 
@@ -53,7 +58,7 @@
 }
 
 .google-map {
-  width: 83% !important;
+  width: 80% !important;
   height: 90% !important;
   border: 2px solid black;
   margin: 10px;
@@ -61,7 +66,7 @@
 
 .map{
   &.map-modal{
-    &.header{
+    &.map-header{
       margin: 3px 0 1px 0;
       font-size: 14pt;
     }

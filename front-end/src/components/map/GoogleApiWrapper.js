@@ -93,7 +93,7 @@ export function RenderMap(props){
           visible={mapState.showingInfoWindow}
         >
           <div>
-            <h4 className="map map-modal header">{mapState.selectedPlace.name} ({grads.length})</h4>
+            <h4 className="map map-modal map-header">{mapState.selectedPlace.name} ({grads.length})</h4>
             <p className="map map-modal location">{mapState.selectedPlace.city}, {mapState.selectedPlace.state}</p>
             <p>Grads that started here...</p>
             {grads}

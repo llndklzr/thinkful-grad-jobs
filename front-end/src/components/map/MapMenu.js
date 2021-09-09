@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Toggle from "react-toggle";
 import DLBtn from "../DLBtn";
+import { BsSearch, BsX} from "react-icons/bs";
 
 
 export default function MapMenu({filters, setFilters, retrieveFilters}){
@@ -17,7 +18,7 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
     <div className="map-filter">
       <h3 className="filter-label">Filters</h3>
       <div className="filter-option-container">
-        <label>Company</label>
+        <label className="map-filter-label">Company</label>
         <Toggle
           defaultChecked={companyToggle}
           icons={false}
@@ -27,16 +28,24 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
       </div>
       <div className={filterInputVisibility(companyToggle)}>
         <form onSubmit={retrieveFilters}>
-          <input 
-            value={filters.companyFilter}
-            onChange={(e)=>setFilters({...filters, companyFilter: e.target.value})}
-            className="filter-input"
-          />
+        <div className="search map">
+            <div onClick={retrieveFilters} className="icon-wrapper">
+              <BsSearch />
+            </div>
+            <input 
+              value={filters.companyFilter}
+              onChange={(e)=>setFilters({...filters, companyFilter: e.target.value})}
+              className="search input"
+            />
+            <div className="icon-wrapper cancel" onClick={()=>setFilters({...filters, companyFilter: ""})}>
+              <BsX />
+            </div>
+          </div> 
         </form>
       </div>
       
       <div className="filter-option-container">
-        <label>Location</label>
+        <label className="map-filter-label">Location</label>
           <Toggle
             defaultChecked={locationToggle}
             icons={false}
@@ -46,15 +55,23 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
       </div>
       <div className={filterInputVisibility(locationToggle)}>
         <form onSubmit={retrieveFilters}>
-          <input 
-            value={filters.locationFilter}
-            onChange={(e)=>setFilters({...filters, locationFilter: e.target.value})}
-            className="filter-input"
-          />
+          <div className="search map">
+            <div onClick={retrieveFilters} className="icon-wrapper">
+              <BsSearch />
+            </div>
+            <input 
+              className="search input"
+              value={filters.locationFilter}
+              onChange={(e)=>setFilters({...filters, locationFilter: e.target.value})}
+            />
+            <div className="icon-wrapper cancel" onClick={()=>setFilters({...filters, locationFilter: ""})}>
+              <BsX />
+            </div>
+          </div>
         </form>
       </div>
       <div className="filter-option-container">
-        <label>Field</label>
+        <label className="map-filter-label">Field</label>
           <Toggle
             defaultChecked={fieldToggle}
             icons={false}
@@ -67,7 +84,7 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
           <select 
             value={filters.fieldFilter}
             onChange={(e)=>setFilters({...filters, fieldFilter: e.target.value})}
-            className="filter-input"
+            className="search select map"
           >
             <option value="">Career Field</option>
             <option value="Full Stack Development">Engineering</option>
