@@ -27,9 +27,9 @@ export default function StoriesFilter({filters, setFilters, retrieveGrads}){
         Search by company
         <br/>
         <div className="search">
-        <div onClick={()=>retrieveGrads} className="icon-wrapper">
-          <BsSearch />
-        </div>
+          <div onClick={retrieveGrads} className="icon-wrapper">
+            <BsSearch />
+          </div>
           <input
             className="search input"
             onChange={(e)=>setFilters({...filters, company: e.target.value})}
@@ -44,11 +44,19 @@ export default function StoriesFilter({filters, setFilters, retrieveGrads}){
       <label className="story-filter-labels">
         Search by name
         <br/>
-        <input 
-          className="search input"
-          onChange={(e)=>setFilters({...filters, name: e.target.value})}
-          value={filters.name}
-        />
+        <div className="search">
+          <div onClick={retrieveGrads} className="icon-wrapper">
+            <BsSearch />
+          </div>
+          <input 
+            className="search input"
+            onChange={(e)=>setFilters({...filters, name: e.target.value})}
+            value={filters.name}
+          />
+          <div className="icon-wrapper cancel" onClick={()=>setFilters({...filters, name: ""})}>
+            <BsX />
+          </div>
+        </div>
       </label>
     </form>
   )

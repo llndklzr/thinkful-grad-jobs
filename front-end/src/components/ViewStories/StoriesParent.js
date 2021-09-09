@@ -15,18 +15,21 @@ export default function StoriesParent(){
 
   const [filters, setFiters] = useState({...intitialFilters});
   const [stories, setStories] = useState([]);
+  const [loadingState, setLoadingState] = useState(true);
 
   useEffect(()=>{
     async function loadStories(){
       return await filterResultsForStories(filters, abortController.signal).then(setStories)
+        .then(()=>setLoadingState(false))
     }
 
     loadStories();
   },[])
 
-  async function retrieveGrads(){
+  const retrieveGrads = async (e) =>{
+    e.preventDefault();
     console.log('WE GOT CALLED')
-    await filterResultsForStories(filters, abortController.signal).then(setStories);
+    return await filterResultsForStories(filters, abortController.signal).then((res)=>setStories(res));
   }
 
   return (
@@ -37,7 +40,7 @@ export default function StoriesParent(){
           <StoriesFilter filters={filters} setFilters={setFiters} retrieveGrads={retrieveGrads}/>
         </div>
         <div className="stories-wrapper-in-parent">
-          <Stories stories={stories} />
+          <Stories stories={stories} loadingState={loadingState}/>
         </div>
         <div className="stories-spacer-wrapper-in-parent"></div>
       </div>
