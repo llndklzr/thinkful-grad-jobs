@@ -36,6 +36,31 @@ footer{
   height: 50px;
 }
 
+.small-screen{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: $font-noto;
+  margin: 20px;
+}
+
+.small-screen-body{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: $whyte;
+  border: 2px solid $blaq;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.small-screen-header{
+  display: flex;
+  justify-content: center;
+}
+
 
 body{
   margin: 0;

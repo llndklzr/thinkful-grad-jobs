@@ -2,9 +2,11 @@ import "./styles/styles.scss";
 import Router from "./components/Router";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import SmallScreen from "./components/SmallScreen";
 
 function App() {
-  return (
+  
+  const desktop = (
     <div className="App-wrapper">
       <nav className="navbar">
         <Navbar />
@@ -16,7 +18,8 @@ function App() {
         <Footer />
       </section>
     </div>
-  );
+  )
+  return window.innerWidth >= 1000 ? desktop : <SmallScreen />
 }
 
 export default App;
