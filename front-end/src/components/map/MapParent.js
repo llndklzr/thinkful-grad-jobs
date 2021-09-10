@@ -23,7 +23,6 @@ export default function MapParent(){
       })
       .catch(setErrors);
   }
-  console.log("BUSINESSES", businesses)
   useEffect(()=>{
     async function loadBusinesses(){
       await filterResultsForMap(filters, abortController.signal).then(setBusinesses).catch(setErrors);
