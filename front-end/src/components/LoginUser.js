@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import { useHistory } from "react-router-dom";
 import { loginUser } from "../utils/apiFetcher";
-import "../styles/styles.scss";
 import handleSessionStorage from "../utils/handleSessionStorage";
+import DLBtn from "../components/DLBtn";
+
 
 export default function LoginUser(){
   const initialForm = {
@@ -43,7 +44,6 @@ export default function LoginUser(){
 
   const errorMessage =<p className="auth error-msg top">{error?.message}</p>
   
-  console.log("ERROR", error)
 
   return (
     <div >
@@ -76,7 +76,7 @@ export default function LoginUser(){
         <br />
       </form>
       <div className="btn-wrapper">
-        <button className="btn auth" type="submit">Submit</button>
+        <DLBtn text="Sign In" clickHandler={submitHandler}/>
       </div>
     </div>
   );

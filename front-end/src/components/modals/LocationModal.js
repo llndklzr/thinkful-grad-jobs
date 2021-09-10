@@ -1,10 +1,7 @@
 import React from "react";
 
 export default function LocationModal({grad, onEdit = false}){
-  console.log(grad)
 
-  
-  
   return(
     <>
       <h3 className="modal-header">Location</h3>

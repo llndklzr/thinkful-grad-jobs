@@ -3,9 +3,11 @@ import Router from "./components/Router";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SmallScreen from "./components/SmallScreen";
+import useWindowSize from "./utils/useWindowSize";
 
 function App() {
-  
+  const windowSize = useWindowSize();
+
   const desktop = (
     <div className="App-wrapper">
       <nav className="navbar">
@@ -19,7 +21,7 @@ function App() {
       </section>
     </div>
   )
-  return window.innerWidth >= 1000 ? desktop : <SmallScreen />
+  return windowSize.width >= 1000 ? desktop : <SmallScreen />
 }
 
 export default App;

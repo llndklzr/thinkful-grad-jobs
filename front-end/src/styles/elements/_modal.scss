@@ -1,6 +1,7 @@
 @import"./variables";
 
 .modal{
+  font-family: $font-noto;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -63,12 +64,10 @@
   font-size: 18px;
 }
 
-.radio-btn{
-  border: 0 solid pink;
-  background-color: red;
-  background: greenyellow;
+input[type=radio]{
+  border: none;
   &:checked{
-    background-color: pink;
     color: green;
+    background-color: $blaq;
   }
 }
