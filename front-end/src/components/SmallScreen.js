@@ -13,7 +13,7 @@ export default function SmallScreen(){
           Come back with a larger device for a better experience!
           <br/>
           <br/>
-          Responsive design is coming soon!
+          Mobile support is coming soon!
         </p>
       </div>
     </div>
