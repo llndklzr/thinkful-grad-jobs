@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { GoogleApiWrapper, Map, Marker, InfoWindow } from "google-maps-react";
-import MarkerClusterer from '@googlemaps/markerclustererplus';
 
 import icons from "../../styles/icons/icons";
 
@@ -63,21 +62,8 @@ export function RenderMap(props){
     }
   )
 
-  const map = (
-    <Map 
-      onClick={onMapClicked}
-      google={props.google} 
-      zoom={5} 
-      initialCenter={{lat: 39.833333, lng: -98.583333}}
-      className={"google-map"}
-      fullscreenControl={false}
-      streetViewControl={false}
-    />
-  )
-
-  //const markerCluster = new MarkerClusterer(map, mapPins,{ imagePath:"https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",})
-
   return (
+    <div className="google-map-wrapper">
     <Map 
       onClick={onMapClicked}
       google={props.google} 
@@ -100,6 +86,7 @@ export function RenderMap(props){
           </div>
         </InfoWindow>
     </Map>
+    </div>
   );
 }
 

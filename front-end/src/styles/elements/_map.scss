@@ -9,6 +9,9 @@
   min-width: 270px;
 }
 
+.map-wrapper-in-parent{
+  width: 82%;
+}
 
 .map-filter{
   display: flex;
@@ -58,11 +61,17 @@
   justify-content: center;
 }
 
+.google-map-wrapper{
+  height: 100% !important;
+  //position: relative;
+}
+
 .google-map {
+  //position: relative !important;
   width: 80% !important;
   height: 90% !important;
   border: 2px solid black;
-  margin: 10px;
+  margin: 10px 0 0 0;
 }
 
 .map{
