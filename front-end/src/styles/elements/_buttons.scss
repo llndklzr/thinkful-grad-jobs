@@ -4,6 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  &.split{
+    justify-content: space-between;
+  }
 }
 
 .btn {
@@ -12,6 +15,9 @@
   display: flex;
   align-items: center;
   float: left;
+  &.flip-icon{
+    flex-direction: row-reverse;
+  }
   &.invisible{
     visibility: hidden;
   }

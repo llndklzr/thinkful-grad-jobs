@@ -37,7 +37,7 @@ export default function LoginUser(){
       });
 
     if(!err){
-      history.go(-2);
+      history.push("/new-story");
     }
   }
   

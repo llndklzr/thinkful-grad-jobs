@@ -1,10 +1,16 @@
 import React from "react";
+import DLBtn from "../DLBtn";
 
 export default function StoryFormPage2({ setFormPage }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormPage((prev) => prev + 1);
   };
+
+  const goBack = (e) =>{
+    e.preventDefault();
+    setFormPage((prev) => prev - 1);
+  }
   return (
     <div className="form-group">
       <p>
@@ -49,9 +55,10 @@ export default function StoryFormPage2({ setFormPage }) {
             />
           </div>
         </div>
-        <button className="form-button" type="submit">
-          next
-        </button>
+        <div className="btn-wrapper split">
+          <DLBtn text="Edit" clickHandler={goBack} classname="flip-icon" icon="<"/>
+          <DLBtn text="Next" clickHandler={handleSubmit}/>
+        </div>
       </form>
     </div>
   );

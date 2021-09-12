@@ -25,7 +25,7 @@ function Stories({stories, loadingState}) {
     <div>
       <div className="stories-wrapper">
         <h4 className="recent-stories-title">Recent Stories</h4>
-        {loadingState ? <LoadingScreen /> : grads}
+        {loadingState ? <LoadingScreen classname="small"/> : grads}
       </div>
     </div>
   ) 

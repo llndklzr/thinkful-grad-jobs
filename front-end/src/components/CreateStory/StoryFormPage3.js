@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DragNDrop from "./DragNDrop";
+import DLBtn from "../DLBtn";
 
 export default function StoryFormPage3({ setFormPage, formData, setFormData }) {
   const initialList = [
@@ -25,6 +26,10 @@ export default function StoryFormPage3({ setFormPage, formData, setFormData }) {
     console.log(formData);
     setFormPage((prev) => prev + 1);
   };
+  const goBack = (e) =>{
+    e.preventDefault();
+    setFormPage((prev) => prev - 1);
+  }
 
   return (
     <div className="form-group">
@@ -35,9 +40,10 @@ export default function StoryFormPage3({ setFormPage, formData, setFormData }) {
         all the tabs.
       </p>
       <DragNDrop list={list} setList={setList} />
-      <button className="form-button" onClick={handleSubmit}>
-        next
-      </button>
+      <div className="btn-wrapper split">
+        <DLBtn text="Edit" clickHandler={goBack} classname="flip-icon" icon="<"/>
+        <DLBtn text="Next" clickHandler={handleSubmit}/>
+      </div>
     </div>
   );
 }

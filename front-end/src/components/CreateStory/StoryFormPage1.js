@@ -1,4 +1,5 @@
 import React from "react";
+import DLBtn from "../DLBtn";
 
 export default function StoryFormPage1({
   handleChange,
@@ -140,9 +141,7 @@ export default function StoryFormPage1({
             </p>
           </div>
         </div>
-        <button className="form-button" type="submit">
-          next
-        </button>
+        <DLBtn text="Next" clickHandler={handleSubmit}/>
       </form>
     </div>
   );

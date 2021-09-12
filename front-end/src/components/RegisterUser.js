@@ -68,7 +68,7 @@ export default function RegisterUser(){
       setPasswordError(false);
       setForm({...initialForm});
       if(!err){
-        history.go(-1);
+        history.push("/new-story");
       }
     } else{
       setPasswordError(true);

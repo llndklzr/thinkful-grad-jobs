@@ -1,11 +1,18 @@
 import { useState } from "react";
 import Modal from "../modals/Modal";
-export default function StoryFormPage4({ formData }) {
+import DLBtn from "../DLBtn";
+
+export default function StoryFormPage4({ formData, setFormPage }) {
   const [whichModal, setWhichModal] = useState(null);
 
   const handleModalOpen = ({ target }) => {
     setWhichModal(target.innerText.toLowerCase());
   };
+
+  const goBack = (e) =>{
+    e.preventDefault();
+    setFormPage((prev) => prev - 1);
+  }
 
   return (
     <div className="form-group">
@@ -26,6 +33,10 @@ export default function StoryFormPage4({ formData }) {
           grad={formData}
         />
       )}
+      <div className="btn-wrapper split">
+        <DLBtn text="Edit" clickHandler={goBack} classname="flip-icon" icon="<"/>
+        <DLBtn text="Next" />
+      </div>
     </div>
   );
 }
