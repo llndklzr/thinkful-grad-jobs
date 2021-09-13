@@ -1,7 +1,6 @@
 .homepage-wrapper{
   display: flex;
   justify-content: center;
-  max-width: 940px;
 }
 
 .sub-homepage-wrapper{
@@ -11,6 +10,7 @@
   margin: 20px;
   width: 70%;
   min-width: 900px;
+  max-width: 940px;
 }
 .prompt-wrapper{
   background-color: $whyte;
