@@ -10,21 +10,21 @@
     .dot {
       height: 25px;
       width: 25px;
-      //background-color: $light-accent;
+      background-color: $blaq;
       border-radius: 50%;
       display: inline-block;
       margin-inline: 10px;
       cursor: pointer;
     }
     .dot-active {
-      //background-color: $main-brand;
+      background-color: $pale-mint;
     }
   }
   .form-group {
     margin-left: auto;
     margin-right: auto;
     font-size: 24px;
-    max-width: 800px;
+    max-width: 1100px;
     .form-grid-container {
       display: grid;
       grid-template-columns: auto auto auto auto;
@@ -39,8 +39,9 @@
           resize: none;
           width: 100%;
         }
-        .form-label {
-        }
+        // .form-label {
+          
+        // }
         .form-control {
           &:focus {
             outline: none;

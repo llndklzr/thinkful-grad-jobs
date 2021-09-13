@@ -46,12 +46,12 @@ export default function LoginUser(){
   
 
   return (
-    <div >
-      <h3 className="auth page-header">Sign In</h3>
+    <div className="auth page-wrapper">
+      {/* <h3 className="auth page-header">Sign In</h3> */}
       <form className="auth form-wrapper" onSubmit={submitHandler}>
         {error ? errorMessage : null}
         <div className="auth input-wrapper">
-          <label>Email</label>
+          <label>Your Email</label>
           <br/>
           <input
             className={error ? "auth input failure" : "auth input"}

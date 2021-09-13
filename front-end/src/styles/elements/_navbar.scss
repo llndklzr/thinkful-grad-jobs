@@ -9,16 +9,16 @@
 
   &.nav-btn{
     font-family: $font-roboto;
+    font-weight: 500;
     text-decoration: none;
     margin: 0 10px 0 10px;
     border-radius: 5px;
     color: $cool-purp;
     padding: 15px;
     font-size: 18px;
-    font-weight: 500;
     
     &:hover{
-      //transform: scale(1.1);
+      transform: scale(1.1);
       color: $blaq;
     }
     &.current{

@@ -1,7 +1,8 @@
-import React, {useState} from "react";
-import {shortMonthYear} from "../../utils/dateHandler";
+import React, { useState } from "react";
+import { shortMonthYear } from "../../utils/dateHandler";
 import DLBtn from "../DLBtn";
 import icons from "../../styles/icons/icons";
+import { BsX } from "react-icons/bs";
 
 export default function SingleGradHTML({grad, setWhichModal}){
   const [renderMainBlock, setMainBlock] = useState(true);
@@ -45,7 +46,7 @@ export default function SingleGradHTML({grad, setWhichModal}){
           <br/>
           <span className="story date hired">Hired In Field - {shortMonthYear(grad.hire_date)}</span>
           <p className="story story-block">&nbsp;&nbsp;&nbsp;&nbsp;{trimStory(grad.story)}</p>
-          <DLBtn clickHandler={()=>setMainBlock(false)} modal="fullStory" text="Read More" classname={`${readMoreVisibility()}`} />
+          <DLBtn clickHandler={()=>setMainBlock(false)} modal="fullStory" text="Full Story" classname={`${readMoreVisibility()}`} />
         </div>
         <div className="hiring-details-container">
           <p className="story my-story-header">My Hiring Details</p>
@@ -67,7 +68,7 @@ export default function SingleGradHTML({grad, setWhichModal}){
   const fullStory = (
     <div className="full-story">
       <div className="modal-btn-container">
-        <button className="modal-btn" onClick={()=>setMainBlock(true)}>X</button>
+        <button className="modal-btn" onClick={()=>setMainBlock(true)}><BsX /></button>
       </div>
       <p>{grad.story}</p>
     </div>

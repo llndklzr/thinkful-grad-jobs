@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {Link, useHistory} from "react-router-dom";
 import { registerUser } from '../utils/apiFetcher';
-import "../styles/styles.scss";
 import handleSessionStorage from '../utils/handleSessionStorage';
+import DLBtn from './DLBtn';
 
 export default function RegisterUser(){
   const initialForm = {
@@ -77,7 +77,7 @@ export default function RegisterUser(){
   }
 
   return(
-    <div>
+    <div className="auth page-wrapper">
       <h3 className="auth page-header">Sign Up</h3>
       <form className="auth form-wrapper" onSubmit={submitHandler}>
           <div className="auth input-wrapper">
@@ -124,7 +124,7 @@ export default function RegisterUser(){
         <br />
         <div className="auth register-container">
           Already have an account?&nbsp;
-          <Link to="/login">Sign in</Link>
+          <Link className="auth sign-in" to="/login">Sign in</Link>
         </div>
     </div>
   )

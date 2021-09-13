@@ -8,6 +8,10 @@
     align-items: center;
   }
 
+  &.page-wrapper{
+    margin: 6% 0 0 0;
+  }
+
   &.page-header{
     display: flex;
     justify-content: center;
@@ -54,6 +58,16 @@
   &.register-container{
     display: flex;
     justify-content: center;
+    font-family: $font-roboto;
+
+  }
+  &.sign-in{
+    color: $cool-purp;
+    text-decoration: underline;
+    &:hover{
+      color: $blaq;
+      transform: scale(1.1);
+    }
   }
 }
 

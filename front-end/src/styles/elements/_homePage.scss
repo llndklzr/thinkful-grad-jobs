@@ -1,6 +1,7 @@
 .homepage-wrapper{
   display: flex;
   justify-content: center;
+  margin: 40px 0 0 0;
 }
 
 .sub-homepage-wrapper{
@@ -10,13 +11,15 @@
   margin: 20px;
   width: 70%;
   min-width: 900px;
-  max-width: 940px;
+  max-width: 1100px;
 }
+
 .prompt-wrapper{
   background-color: $whyte;
   border: 2px solid $cool-purp;
   border-radius: 15px;
 }
+
 .header{
   display: flex;
   justify-content: center;
@@ -28,8 +31,9 @@
 .prompt{
   color: $blaq;
   font-size: 24px;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
 }
+
 .page-btns{
   display: flex;
   flex-direction: row;

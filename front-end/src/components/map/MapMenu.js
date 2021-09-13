@@ -40,7 +40,7 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
       </div>
       <div className={filterInputVisibility(companyToggle)}>
         <form onSubmit={retrieveFilters}>
-        <div className="search map">
+        <div className="search map drop-shadow">
             <div onClick={retrieveFilters} className="icon-wrapper">
               <BsSearch />
             </div>
@@ -67,7 +67,7 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
       </div>
       <div className={filterInputVisibility(locationToggle)}>
         <form onSubmit={retrieveFilters}>
-          <div className="search map">
+          <div className="search map drop-shadow">
             <div onClick={retrieveFilters} className="icon-wrapper">
               <BsSearch />
             </div>
@@ -96,7 +96,7 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
           <select 
             value={filters.fieldFilter}
             onChange={(e)=>setFilters({...filters, fieldFilter: e.target.value})}
-            className="search select map"
+            className="search select drop-shadow"
           >
             <option value="">Career Field</option>
             <option value="Full Stack Development">Engineering</option>

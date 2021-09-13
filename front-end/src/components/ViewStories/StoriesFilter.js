@@ -11,7 +11,7 @@ export default function StoriesFilter({filters, setFilters, retrieveGrads}){
         <select 
             value={filters.fieldFilter}
             onChange={(e)=>setFilters({...filters, field: e.target.value})}
-            className="search select"
+            className="search select drop-shadow"
           >
             <option value="">Career Field</option>
             <option value="Full Stack Development">Engineering</option>
@@ -26,7 +26,7 @@ export default function StoriesFilter({filters, setFilters, retrieveGrads}){
       <label className="story-filter-labels">
         Search by company
         <br/>
-        <div className="search">
+        <div className="search drop-shadow">
           <div onClick={retrieveGrads} className="icon-wrapper">
             <BsSearch />
           </div>
@@ -44,7 +44,7 @@ export default function StoriesFilter({filters, setFilters, retrieveGrads}){
       <label className="story-filter-labels">
         Search by name
         <br/>
-        <div className="search">
+        <div className="search drop-shadow">
           <div onClick={retrieveGrads} className="icon-wrapper">
             <BsSearch />
           </div>
