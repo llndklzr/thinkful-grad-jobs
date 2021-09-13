@@ -13,6 +13,18 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
     return boolean ? "visible-filter-input" : "invisible-filter-option";
   }
 
+  const cancelInput = (e) =>{
+    e.preventDefault();
+    console.log(e.target)
+    setFilters({
+      ...filters,
+      [e.target.name]: ""
+    })
+    retrieveFilters(e);
+  }
+
+  //()=>setFilters({...filters, companyFilter: ""})
+
   
   return (
     <div className="map-filter">
@@ -37,8 +49,8 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
               onChange={(e)=>setFilters({...filters, companyFilter: e.target.value})}
               className="search input"
             />
-            <div className="icon-wrapper cancel" onClick={()=>setFilters({...filters, companyFilter: ""})}>
-              <BsX />
+            <div className="icon-wrapper cancel" onClick={cancelInput} name="companyFilter">
+              <BsX name="companyFilter"/>
             </div>
           </div> 
         </form>
@@ -64,7 +76,7 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
               value={filters.locationFilter}
               onChange={(e)=>setFilters({...filters, locationFilter: e.target.value})}
             />
-            <div className="icon-wrapper cancel" onClick={()=>setFilters({...filters, locationFilter: ""})}>
+            <div className="icon-wrapper cancel" onClick={()=>setFilters({...filters, locationFilter: ""})} name="locationFilter">
               <BsX />
             </div>
           </div>
