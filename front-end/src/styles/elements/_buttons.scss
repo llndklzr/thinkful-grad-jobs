@@ -41,7 +41,15 @@
     }
   }
   &.auth{
-    width: 300px;
+    font-size: 36px;
+    font-family: $font-roboto;
+    border: none;
+    background-color: $background;
+    color: $cool-purp;
+    text-decoration: underline;
+    &:hover{
+      color: $blaq;
+    }
   }
   &:hover{
     color: $on-hover;

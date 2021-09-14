@@ -119,7 +119,7 @@ export default function RegisterUser(){
           </div>
         </form>
         <div className="btn-wrapper">
-          <button className="btn auth" onClick={submitHandler}>Submit</button>
+          <DLBtn text="Submit" classname="btn" clickHandler={submitHandler}/>
         </div>
         <br />
         <div className="auth register-container">

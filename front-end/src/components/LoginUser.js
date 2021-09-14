@@ -76,7 +76,7 @@ export default function LoginUser(){
         <br />
       </form>
       <div className="btn-wrapper">
-        <DLBtn text="Sign In" clickHandler={submitHandler}/>
+        <button className="btn auth">Sign In</button>
       </div>
     </div>
   );
