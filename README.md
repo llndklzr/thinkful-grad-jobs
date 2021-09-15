@@ -5,6 +5,11 @@
 ## The Mission
 Create an application that allows employed Thinkful graduates to relay their career search story to their job searching peers.  
 
+## The Main Contributors
+[Leland Klauzer](https://github.com/llndklzr) Full Stack Dev
+[Caleb Gekeler](https://github.com/calebgekeler) Full Stack Dev
+[D.L. Grimes](https://www.linkedin.com/in/d-l-grimes/) UX/UI Designer
+
 ## The Stack
 - Javascript
 ### Frontend
@@ -26,9 +31,13 @@ Create an application that allows employed Thinkful graduates to relay their car
 - Google Cloud Services
 
 ## For Contributors:
-```git clone https://github.com/llndklzr/thinkful-grad-jobs.git```
+```bash
+  git clone https://github.com/llndklzr/thinkful-grad-jobs.git
+```
 
-```npm install```
+```bash
+  npm install
+```
 
 This is a _mono repo_. Both the frontend and backend are hosted in this repository.
 
@@ -45,3 +54,8 @@ Create a `.env` file and put the API key in there with the variable name `REACT_
 
 
 The production environment is already set up with a key so no need to add one. You _only_ need a key if you intend to see what the map looks like in the dev environment. 
+
+All designs have been create by D.L. Grimes using Figma. Please follow all design standards. Refer to the below links for details.
+
+[Styles Guide](https://www.figma.com/file/Cy8XgmiuAd3VrPJmtuA21i/Style-Guide?node-id=0%3A1)
+[Final Designs](https://www.figma.com/file/SqiAELQILYs1s7BhVzD75W/Thinkful-Grad-Stories?node-id=119%3A16)
