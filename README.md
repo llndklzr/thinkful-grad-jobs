@@ -6,9 +6,10 @@
 Create an application that allows employed Thinkful graduates to relay their career search story to their job searching peers.  
 
 ## The Main Contributors
-[Leland Klauzer](https://github.com/llndklzr) Full Stack Dev
-[Caleb Gekeler](https://github.com/calebgekeler) Full Stack Dev
-[D.L. Grimes](https://www.linkedin.com/in/d-l-grimes/) UX/UI Designer
+- [Leland Klauzer - Fullstack Dev](https://github.com/llndklzr)
+- [Caleb Gekeler - Fullstack Dev](https://github.com/calebgekeler)
+- [D.L. Grimes - UX/UI Designer](https://www.linkedin.com/in/d-l-grimes/)
+
 
 ## The Stack
 - Javascript
@@ -57,5 +58,5 @@ The production environment is already set up with a key so no need to add one. Y
 
 All designs have been create by D.L. Grimes using Figma. Please follow all design standards. Refer to the below links for details.
 
-[Styles Guide](https://www.figma.com/file/Cy8XgmiuAd3VrPJmtuA21i/Style-Guide?node-id=0%3A1)
-[Final Designs](https://www.figma.com/file/SqiAELQILYs1s7BhVzD75W/Thinkful-Grad-Stories?node-id=119%3A16)
+- [Styles Guide](https://www.figma.com/file/Cy8XgmiuAd3VrPJmtuA21i/Style-Guide?node-id=0%3A1)
+- [Final Designs](https://www.figma.com/file/SqiAELQILYs1s7BhVzD75W/Thinkful-Grad-Stories?node-id=119%3A16)
