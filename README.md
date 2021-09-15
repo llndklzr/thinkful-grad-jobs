@@ -26,12 +26,18 @@ Create an application that allows employed Thinkful graduates to relay their car
 - Google Cloud Services
 
 ## For Contributors:
-`git clone https://github.com/llndklzr/thinkful-grad-jobs.git`
-`npm install`
+```git clone https://github.com/llndklzr/thinkful-grad-jobs.git```
+```npm install```
 
 This is a _mono repo_. Both the frontend and backend are hosted in this repository.
 
 ### Frontend
-Everything should be turn key with the exception of the Google Maps API Key. You will need to get [one](https://developers.google.com/maps/documentation/javascript/get-api-key) to play around in your development environment. Create a `.env` file and put the API key in there with the variable name `REACT_APP_GOOGLE_MAPS_API_KEY`
+Everything should be turn key with the exception of the Google Maps API Key. You will need to get [one](https://developers.google.com/maps/documentation/javascript/get-api-key) to play around in your development environment. 
+
+Create a `.env` file and put the API key in there with the variable name `REACT_APP_GOOGLE_MAPS_API_KEY`. REMINDER: add the `.env` file to `.gitignore`.
+
+![Google Maps API env Example]()
+
+Below is an example of how its pulled into the frontend from the GoogleApiWrapper.js component.
 ![Google Maps API Example](https://raw.githubusercontent.com/llndklzr/thinkful-grad-jobs/main/screenshots/google-maps-api-key-example.png)
-The production environment is already set up with a key so no need to set one up. 
+The production environment is already set up with a key so no need to add one. You _only_ need a key if you intend to see what the map looks like in the dev environment. 
