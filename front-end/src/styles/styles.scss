@@ -35,8 +35,15 @@
   }
 }
 
+.main-body{
+  height: calc(100% -70px); // forces footer to the bottom of the page
+}
+
 footer{
   height: 50px;
+  width: 100%;
+  bottom: 0;
+  position: sticky;
 }
 
 .small-screen{

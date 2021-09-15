@@ -40,7 +40,7 @@ export default function StoryFormPage3({ setFormPage, formData, setFormData }) {
         all the tabs.
       </p>
       <DragNDrop list={list} setList={setList} />
-      <div className="btn-wrapper split">
+      <div className="btn-wrapper split bottom">
         <DLBtn text="Edit" clickHandler={goBack} classname="flip-icon" icon="<"/>
         <DLBtn text="Next" clickHandler={handleSubmit}/>
       </div>

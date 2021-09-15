@@ -13,7 +13,7 @@ function App() {
       <nav className="navbar">
         <Navbar />
       </nav>
-      <section>
+      <section className="main-body">
         <Router />
       </section>
       <section>

@@ -1,5 +1,6 @@
 import React from "react";
 import { BsSearch, BsX } from "react-icons/bs";
+import DLBtn from "../DLBtn";
 
 export default function StoriesFilter({filters, setFilters, retrieveGrads}){
 
@@ -58,6 +59,9 @@ export default function StoriesFilter({filters, setFilters, retrieveGrads}){
           </div>
         </div>
       </label>
+      <div>
+        <DLBtn text="Apply Filters" clickHandler={retrieveGrads}/>
+      </div>
     </form>
   )
 }

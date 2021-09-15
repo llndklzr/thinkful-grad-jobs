@@ -7,6 +7,14 @@
   &.split{
     justify-content: space-between;
   }
+  &.bottom{
+    bottom: 50px;
+    top: auto;
+    position: absolute;
+  }
+  &.left{
+    justify-content: start;
+  }
 }
 
 .btn {

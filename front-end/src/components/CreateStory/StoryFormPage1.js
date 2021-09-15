@@ -141,7 +141,9 @@ export default function StoryFormPage1({
             </p>
           </div>
         </div>
-        <DLBtn text="Next" clickHandler={handleSubmit}/>
+        <div className="btn-wrapper bottom left">
+          <DLBtn text="Next" clickHandler={handleSubmit}/>
+        </div>
       </form>
     </div>
   );
