@@ -33,4 +33,5 @@ This is a _mono repo_. Both the frontend and backend are hosted in this reposito
 
 ### Frontend
 Everything should be turn key with the exception of the Google Maps API Key. You will need to get [one](https://developers.google.com/maps/documentation/javascript/get-api-key) to play around in your development environment. Create a `.env` file and put the API key in there with the variable name `REACT_APP_GOOGLE_MAPS_API_KEY`
+![Google Maps API Example](https://raw.githubusercontent.com/llndklzr/thinkful-grad-jobs/main/screenshots/google-maps-api-key-example.png)
 The production environment is already set up with a key so no need to set one up. 
