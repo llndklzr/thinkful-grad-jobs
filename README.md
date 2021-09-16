@@ -31,7 +31,7 @@ Create an application that allows employed Thinkful graduates to relay their car
 - AWS
 - Google Cloud Services
 
-## For Contributors:
+## For Contributors
 ```bash
   git clone https://github.com/llndklzr/thinkful-grad-jobs.git
 ```
@@ -43,7 +43,7 @@ Create an application that allows employed Thinkful graduates to relay their car
 This is a _mono repo_. Both the frontend and backend are hosted in this repository.
 
 ### Frontend
-Everything should be turn key with the exception of the Google Maps API Key. You will need to [set one up](https://developers.google.com/maps/documentation/javascript/get-api-key) to play around in your development environment. 
+For the frontend, everything should be turn key with the exception of the Google Maps API Key. You will need to [set one up](https://developers.google.com/maps/documentation/javascript/get-api-key) to play around in your development environment. 
 
 Create a `.env` file and put the API key in there with the variable name `REACT_APP_GOOGLE_MAPS_API_KEY`. REMINDER: add the `.env` file to `.gitignore`.
 
@@ -55,6 +55,8 @@ Create a `.env` file and put the API key in there with the variable name `REACT_
 
 
 The production environment is already set up with a key so no need to add one. You _only_ need a key if you intend to see what the map looks like in the dev environment. 
+
+#### Designs
 
 All designs have been create by D.L. Grimes using Figma. Please follow all design standards. Refer to the below links for details.
 
