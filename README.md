@@ -73,11 +73,48 @@ The backend follows RESTful practices.
 
 The API is built with `Express.js`, queries are made with `Knex.js` and the main database is `Postgres`, with the exception of `AWS` for storing files.
 
+The main database (`Postgres`) is made up of 3 different tables: stories, businesses, and graduates.
+
 #### API Endpoints
 
 ##### Stories
 ```https
   GET /stories
 ```
-This returns all stories with their corresponding graduates.
+Returns all stories with their corresponding graduates.
 
+```https
+  POST /coming soon
+```
+
+##### Businesses
+```https
+  GET /businesses
+```
+Returns all businesses by themselves.
+
+```https
+  GET /businesses/:businessId/graduates
+```
+Returns all graduates that work for a particular company.
+
+##### Graduates
+```https 
+  POST /graduates/register
+```
+Registers the user into the auth system. More on that later.
+
+```https
+  POST /graduates/login
+```
+Logs the user into the auth system.
+
+```https
+  GET /graduates/:graduate_id
+```
+Returns a particular graduate with their corresponding story and company information. It returns all information related to the graduate.
+
+```https
+  GET /graduates
+```
+Returns all graduates.
