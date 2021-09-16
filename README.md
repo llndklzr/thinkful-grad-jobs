@@ -48,6 +48,9 @@ For the frontend, everything should be turn key with the exception of the Google
 Create a `.env` file and put the API key in there with the variable name `REACT_APP_GOOGLE_MAPS_API_KEY`. REMINDER: add the `.env` file to `.gitignore`.
 
 [Example of .env file]
+```env
+  REACT_APP_GOOGLE_MAPS_API_KEY='<your url>'
+```
 ![Google Maps API env Example](https://raw.githubusercontent.com/llndklzr/thinkful-grad-jobs/main/screenshots/google-maps-env-example.png)
 
 [Example of how API key is pulled into the frontend from the GoogleApiWrapper.js component]
