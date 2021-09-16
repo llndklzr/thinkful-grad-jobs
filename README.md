@@ -68,6 +68,8 @@ All designs have been created by D.L. Grimes using Figma. Please follow all desi
 - [Styles Guide](https://www.figma.com/file/Cy8XgmiuAd3VrPJmtuA21i/Style-Guide?node-id=0%3A1)
 - [Final Designs](https://www.figma.com/file/SqiAELQILYs1s7BhVzD75W/Thinkful-Grad-Stories?node-id=119%3A16)
 
+------------------------------------------------------------------------------------------------------------------------------
+
 ### Backend
 The backend follows RESTful practices. 
 
