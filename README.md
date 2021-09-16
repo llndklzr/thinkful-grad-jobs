@@ -43,26 +43,41 @@ Create an application that allows employed Thinkful graduates to relay their car
 This is a _mono repo_. Both the frontend and backend are hosted in this repository.
 
 ### Frontend
+#### Google Maps API Key
 For the frontend, everything should be turn key with the exception of the Google Maps API Key. You will need to [set one up](https://developers.google.com/maps/documentation/javascript/get-api-key) to play around in your development environment. 
 
 Create a `.env` file and put the API key in there with the variable name `REACT_APP_GOOGLE_MAPS_API_KEY`. REMINDER: add the `.env` file to `.gitignore`.
 
-Example of .env file
-```env
-  REACT_APP_GOOGLE_MAPS_API_KEY='<your url>'
+Example of API key in the `.env` file
+```dotenv
+  REACT_APP_GOOGLE_MAPS_API_KEY='<your api key>'
 ```
 
-Example of how API key is pulled into the frontend from the GoogleApiWrapper.js component
+Example of how API key is pulled into the frontend from the `GoogleApiWrapper.js` component
 ```javascript
   const KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 ```
 
 
-The production environment is already set up with a key so no need to add one. You _only_ need a key if you intend to see what the map looks like in the dev environment. 
+The production environment is already set up with a key so no need to add one. You _only_ need a key if you intend to see what the map looks like in the developer environment. Most work can be completed _without_ a key.
 
 #### Designs
 
-All designs have been create by D.L. Grimes using Figma. Please follow all design standards. Refer to the below links for details.
+All designs have been created by D.L. Grimes using Figma. Please follow all design standards. Refer to the below links for details.
 
 - [Styles Guide](https://www.figma.com/file/Cy8XgmiuAd3VrPJmtuA21i/Style-Guide?node-id=0%3A1)
 - [Final Designs](https://www.figma.com/file/SqiAELQILYs1s7BhVzD75W/Thinkful-Grad-Stories?node-id=119%3A16)
+
+### Backend
+The backend follows RESTful practices. 
+
+The API is built with `Express.js`, queries are made with `Knex.js` and the main database is `Postgres`, with the exception of `AWS` for storing files.
+
+#### API Endpoints
+
+##### Stories
+```https
+  GET /stories
+```
+This returns all stories with their corresponding graduates.
+
