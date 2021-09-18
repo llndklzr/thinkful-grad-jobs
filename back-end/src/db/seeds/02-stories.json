@@ -10,8 +10,8 @@
     "resumeTitle": "",
     "portfolioUrl": "",
     "coverLetterTitle": "",
-    "enabled": ["Location", "Networking"],
-    "disabled": ["Coaching/Mentorship", "Tranfered Skills", "Interviewing"],
+    "enabled": ["Location", "Networking", "Coaching/Mentorship", "Tranfered Skills", "Interviewing"],
+    "disabled": [],
     "storyDetails": {
       "Location": {
         "willingToRelocate": "yes",
