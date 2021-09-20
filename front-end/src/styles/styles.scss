@@ -36,7 +36,7 @@
 }
 
 .main-body{
-  height: calc(100% -70px); // forces footer to the bottom of the page
+  height: calc(100% -50px -7%); // forces footer to the bottom of the page
 }
 
 footer{
@@ -44,10 +44,7 @@ footer{
   width: 100%;
   bottom: 0;
   position: sticky;
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
+
 }
 
 .small-screen{

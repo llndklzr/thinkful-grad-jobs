@@ -16,12 +16,12 @@ function App() {
       <section className="main-body">
         <Router />
       </section>
-      <section>
+      <>
         <Footer />
-      </section>
+      </>
     </div>
   )
-  return windowSize.width >= 1000 ? desktop : <SmallScreen />
+  return windowSize.width >= 1000 ? desktop : <SmallScreen />;
 }
 
 export default App;

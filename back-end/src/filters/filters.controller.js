@@ -13,7 +13,6 @@ async function listMatchesForMapFilter(req, res) {
 
 async function listMatchesForStoryFilter(req, res){
   const filters = req.body.data;
-  console.log("FILTERS IN CONTROLLER", filters)
   const results = await service.filterFromStories(filters);
   res.json({data: results});
 }
