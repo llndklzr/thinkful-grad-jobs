@@ -8,12 +8,11 @@
     justify-content: space-between;
   }
   &.bottom{
-    bottom: 50px;
-    top: auto;
-    position: absolute;
+    bottom: 5%;
+    //top: auto;
   }
-  &.left{
-    justify-content: start;
+  &.right{
+    justify-content: flex-end;
   }
 }
 

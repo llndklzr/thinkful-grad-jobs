@@ -1,5 +1,10 @@
 .create-story-wrapper {
-  height: calc(100% - 70px); // forces footer to the very bottom
+  //height: 100%; // forces footer to the very bottom
+  position: absolute;
+  bottom: 0;
+  top: 7%;
+  left: 0;
+  right: 0;
   .create-story-title {
     text-align: center;
   }
@@ -87,3 +92,11 @@
     }
   }
 }
+
+// .story-form-1-wrapper{
+//   position: absolute;
+//   bottom: 0;
+//   right: 10px;
+//   left: 10px;
+//   top: 20%;
+// }

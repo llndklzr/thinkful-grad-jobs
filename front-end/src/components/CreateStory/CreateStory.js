@@ -3,6 +3,7 @@ import StoryFormPage1 from "./StoryFormPage1";
 import StoryFormPage2 from "./StoryFormPage2";
 import StoryFormPage3 from "./StoryFormPage3";
 import StoryFormPage4 from "./StoryFormPage4";
+import DLBtn from "../DLBtn";
 
 export default function CreateStory() {
   const initialFormData = {
@@ -55,6 +56,12 @@ export default function CreateStory() {
       [target.name]: target.value,
     });
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormPage((prev) => prev + 1);
+  };
+
   return (
     <div className="create-story-wrapper">
       <h2 className="create-story-title">Create Story Page {formPage}</h2>
@@ -77,7 +84,7 @@ export default function CreateStory() {
         ></span>
       </div>
       {formPage === 1 && (
-        <div>
+        <div className="story-form-1-wrapper">
           <StoryFormPage1
             handleChange={handleChange}
             formData={formData}
@@ -113,6 +120,9 @@ export default function CreateStory() {
           />
         </div>
       )}
+      <div className="btn-wrapper bottom right">
+        <DLBtn text="Next" clickHandler={handleSubmit}/>
+      </div>
     </div>
   );
 }

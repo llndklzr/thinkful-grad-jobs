@@ -141,10 +141,10 @@ export default function StoryFormPage1({
             </p>
           </div>
         </div>
-        <div className="btn-wrapper bottom left">
-          <DLBtn text="Next" clickHandler={handleSubmit}/>
-        </div>
       </form>
+      <div className="btn-wrapper bottom right">
+        <DLBtn text="Next" clickHandler={handleSubmit}/>
+      </div>
     </div>
   );
 }

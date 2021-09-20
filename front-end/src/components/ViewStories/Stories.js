@@ -3,7 +3,7 @@ import DLBtn from "../DLBtn";
 import {useHistory} from "react-router-dom";
 import LoadingScreen from "../LoadingScreen"
 
-function Stories({stories, loadingState}) {
+function Stories({stories, loadingState}){
 
   const history = useHistory();
 
@@ -21,11 +21,15 @@ function Stories({stories, loadingState}) {
     );
   })
 
+  const noResults = <div className="no-results">No results matching your search</div>
+
+  const container = stories.length !== 0 ? grads : noResults;
+
   return (
     <div>
       <div className="stories-wrapper">
         <h4 className="recent-stories-title">Recent Stories</h4>
-        {loadingState ? <LoadingScreen classname="small"/> : grads}
+        {loadingState ? <LoadingScreen classname="small"/> : container}
       </div>
     </div>
   ) 

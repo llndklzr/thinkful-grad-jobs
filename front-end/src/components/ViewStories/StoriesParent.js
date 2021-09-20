@@ -28,8 +28,10 @@ export default function StoriesParent(){
 
   const retrieveGrads = async (e) =>{
     e.preventDefault();
-    console.log('WE GOT CALLED')
-    return await filterResultsForStories(filters, abortController.signal).then((res)=>setStories(res));
+    setLoadingState(true);
+    return await filterResultsForStories(filters, abortController.signal)
+      .then((res)=>setStories(res))
+      .then(()=>setLoadingState(false));
   }
 
   return (

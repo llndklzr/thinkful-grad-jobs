@@ -30,21 +30,20 @@
   justify-content: center;
   align-items: center;
   height: 93vh;
-  .small{
-    height: auto;
+  &.small{
+    height: 200px;
   }
 }
 
-.main-body{
-  height: calc(100% -50px -7%); // forces footer to the bottom of the page
-}
+// .main-body{
+//   height: 85%; // forces footer to the bottom of the page
+// }
 
 footer{
-  height: 50px;
+  height: 5%;
   width: 100%;
   bottom: 0;
   position: sticky;
-
 }
 
 .small-screen{
