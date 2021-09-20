@@ -44,6 +44,10 @@ footer{
   width: 100%;
   bottom: 0;
   position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
 }
 
 .small-screen{

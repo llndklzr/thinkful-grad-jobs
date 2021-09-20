@@ -22,7 +22,6 @@ export default function LoginUser(){
     });
     setError(null);
   }
-  console.log("FORM", form)
 
   const submitHandler = async (e) => {
     e.preventDefault();
