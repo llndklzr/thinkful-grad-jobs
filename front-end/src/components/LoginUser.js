@@ -22,6 +22,7 @@ export default function LoginUser(){
     });
     setError(null);
   }
+  console.log("FORM", form)
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -76,7 +77,7 @@ export default function LoginUser(){
         <br />
       </form>
       <div className="btn-wrapper">
-        <button className="btn auth">Sign In</button>
+        <button className="btn auth" onClick={submitHandler}>Sign In</button>
       </div>
     </div>
   );
