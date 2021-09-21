@@ -84,13 +84,18 @@ export default function CreateStory() {
         ></span>
       </div>
       {formPage === 1 && (
-        <div className="story-form-1-wrapper">
-          <StoryFormPage1
-            handleChange={handleChange}
-            formData={formData}
-            setFormPage={setFormPage}
-          />
-        </div>
+        <>
+          <div className="story-form-1-wrapper">
+            <StoryFormPage1
+              handleChange={handleChange}
+              formData={formData}
+              setFormPage={setFormPage}
+            />
+          </div>
+          <div className="btn-wrapper bottom right">
+            <DLBtn text="Next" clickHandler={handleSubmit}/>
+          </div>
+        </>
       )}
       {formPage === 2 && (
         <div>
@@ -120,9 +125,6 @@ export default function CreateStory() {
           />
         </div>
       )}
-      <div className="btn-wrapper bottom right">
-        <DLBtn text="Next" clickHandler={handleSubmit}/>
-      </div>
     </div>
   );
 }

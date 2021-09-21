@@ -35,9 +35,9 @@
   }
 }
 
-// .main-body{
-//   height: 85%; // forces footer to the bottom of the page
-// }
+.main-body{
+  min-height: 88%; // 100vh - (navbar + footer)
+}
 
 footer{
   height: 5%;

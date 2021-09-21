@@ -1,12 +1,9 @@
 .create-story-wrapper {
-  //height: 100%; // forces footer to the very bottom
-  position: absolute;
-  bottom: 0;
-  top: 7%;
-  left: 0;
-  right: 0;
+  min-height: 88vh;
   .create-story-title {
     text-align: center;
+    margin: 0;
+    padding: 10px 0 10px 0;
   }
   .create-story-breadcrumbs {
     display: flex;
@@ -93,10 +90,6 @@
   }
 }
 
-// .story-form-1-wrapper{
-//   position: absolute;
-//   bottom: 0;
-//   right: 10px;
-//   left: 10px;
-//   top: 20%;
-// }
+.story-form-1-wrapper{
+  height: 100%;
+}
