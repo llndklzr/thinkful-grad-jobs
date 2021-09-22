@@ -33,17 +33,17 @@ export default function StoryFormPage3({ setFormPage, formData, setFormData }) {
 
   return (
     <div className="form-group">
-      <p>
+      <p className="ux-writing">
         The tabs below represent aspects of your story. Move the tabs from left
         to right of the aspects you feel were critical to your hiring. Arrange
         the tabs in order of importance (top to bottom); you don't have to use
         all the tabs.
       </p>
       <DragNDrop list={list} setList={setList} />
-      <div className="btn-wrapper split bottom">
+      {/* <div className="btn-wrapper split bottom">
         <DLBtn text="Edit" clickHandler={goBack} classname="flip-icon" icon="<"/>
         <DLBtn text="Next" clickHandler={handleSubmit}/>
-      </div>
+      </div> */}
     </div>
   );
 }

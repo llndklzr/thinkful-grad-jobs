@@ -67,7 +67,7 @@ function DragNDrop({ list, setList }) {
           }
           onDragOver={(e) => e.preventDefault()}
         >
-          <h2 className="group-title">{group.title}</h2>
+          {/* <h2 className="group-title">{group.title}</h2> */}
           {group.items.map((item, itemIndex) => (
             <div
               draggable

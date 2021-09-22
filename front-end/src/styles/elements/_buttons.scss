@@ -8,7 +8,8 @@
     justify-content: space-between;
   }
   &.bottom{
-    bottom: 0;
+    height: 10000px;
+    align-items: flex-end;
   }
   &.right{
     justify-content: flex-end;

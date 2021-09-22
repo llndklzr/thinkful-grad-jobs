@@ -62,6 +62,11 @@ export default function CreateStory() {
     setFormPage((prev) => prev + 1);
   };
 
+  const goBack = (e) =>{
+    e.preventDefault();
+    setFormPage((prev) => prev - 1);
+  }
+
   return (
     <div className="create-story-wrapper">
       <h2 className="create-story-title">Create Story Page {formPage}</h2>
@@ -98,23 +103,35 @@ export default function CreateStory() {
         </>
       )}
       {formPage === 2 && (
-        <div>
-          <StoryFormPage2
-            handleChange={handleChange}
-            formData={formData}
-            setFormPage={setFormPage}
-          />
-        </div>
+        <>
+          <div>
+            <StoryFormPage2
+              handleChange={handleChange}
+              formData={formData}
+              setFormPage={setFormPage}
+            />
+          </div>
+          <div className="btn-wrapper bottom split">
+            <DLBtn text="Edit" icon="<" classname="flip-icon" clickHandler={goBack} />
+            <DLBtn text="Next" clickHandler={handleSubmit}/>
+          </div>
+        </>
       )}
       {formPage === 3 && (
-        <div>
-          <StoryFormPage3
-            handleChange={handleChange}
-            formData={formData}
-            setFormData={setFormData}
-            setFormPage={setFormPage}
-          />
-        </div>
+        <>
+          <div>
+            <StoryFormPage3
+              handleChange={handleChange}
+              formData={formData}
+              setFormData={setFormData}
+              setFormPage={setFormPage}
+            />
+          </div>
+          <div className="btn-wrapper bottom split">
+            <DLBtn text="Edit" icon="<" classname="flip-icon" clickHandler={goBack} />
+            <DLBtn text="Next" clickHandler={handleSubmit}/>
+          </div>
+        </>
       )}
       {formPage === 4 && (
         <div>

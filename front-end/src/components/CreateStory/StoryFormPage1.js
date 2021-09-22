@@ -142,9 +142,9 @@ export default function StoryFormPage1({
           </div>
         </div>
       </form>
-      <div className="btn-wrapper bottom right">
+      {/* <div className="btn-wrapper bottom right">
         <DLBtn text="Next" clickHandler={handleSubmit}/>
-      </div>
+      </div> */}
     </div>
   );
 }

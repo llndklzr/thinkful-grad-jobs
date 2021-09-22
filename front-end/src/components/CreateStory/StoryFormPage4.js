@@ -33,10 +33,10 @@ export default function StoryFormPage4({ formData, setFormPage }) {
           grad={formData}
         />
       )}
-      <div className="btn-wrapper split">
+      {/* <div className="btn-wrapper split">
         <DLBtn text="Edit" clickHandler={goBack} classname="flip-icon" icon="<"/>
         <DLBtn text="Next" />
-      </div>
+      </div> */}
     </div>
   );
 }

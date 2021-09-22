@@ -21,7 +21,7 @@ function App() {
       </>
     </div>
   )
-  return windowSize.width >= 1000 ? desktop : <SmallScreen />;
+  return windowSize.width >= 1000 && windowSize.height>=700 ? desktop : <SmallScreen />;
 }
 
 export default App;
