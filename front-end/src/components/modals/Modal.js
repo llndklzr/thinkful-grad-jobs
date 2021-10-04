@@ -5,7 +5,7 @@ import NetworkingModal from "./NetworkingModal";
 import CoachingModal from "./CoachingModal";
 import { BsX } from "react-icons/bs";
 
-export default function Modal({ whichModal, setWhichModal, grad }) {
+export default function Modal({ whichModal, setWhichModal, grad, createMode, setFormData }) {
   if (!whichModal) return null;
 
   return ReactDom.createPortal(
@@ -15,7 +15,7 @@ export default function Modal({ whichModal, setWhichModal, grad }) {
         <button className="modal-btn" onClick={() => setWhichModal("")}>
           <BsX />
         </button>
-        {whichModal === "location" ? <LocationModal grad={grad} /> : null}
+        {whichModal === "location" ? <LocationModal grad={grad} createMode={createMode} setFormData={setFormData} setWhichModal={setWhichModal}/> : null}
         {whichModal === "networking" ? <NetworkingModal grad={grad}/> : null}
         {whichModal === "coaching/mentorship" ? <CoachingModal grad={grad}/> : null}
       </div>

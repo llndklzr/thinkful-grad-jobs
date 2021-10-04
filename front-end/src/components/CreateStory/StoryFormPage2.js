@@ -55,10 +55,6 @@ export default function StoryFormPage2({ setFormPage }) {
             />
           </div>
         </div>
-        {/* <div className="btn-wrapper split bottom">
-          <DLBtn text="Edit" clickHandler={goBack} classname="flip-icon" icon="<"/>
-          <DLBtn text="Next" clickHandler={handleSubmit}/>
-        </div> */}
       </form>
     </div>
   );

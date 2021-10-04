@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 
 function DragNDrop({ list, setList }) {
-  // const [list, setList] = useState(data);
+  //const [list, setList] = useState(data);
   const [dragging, setDragging] = useState(false);
 
   const dragItem = useRef();
@@ -67,7 +67,6 @@ function DragNDrop({ list, setList }) {
           }
           onDragOver={(e) => e.preventDefault()}
         >
-          {/* <h2 className="group-title">{group.title}</h2> */}
           {group.items.map((item, itemIndex) => (
             <div
               draggable
