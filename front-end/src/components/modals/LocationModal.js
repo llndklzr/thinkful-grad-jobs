@@ -19,11 +19,13 @@ export default function LocationModal({grad, createMode = false, setFormData, se
   }
 
   const handleChange = ({ target }) => {
-    setLocation({
-      ...location,
-      [target.name]: target.value,
-    });
-    console.log("location ->", location)
+    if(createMode){
+      setLocation({
+        ...location,
+        [target.name]: target.value,
+      });
+      console.log("location ->", location)
+    }
   };
   
 
@@ -49,7 +51,6 @@ export default function LocationModal({grad, createMode = false, setFormData, se
             <div className="radio-wrapper">
               <label className="radio-label">Remote
                 <input 
-                  readOnly={ !createMode } 
                   onChange={handleChange}
                   className="radio-btn" 
                   type="radio" 
@@ -60,7 +61,6 @@ export default function LocationModal({grad, createMode = false, setFormData, se
               </label>
               <label className="radio-label">Hybrid
                 <input 
-                  readOnly={ !createMode } 
                   onChange={handleChange}
                   className="radio-btn" 
                   type="radio" 
@@ -71,7 +71,6 @@ export default function LocationModal({grad, createMode = false, setFormData, se
               </label>
               <label className="radio-label">Home
                 <input 
-                  readOnly={ !createMode }
                   onChange={handleChange}
                   className="radio-btn" 
                   type="radio" 
@@ -86,7 +85,6 @@ export default function LocationModal({grad, createMode = false, setFormData, se
             <div className="radio-wrapper">
               <label className="radio-label">Yes
                 <input 
-                  readOnly={ !createMode } 
                   onChange={handleChange} 
                   name="willingToRelocate" 
                   className="radio-btn" 
@@ -96,7 +94,6 @@ export default function LocationModal({grad, createMode = false, setFormData, se
               </label>
               <label className="radio-label">No
                 <input 
-                readOnly={ !createMode } 
                 onChange={handleChange} 
                 name="willingToRelocate" 
                 className="radio-btn" 
@@ -107,7 +104,11 @@ export default function LocationModal({grad, createMode = false, setFormData, se
             </div>
           </div>
         </div>
-        <DLBtn text="Save" clickHandler={handleSubmit}/>
+        {createMode ? 
+          <div className="btn-wrapper margin-for-modal">
+            <DLBtn text="Save" clickHandler={handleSubmit}/>
+          </div>
+        : null}
       </form>
     </>
   )
