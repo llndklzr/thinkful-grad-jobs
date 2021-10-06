@@ -10,7 +10,7 @@ function Stories({stories, loadingState}){
   const grads = stories.map((story) => {
     const { first_name, last_name, job_title, business_name } = story;
     return (
-      <div className="grad-div">
+      <div key={story.graduate_id} className="grad-div">
         <span className="story-name">{first_name} {last_name}</span> &nbsp;
         <div className="story-grad-job-details">
           <span className="story-title">{job_title},&nbsp;</span>

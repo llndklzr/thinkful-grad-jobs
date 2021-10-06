@@ -39,7 +39,7 @@ export default function CreateStory() {
     storyAbstract: "",
     enabled: [],
     disabled: [
-      "Coaching/Mentoring",
+      "Coaching/Mentorship",
       "Location",
       "Networking",
       "Transferred Skills",

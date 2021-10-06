@@ -3,10 +3,15 @@ import Modal from "../modals/Modal";
 
 export default function StoryFormPage4({ formData, setFormData }) {
   const [whichModal, setWhichModal] = useState(null);
+
   const handleModalOpen = ({ target }) => {
+    console.log(target.innerText)
     setWhichModal(target.innerText.toLowerCase());
   };
 
+
+  
+  console.log("GRAD DATA", formData);
 
   return (
     <div className="form-group">

@@ -8,6 +8,7 @@ import { BsX } from "react-icons/bs";
 export default function Modal({ whichModal, setWhichModal, grad, createMode, setFormData }) {
   if (!whichModal) return null;
 
+console.log("MODAL", whichModal);
   return ReactDom.createPortal(
     <>
       <div className="overlay" />
@@ -16,8 +17,8 @@ export default function Modal({ whichModal, setWhichModal, grad, createMode, set
           <BsX />
         </button>
         {whichModal === "location" ? <LocationModal grad={grad} createMode={createMode} setFormData={setFormData} setWhichModal={setWhichModal}/> : null}
-        {whichModal === "networking" ? <NetworkingModal grad={grad}/> : null}
-        {whichModal === "coaching/mentorship" ? <CoachingModal grad={grad}/> : null}
+        {whichModal === "networking" ? <NetworkingModal grad={grad} createMode={createMode} setFormData={setFormData} setWhichModal={setWhichModal}/> : null}
+        {whichModal === "coaching/mentorship" ? <CoachingModal grad={grad} createMode={createMode} setFormData={setFormData} setWhichModal={setWhichModal}/> : null}
       </div>
     </>,
     document.getElementById("modal")

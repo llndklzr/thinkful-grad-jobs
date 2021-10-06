@@ -14,7 +14,6 @@ export default function LocationModal({grad, createMode = false, setFormData, se
     const tempGrad = {...grad}
     tempGrad.storyDetails.Location = location;
     setFormData(tempGrad);
-    console.log("Grad location -> ", grad.storyDetails.Location);
     setWhichModal("");
   }
 
@@ -24,7 +23,6 @@ export default function LocationModal({grad, createMode = false, setFormData, se
         ...location,
         [target.name]: target.value,
       });
-      console.log("location ->", location)
     }
   };
   
