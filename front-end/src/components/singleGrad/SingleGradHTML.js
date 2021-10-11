@@ -30,6 +30,8 @@ export default function SingleGradHTML({grad, setWhichModal}){
   function readMoreVisibility(){
     if(grad.story?.length<=420){
       return "invisible";
+    } else{
+      return ""
     }
   }
 
@@ -45,8 +47,12 @@ export default function SingleGradHTML({grad, setWhichModal}){
           <span className="story date">{grad.graduate_career_field} - {shortMonthYear(grad.graduation_date)}</span>
           <br/>
           <span className="story date hired">Hired In Field - {shortMonthYear(grad.hire_date)}</span>
-          <p className="story story-block">&nbsp;&nbsp;&nbsp;&nbsp;{trimStory(grad.story)}</p>
-          <DLBtn clickHandler={()=>setMainBlock(false)} modal="fullStory" text="Full Story" classname={`${readMoreVisibility()}`} />
+          <div className="story story-block">
+            &nbsp;&nbsp;&nbsp;&nbsp;{trimStory(grad.story)}
+            <div className={`btn-wrapper ${readMoreVisibility()}`}>
+              <DLBtn clickHandler={()=>setMainBlock(false)} text="Full Story" classname={`${readMoreVisibility()}`} />
+            </div>
+          </div>
         </div>
         <div className="hiring-details-container">
           <p className="story my-story-header">My Hiring Details</p>

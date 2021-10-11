@@ -29,7 +29,6 @@ export default function LocationModal({grad, createMode = false, setFormData, se
 
   return(
     <>
-    
       <h3 className="modal-header">Location</h3>
       {createMode ? <p className="ux-writing">
           Use this space to discuss how location played into your hiring process.
