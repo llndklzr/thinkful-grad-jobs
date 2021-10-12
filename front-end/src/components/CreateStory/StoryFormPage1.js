@@ -129,9 +129,9 @@ export default function StoryFormPage1({
             </label>
             <textarea
               className="form-control"
-              id="storyAbstract"
-              name="storyAbstract"
-              value={formData.storyAbstract || ""}
+              id="story"
+              name="story"
+              value={formData.story || ""}
               onChange={handleChange}
               rows={5}
             />

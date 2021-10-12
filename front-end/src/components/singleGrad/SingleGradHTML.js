@@ -49,9 +49,9 @@ export default function SingleGradHTML({grad, setWhichModal}){
           <span className="story date hired">Hired In Field - {shortMonthYear(grad.hire_date)}</span>
           <div className="story story-block">
             &nbsp;&nbsp;&nbsp;&nbsp;{trimStory(grad.story)}
-            <div className={`btn-wrapper ${readMoreVisibility()}`}>
+            {/* <span className={`btn-wrapper ${readMoreVisibility()}`}> */}
               <DLBtn clickHandler={()=>setMainBlock(false)} text="Full Story" classname={`${readMoreVisibility()}`} />
-            </div>
+            {/* </span> */}
           </div>
         </div>
         <div className="hiring-details-container">

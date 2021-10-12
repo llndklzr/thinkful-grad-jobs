@@ -3,6 +3,8 @@ import StoryFormPage1 from "./StoryFormPage1";
 import StoryFormPage2 from "./StoryFormPage2";
 import StoryFormPage3 from "./StoryFormPage3";
 import StoryFormPage4 from "./StoryFormPage4";
+import SingleGradDisplay from "../singleGrad/SingleGradDisplay";
+import StoryBreadCrumbs from "./StoryBreadCrumbs";
 import DLBtn from "../DLBtn";
 
 export default function CreateStory() {
@@ -36,7 +38,7 @@ export default function CreateStory() {
     linkedInUrl: "",
     graduationDate: "",
     hireDate: "",
-    storyAbstract: "",
+    story: "",
     enabled: [],
     disabled: [
       "Coaching/Mentorship",
@@ -94,28 +96,13 @@ export default function CreateStory() {
 
   return (
     <div className="create-story-wrapper">
-      <div className="create-stroy-title-wrapper">
-        <span className="create-story-title">Create Story</span>
-        {formPage === 1 ? null : <span>&nbsp; &#40;Cont.&#41;</span>}
-      </div>
-      <div className="create-story-breadcrumbs">
-        <span
-          className={formPage === 1 ? "dot dot-active" : "dot"}
-          onClick={() => setFormPage(1)}
-        ></span>
-        <span
-          className={formPage === 2 ? "dot dot-active" : "dot"}
-          onClick={() => setFormPage(2)}
-        ></span>
-        <span
-          className={formPage === 3 ? "dot dot-active" : "dot"}
-          onClick={() => setFormPage(3)}
-        ></span>
-        <span
-          className={formPage === 4 ? "dot dot-active" : "dot"}
-          onClick={() => setFormPage(4)}
-        ></span>
-      </div>
+      {formPage < 5 ?
+        <div className="create-stroy-title-wrapper">
+         <span className="create-story-title">Create Story</span>
+          {formPage === 1 ? null : <span>&nbsp; &#40;Cont.&#41;</span>}
+        </div>
+      : null}
+      <StoryBreadCrumbs formPage={formPage} setFormPage={setFormPage}/>
       {formPage === 1 && (
         <>
           <div className="story-form-1-wrapper">
@@ -176,6 +163,16 @@ export default function CreateStory() {
           <div className="btn-wrapper bottom split">
             <DLBtn text="Edit" icon="<" classname="flip-icon" clickHandler={goBack} />
             <DLBtn text="Next" clickHandler={handleSubmit}/>
+          </div>
+        </>
+      )}
+      {formPage === 5 && (
+        <>
+          <div>
+            <SingleGradDisplay formData={formData}/>
+          </div>
+          <div className="btn-wrapper bottom">
+            <DLBtn text="Publish this story?" clickHandler={handleSubmit}/>
           </div>
         </>
       )}
