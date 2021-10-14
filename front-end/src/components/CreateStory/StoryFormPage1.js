@@ -60,9 +60,9 @@ export default function StoryFormPage1({
             <input
               className="form-control"
               type="text"
-              id="jobTitle"
-              name="jobTitle"
-              value={formData.jobTitle || ""}
+              id="job_title"
+              name="job_title"
+              value={formData.job_title || ""}
               onChange={handleChange}
             />
           </div>
@@ -94,33 +94,33 @@ export default function StoryFormPage1({
           </div>
           <div className="form-grid-item" />
           <div className="form-grid-item">
-            <label className="form-label" htmlFor="graduationDate">
+            <label className="form-label" htmlFor="graduation_date">
               Graduation Date
             </label>
             <input
               className="form-control"
               type="date"
-              id="graduationDate"
-              name="graduationDate"
-              value={formData.graduationDate || ""}
+              id="graduation_date"
+              name="graduation_date"
+              value={formData.graduation_date || ""}
               onChange={handleChange}
             />
           </div>
           <div className="form-grid-item">
-            <label className="form-label" htmlFor="hireDate">
+            <label className="form-label" htmlFor="hire_date">
               Hire Date
             </label>
             <input
               className="form-control"
               type="date"
-              id="hireDate"
-              name="hireDate"
-              value={formData.hireDate || ""}
+              id="hire_date"
+              name="hire_date"
+              value={formData.hire_date || ""}
               onChange={handleChange}
             />
           </div>
           <div className="form-grid-item grid-item-full-width">
-            <label className="form-label" htmlFor="storyAbstract">
+            <label className="form-label" htmlFor="story">
               <p>Use this space to tell us about your new career.</p>
               <p>
                 This is a good place for any of your general thoughts, feelings,

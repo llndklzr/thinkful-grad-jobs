@@ -3,15 +3,16 @@ import StoryFormPage1 from "./StoryFormPage1";
 import StoryFormPage2 from "./StoryFormPage2";
 import StoryFormPage3 from "./StoryFormPage3";
 import StoryFormPage4 from "./StoryFormPage4";
-import SingleGradDisplay from "../singleGrad/SingleGradDisplay";
+import StoryFormPage5 from "./StoryFormPage5";
 import StoryBreadCrumbs from "./StoryBreadCrumbs";
 import DLBtn from "../DLBtn";
 
 export default function CreateStory() {
   const initialFormData = {
-    name: "",
+    first_name: "",
+    last_name: "",
     course: "",
-    jobTitle: "",
+    job_title: "",
     storyDetails: {
       Location: {
         willingToRelocate: "",
@@ -36,8 +37,8 @@ export default function CreateStory() {
       },
     },
     linkedInUrl: "",
-    graduationDate: "",
-    hireDate: "",
+    graduation_date: "",
+    hire_date: "",
     story: "",
     enabled: [],
     disabled: [
@@ -169,7 +170,7 @@ export default function CreateStory() {
       {formPage === 5 && (
         <>
           <div>
-            <SingleGradDisplay formData={formData}/>
+            <StoryFormPage5 setFormPage={setFormPage} formData={formData}/>
           </div>
           <div className="btn-wrapper bottom">
             <DLBtn text="Publish this story?" clickHandler={handleSubmit}/>

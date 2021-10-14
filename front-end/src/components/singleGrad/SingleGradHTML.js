@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { shortMonthYear } from "../../utils/dateHandler";
 import DLBtn from "../DLBtn";
 import icons from "../../styles/icons/icons";
-import { BsX } from "react-icons/bs";
+import { BsX, BsPencil} from "react-icons/bs";
 
-export default function SingleGradHTML({grad, setWhichModal}){
+export default function SingleGradHTML({grad, setWhichModal, createMode = false, setFormPage}){
   const [renderMainBlock, setMainBlock] = useState(true);
-  
+  console.log(grad)
   const enabledDetails = grad.enabled?.map((detail, index) =>{
     return(
       <a onClick={()=>setWhichModal(detail.toLowerCase())} className="story sub-details" key={index}>{detail}</a>
@@ -43,6 +43,7 @@ export default function SingleGradHTML({grad, setWhichModal}){
     <>
       <div className="main-container">
         <div className="my-story-container">
+          {createMode ? <span onClick={()=>setFormPage(1)} className="edit-button"><BsPencil />&nbsp;</span> : null}
           <span className="story my-story-header">My Story </span>
           <span className="story date">{grad.graduate_career_field} - {shortMonthYear(grad.graduation_date)}</span>
           <br/>
@@ -55,13 +56,18 @@ export default function SingleGradHTML({grad, setWhichModal}){
           </div>
         </div>
         <div className="hiring-details-container">
-          <p className="story my-story-header">My Hiring Details</p>
+          
+          <span className="story my-story-header">
+            {createMode ? <span onClick={()=>setFormPage(3)} className="edit-button"><BsPencil />&nbsp;</span> : null}
+            My Hiring Details
+          </span>
           {enabledDetails}
           {disabledDetails}
         </div>
       </div>
       <div>
-        <p className="story my-story-header">My Hiring Essentials</p>
+        {createMode ? <span onClick={()=>setFormPage(2)} className="edit-button"><BsPencil />&nbsp;</span> : null}
+        <span className="story my-story-header">My Hiring Essentials</span>
         <div className="hiring-essentials">
           <a onClick={() => setWhichModal("resume")} className={disableAnchor(grad.resumeTitle)}>My Resume</a>
           <a href={grad.portfolioUrl} className={disableAnchor(grad.portfolioUrl)}>My Portfolio/Projects</a>
