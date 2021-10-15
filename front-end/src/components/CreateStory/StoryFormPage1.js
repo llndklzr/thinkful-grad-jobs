@@ -5,7 +5,8 @@ export default function StoryFormPage1({
   formData,
   formPage,
   setFormPage,
-}) {
+}) { 
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormPage((prev) => prev + 1);
@@ -31,14 +32,14 @@ export default function StoryFormPage1({
             />
           </div>
           <div className="form-grid-item">
-            <label className="form-label" htmlFor="course">
-              Career Field
+            <label className="form-label" htmlFor="graduate_career_field">
+              Thinkful Course
             </label>
             <select
               className="form-control"
-              id="course"
-              name="course"
-              value={formData.course || ""}
+              id="graduate_career_field"
+              name="graduate_career_field"
+              value={formData.graduate_career_field || ""}
               onChange={handleChange}
               required
             >
@@ -54,8 +55,48 @@ export default function StoryFormPage1({
             </select>
           </div>
           <div className="form-grid-item">
-            <label className="form-label" htmlFor="jobTitle">
-              Current Job Title
+            <label className="form-label" htmlFor="linkedInUrl">
+              LinkedIn (optional)
+            </label>
+            <input
+              className="form-control"
+              type="url"
+              id="linkedInUrl"
+              name="linkedInUrl"
+              value={formData.linkedInUrl || ""}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-grid-item">
+            <label className="form-label" htmlFor="graduation_date">
+              Graduation Date
+            </label>
+            <input
+              className="form-control"
+              type="date"
+              id="graduation_date"
+              name="graduation_date"
+              value={formData.graduation_date || ""}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-grid-item">
+            <label className="form-label" htmlFor="graduation_date">
+              Company
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              id="business_name"
+              name="business_name"
+              value={formData.business_name || ""}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-grid-item">
+            <label className="form-label" htmlFor="job_title">
+              Job Title
             </label>
             <input
               className="form-control"
@@ -68,7 +109,7 @@ export default function StoryFormPage1({
           </div>
           <div className="form-grid-item">
             <label className="form-label" htmlFor="location">
-              Location
+              Job Location
             </label>
             <input
               className="form-control"
@@ -76,33 +117,6 @@ export default function StoryFormPage1({
               id="location"
               name="location"
               value={formData.location || ""}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-grid-item">
-            <label className="form-label" htmlFor="linkedInUrl">
-              LinkedIn (optional)
-            </label>
-            <input
-              className="form-control"
-              type="url"
-              id="linkedInUrl"
-              name="linkedInUrl"
-              value={formData.linkedInUrl || ""}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-grid-item" />
-          <div className="form-grid-item">
-            <label className="form-label" htmlFor="graduation_date">
-              Graduation Date
-            </label>
-            <input
-              className="form-control"
-              type="date"
-              id="graduation_date"
-              name="graduation_date"
-              value={formData.graduation_date || ""}
               onChange={handleChange}
             />
           </div>
@@ -141,9 +155,6 @@ export default function StoryFormPage1({
           </div>
         </div>
       </form>
-      {/* <div className="btn-wrapper bottom right">
-        <DLBtn text="Next" clickHandler={handleSubmit}/>
-      </div> */}
     </div>
   );
 }

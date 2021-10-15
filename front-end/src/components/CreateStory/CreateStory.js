@@ -13,6 +13,7 @@ export default function CreateStory() {
     last_name: "",
     course: "",
     job_title: "",
+    graduate_career_field: "",
     storyDetails: {
       Location: {
         willingToRelocate: "",
@@ -38,6 +39,8 @@ export default function CreateStory() {
     },
     linkedInUrl: "",
     graduation_date: "",
+    business_name: "",
+    address: "",
     hire_date: "",
     story: "",
     enabled: [],

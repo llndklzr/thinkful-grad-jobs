@@ -6,7 +6,7 @@ export default function StoryFormPage5({formData, setFormPage}){
   const [whichModal, setWhichModal] = useState("");
   return (
     <>
-      <SingleGradHTML setWhichModal={setWhichModal} whichModal={whichModal} grad={formData} createMode={true} setFormPage={setFormPage}/> 
+      <SingleGradHTML setWhichModal={setWhichModal} whichModal={whichModal} grad={formData} createMode={false} setFormPage={setFormPage}/> 
       <Modal whichModal={whichModal} setWhichModal={setWhichModal} grad={formData}/>
     </>
   )
