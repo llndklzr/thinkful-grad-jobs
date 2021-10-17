@@ -1,32 +1,46 @@
 @import"./variables";
 
 .auth{
-  &.form-wrapper{
+
+  &.page-wrapper{
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
   }
 
-  &.page-wrapper{
-    margin: 6% 0 0 0;
+  &.form-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: $whyte;
+    width: 20%;
+    height: 50%;
+    padding: 60px;
+    border: 3px solid $cool-purp;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    margin: 10px 0 20px 0;
   }
 
   &.page-header{
     display: flex;
     justify-content: center;
     font-size: 36pt;
-    margin: 2px;
   }
 
   &.input-wrapper{
     padding: 5px 0 5px 0;
-    width: 300px;
+    width: 100%;
   }
 
   &.input{
     width: 100%;
+    height: 40px;
+    border: 2px solid $blaq;
     box-sizing: border-box;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: $input-body;
     &.failure{
       border: 1px solid $danger-red;
       font-size: 10pt;
@@ -59,7 +73,6 @@
     display: flex;
     justify-content: center;
     font-family: $font-roboto;
-
   }
   &.sign-in{
     color: $cool-purp;

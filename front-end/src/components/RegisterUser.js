@@ -79,6 +79,7 @@ export default function RegisterUser(){
   return(
     <div className="auth page-wrapper">
       <h3 className="auth page-header">Sign Up</h3>
+      <span>Create an account to share your story with fellow grads.</span>
       <form className="auth form-wrapper" onSubmit={submitHandler}>
           <div className="auth input-wrapper">
             <label>Email</label>
@@ -119,12 +120,13 @@ export default function RegisterUser(){
           </div>
         </form>
         <div className="btn-wrapper">
-          <DLBtn text="Submit" classname="btn" clickHandler={submitHandler}/>
+          <DLBtn text="Create Account" classname="btn" clickHandler={submitHandler}/>
         </div>
         <br />
         <div className="auth register-container">
-          Already have an account?&nbsp;
-          <Link className="auth sign-in" to="/login">Sign in</Link>
+          Click&nbsp;
+          <Link className="auth sign-in" to="/login">here</Link>
+          &nbsp;if you already have an account.
         </div>
     </div>
   )

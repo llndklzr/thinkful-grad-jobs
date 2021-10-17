@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { loginUser } from "../utils/apiFetcher";
 import handleSessionStorage from "../utils/handleSessionStorage";
 import DLBtn from "../components/DLBtn";
@@ -47,11 +47,12 @@ export default function LoginUser(){
 
   return (
     <div className="auth page-wrapper">
-      {/* <h3 className="auth page-header">Sign In</h3> */}
+      <h3 className="auth page-header">Welcome Back</h3>
+      <span>Enter your account info to edit your story.</span>
       <form className="auth form-wrapper" onSubmit={submitHandler}>
         {error ? errorMessage : null}
         <div className="auth input-wrapper">
-          <label>Your Email</label>
+          <label>Email</label>
           <br/>
           <input
             className={error ? "auth input failure" : "auth input"}
@@ -76,8 +77,14 @@ export default function LoginUser(){
         <br />
       </form>
       <div className="btn-wrapper">
-        <button className="btn auth" onClick={submitHandler}>Sign In</button>
+        <DLBtn text="Sign In" clickHandler={submitHandler}/>
       </div>
+      <br/>
+      <div className="auth register-container">
+          Click&nbsp;
+          <Link className="auth sign-in" to="/register">here</Link>
+          &nbsp;if you need to create an account.
+        </div>
     </div>
   );
 }
