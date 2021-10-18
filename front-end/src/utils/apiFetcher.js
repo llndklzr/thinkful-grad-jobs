@@ -70,7 +70,20 @@ export async function getGradsByBusinessId(businessId, signal) {
   return await fetchJson(url, { headers: myHeaders, signal }, []);
 }
 
-export async function postStory(story, signal) {}
+export async function postStory(story, signal){
+  const url = new URL(`${API_BASE_URL}/stories`);
+  return await fetchJson(
+    url,
+    {
+      signal,
+      headers: myHeaders,
+      method: "POST",
+      credentials: "include",
+      body: JSON.stringify(story)
+    },
+    []
+  );
+}
 
 export async function registerUser(credentials, signal) {
   const url = new URL(`${API_BASE_URL}/graduates/register`);

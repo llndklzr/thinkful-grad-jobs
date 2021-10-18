@@ -6,7 +6,6 @@ import { BsX, BsPencil} from "react-icons/bs";
 
 export default function SingleGradHTML({grad, setWhichModal, createMode = false, setFormPage}){
   const [renderMainBlock, setMainBlock] = useState(true);
-  console.log(grad)
   const enabledDetails = grad.enabled?.map((detail, index) =>{
     return(
       <a onClick={()=>setWhichModal(detail.toLowerCase())} className="story sub-details" key={index}>{detail}</a>
@@ -50,9 +49,9 @@ export default function SingleGradHTML({grad, setWhichModal, createMode = false,
           <span className="story date hired">Hired In Field - {shortMonthYear(grad.hire_date)}</span>
           <div className="story story-block">
             &nbsp;&nbsp;&nbsp;&nbsp;{trimStory(grad.story)}
-            {/* <span className={`btn-wrapper ${readMoreVisibility()}`}> */}
-              <DLBtn clickHandler={()=>setMainBlock(false)} text="Full Story" classname={`${readMoreVisibility()}`} />
-            {/* </span> */}
+            <span className={`btn-wrapper full-story-btn-wrapper ${readMoreVisibility()}`}>
+              <DLBtn clickHandler={()=>setMainBlock(false)} text="Full Story" classname={`full-story-btn ${readMoreVisibility()}`} />
+            </span>
           </div>
         </div>
         <div className="hiring-details-container">

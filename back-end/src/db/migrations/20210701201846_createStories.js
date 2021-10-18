@@ -26,7 +26,7 @@ exports.up = function (knex) {
     table.string("resumeTitle");
     table.string("portfolioUrl");
     table.string("coverLetterTitle");
-    table.date("created_at");
+    table.timestamps(true, true);
   });
 };
 

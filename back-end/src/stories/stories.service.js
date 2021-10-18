@@ -20,8 +20,14 @@ function getStoryByGradId(gradId){
     .then(grad=>grad[0])
 }
 
+function createStory(parsedStory){
+  return knex()
+  // we have some transaction here
+}
+
 module.exports = {
   list,
   getStoryByGradId,
-  listWithGrads
+  listWithGrads,
+  createStory
 };
