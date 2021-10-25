@@ -20,9 +20,28 @@ function getStoryByGradId(gradId){
     .then(grad=>grad[0])
 }
 
-function createStory(parsedStory){
-  return knex()
-  // we have some transaction here
+function createStory(story, grad, bizz){
+  let gradId;
+  let bizzId;
+  return knex.transaction(trx =>{
+    return trx
+      .insert(grad, "graduate_id")
+      .into("graduates")
+      .then(id => {
+        gradId = id
+        return trx.insert(bizz, "business_id")
+          .into("businesses")
+          .then(id =>{
+            bizzId = id;
+            return trx.insert({
+              ...story,
+              business_id: Number(bizzId),
+              graduate_id: Number(gradId)
+            })
+            .into("stories").returning("*")
+          })
+      })
+  })
 }
 
 module.exports = {

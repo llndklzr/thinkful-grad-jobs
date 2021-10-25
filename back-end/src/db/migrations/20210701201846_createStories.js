@@ -12,6 +12,7 @@ exports.up = function (knex) {
     table.date("hire_date");
     table.string("story", 2000);
     table.integer("interview_count");
+    table.integer("application_count");
     table.string("job_title");
     table.integer("business_id").unsigned().notNullable();
     table
