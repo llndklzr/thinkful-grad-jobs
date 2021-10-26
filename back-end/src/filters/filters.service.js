@@ -31,7 +31,7 @@ function filterFromStories(filters){
       "g.*",
       "s.*"
     )
-    .orderBy("s.created_at")
+    .orderBy("s.created_at", "desc")
 }
 
 module.exports = {filterFromMap, filterFromStories}

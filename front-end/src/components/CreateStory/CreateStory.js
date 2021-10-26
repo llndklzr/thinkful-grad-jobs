@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {useHistory} from "react-router-dom";
 import StoryFormPage1 from "./StoryFormPage1";
 import StoryFormPage2 from "./StoryFormPage2";
 import StoryFormPage3 from "./StoryFormPage3";
@@ -6,6 +7,7 @@ import StoryFormPage4 from "./StoryFormPage4";
 import StoryFormPage5 from "./StoryFormPage5";
 import StoryBreadCrumbs from "./StoryBreadCrumbs";
 import DLBtn from "../DLBtn";
+import { postStory } from "../../utils/apiFetcher";
 
 export default function CreateStory() {
   const initialFormData = {
@@ -55,7 +57,7 @@ export default function CreateStory() {
 
   const [formData, setFormData] = useState(initialFormData);
   const [formPage, setFormPage] = useState(1);
-
+  const history = useHistory();
   const handleChange = ({ target }) => {
     setFormData({
       ...formData,
@@ -71,6 +73,15 @@ export default function CreateStory() {
   const goBack = (e) =>{
     e.preventDefault();
     setFormPage((prev) => prev - 1);
+  }
+
+  const finalSubmit = async (e) =>{
+    e.preventDefault();
+    await postStory(formData)
+      .then(()=>{
+        history.push("/stories")
+      })
+      .catch()
   }
 
   const handleSubmitForDragDrop = (e) => {
@@ -176,7 +187,7 @@ export default function CreateStory() {
             <StoryFormPage5 setFormPage={setFormPage} formData={formData}/>
           </div>
           <div className="btn-wrapper bottom">
-            <DLBtn text="Publish this story?" clickHandler={handleSubmit}/>
+            <DLBtn text="Publish this story?" clickHandler={finalSubmit}/>
           </div>
         </>
       )}

@@ -25,7 +25,7 @@ myHeaders.append("Access-Control-Allow-Origin", "http://localhost:3000");
 async function fetchJson(url, options, onCancel) {
   try {
     const response = await fetch(url, options);
-
+    
     if (response.status === 204) {
       return null;
     }
@@ -79,7 +79,7 @@ export async function postStory(story, signal){
       headers: myHeaders,
       method: "POST",
       credentials: "include",
-      body: JSON.stringify(story)
+      body: JSON.stringify({data: story})
     },
     []
   );

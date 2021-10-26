@@ -38,7 +38,9 @@ function createStory(story, grad, bizz){
               business_id: Number(bizzId),
               graduate_id: Number(gradId)
             })
-            .into("stories").returning("*")
+            .into("stories")
+            .then(trx.commit)
+            .catch(trx.rollback)
           })
       })
   })

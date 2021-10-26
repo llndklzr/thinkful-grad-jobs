@@ -8,6 +8,7 @@ async function list(request, response) {
   response.json({ data });
 }
 function parseData(req, res, next){
+  console.log(req.body.data)
   const {
     first_name,
     last_name,
@@ -75,13 +76,9 @@ function _validateProperties(properties){
 
 function validateStoryObj(req, res, next){
   const stor = res.locals.storyObj.story;
-  const intCount = res.locals.storyObj.interview_count;
-  const appCount = res.locals.storyObj.application_count;
   const jobTitle = res.locals.storyObj.job_title;
   const error = _validateProperties({
     stor,
-    intCount,
-    appCount,
     jobTitle
   })
   if(error){
@@ -130,8 +127,8 @@ function _areDates(testDates){ // returns the date property that failed
 }
 
 async function post(req, res){
-  const result = await service.createStory(res.locals.storyObj, res.locals.graduateObj, res.locals.businessObj);
-  res.sendStatus(result ? 200 : 500);
+  await service.createStory(res.locals.storyObj, res.locals.graduateObj, res.locals.businessObj);
+  res.sendStatus(204);
 }
 
 
