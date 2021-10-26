@@ -33,6 +33,7 @@ export default function StoriesParent(){
       .then((res)=>setStories(res))
       .then(()=>setLoadingState(false));
   }
+  console.log(document.documentElement.offsetHeight, window.pageYOffset)
 
   return (
     <>

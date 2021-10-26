@@ -49,12 +49,14 @@
         input {
           display: block;
         }
-        textarea {
+        .textarea-for-story {
           float: left;
           resize: none;
           width: 100%;
           box-sizing: border-box;
           border: 3px solid $cool-purp;
+          font-size: $input-body;
+          font-family: $font-noto;
         }
         .form-control {
           width: 100%;

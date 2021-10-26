@@ -8,11 +8,6 @@
   &.split{
     justify-content: space-between;
   }
-  // &.full-story-btn-wrapper{
-  //   display: inline;
-  //   font-style: normal; 
-  //   float: right; 
-  // }
   &.bottom{
     height: 10000px;
     align-items: flex-end;
@@ -26,6 +21,13 @@
   &.invisible{
     display: none;
   }
+  &.disabled{
+    color: $disabled;
+    pointer-events: none;
+    .icon{
+      border: 2px solid $disabled;
+    }
+  }
 }
 
 .btn {
@@ -36,10 +38,6 @@
   &.flip-icon{
     flex-direction: row-reverse;
   }
-  // &.full-story-btn{
-  //   float: right;
-  //   font-style: normal;  
-  // }
   &.invisible{
     visibility: hidden;
   }
@@ -56,6 +54,7 @@
     width: 50px;
     height: 28px;
     font-size: 24px;
+    color: inherit;
     &.small{
       width: 25px;
       height: 14px;

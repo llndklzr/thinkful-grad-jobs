@@ -3,7 +3,6 @@ import React from "react";
 export default function StoryFormPage1({
   handleChange,
   formData,
-  formPage,
   setFormPage,
 }) { 
   
@@ -11,7 +10,6 @@ export default function StoryFormPage1({
     e.preventDefault();
     setFormPage((prev) => prev + 1);
   };
-
   return (
     <div className="form-group">
       <form onSubmit={handleSubmit}>
@@ -97,6 +95,7 @@ export default function StoryFormPage1({
               name="graduation_date"
               value={formData.graduation_date || ""}
               onChange={handleChange}
+              required
             />
           </div>
           <div className="form-grid-item">
@@ -110,6 +109,7 @@ export default function StoryFormPage1({
               name="hire_date"
               value={formData.hire_date || ""}
               onChange={handleChange}
+              required
             />
           </div>
           <div className="form-grid-item">
@@ -124,6 +124,7 @@ export default function StoryFormPage1({
               value={formData.business_name || ""}
               onChange={handleChange}
               placeholder="Company"
+              required
             />
           </div>
           <div className="form-grid-item">
@@ -152,26 +153,26 @@ export default function StoryFormPage1({
               value={formData.location || ""}
               onChange={handleChange}
               placeholder="Job Location"
+              required
             />
           </div>
           <div className="form-grid-item grid-item-full-width">
             <label className="form-label" htmlFor="story">
-              <p>Use this space to tell us about your new career.</p>
-              <p>
-                This is a good place for any of your general thoughts, feelings,
-                or experiences along the way.
+              <p>Use this space to tell us about your path to your new career. The first 420 characters will be the first thing anyone sees 
+                of your story. This is a good place for any of your general thoughts, feelings, or experiences along the way.
               </p>
             </label>
             <textarea
-              //className="form-control"
+              className="textarea-for-story"
               id="story"
               name="story"
               value={formData.story || ""}
               onChange={handleChange}
-              rows={5}
+              rows={4}
+              required
             />
             <p className="character-count">
-              {formData.storyAbstract ? formData.storyAbstract.length : "0"}/280
+              {formData.story ? formData.story.length : "0"}/1000
             </p>
           </div>
         </div>

@@ -8,7 +8,6 @@ async function list(request, response) {
   response.json({ data });
 }
 function parseData(req, res, next){
-  console.log(req.body.data)
   const {
     first_name,
     last_name,

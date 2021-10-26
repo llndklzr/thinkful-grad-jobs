@@ -59,10 +59,19 @@ export default function CreateStory() {
   const [formPage, setFormPage] = useState(1);
   const history = useHistory();
   const handleChange = ({ target }) => {
-    setFormData({
-      ...formData,
-      [target.name]: target.value,
-    });
+    if(target.name === "story" && formData.story.length < 1000){
+      console.log("BOOL CHECK")
+      setFormData({
+        ...formData,
+        [target.name]: target.value,
+      });
+    } else if(target.name!=="story"){
+      setFormData({
+        ...formData,
+        [target.name]: target.value,
+      });
+    }
+    
   };
 
   const handleSubmit = (e) => {
@@ -82,6 +91,19 @@ export default function CreateStory() {
         history.push("/stories")
       })
       .catch()
+  }
+
+  function validateFormPage1(){
+    return (
+      formData.story && 
+      formData.first_name &&
+      formData.last_name &&
+      formData.job_title &&
+      formData.graduate_career_field &&
+      formData.graduation_date &&
+      formData.hire_date &&
+      formData.business_name
+    )
   }
 
   const handleSubmitForDragDrop = (e) => {
@@ -127,7 +149,7 @@ export default function CreateStory() {
               setFormPage={setFormPage}
             />
           </div>
-          <div className="btn-wrapper bottom right">
+          <div className={`btn-wrapper bottom right ${validateFormPage1() ? "" : "disabled"}`}>
             <DLBtn text="Next" clickHandler={handleSubmit}/>
           </div>
         </>

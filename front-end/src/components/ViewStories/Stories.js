@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DLBtn from "../DLBtn";
 import {useHistory} from "react-router-dom";
 import LoadingScreen from "../LoadingScreen"
@@ -6,7 +6,7 @@ import LoadingScreen from "../LoadingScreen"
 function Stories({stories, loadingState}){
 
   const history = useHistory();
-
+  const [sliceVal, setSliceVal] = useState(6);
   const grads = stories.map((story) => {
     const { first_name, last_name, job_title, business_name } = story;
     return (
