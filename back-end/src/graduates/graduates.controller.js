@@ -46,8 +46,6 @@ async function getAllGradInfo(req, res){
   const grad = await service.getUserById(gradId);
   const biz = await bizService.getBizByGradId(gradId);
   const story = await storyService.getStoryByGradId(gradId);
-  console.log("BIZ", biz);
-  console.log("STORY", story);
   const allGradInfo = {
     ...grad,
     ...biz,

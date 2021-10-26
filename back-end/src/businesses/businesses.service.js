@@ -26,6 +26,7 @@ function queryForBizzAddress(address){
   return knex(`${tableName} as b`)
     .select("*")
     .whereRaw(`business_location ->> 'address' = '${address}'`)
+    .then(bizz => bizz[0]);
 }
 
 module.exports = {

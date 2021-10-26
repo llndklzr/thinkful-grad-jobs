@@ -10,6 +10,7 @@ async function list(request, response) {
   const data = await service.listWithGrads();
   response.json({ data });
 }
+
 function parseData(req, res, next){
   const {
     first_name,
@@ -31,18 +32,18 @@ function parseData(req, res, next){
     disabled,
     storyDetails,
     application_count
-  } = req.body.data
-  const graduateObj = {
+  } = req.body.data;
+  res.locals.graduateObj = {
     first_name,
     last_name,
     graduation_date,
     graduate_career_field
   }
-  const businessObj = {
+  res.locals.businessObj = {
     business_name,
     address
   }
-  const storyObj = {
+  res.locals.storyObj = {
     graduate_id,
     hire_date,
     story, // validate
@@ -57,41 +58,32 @@ function parseData(req, res, next){
     disabled,
     storyDetails
   }
-  res.locals.graduateObj = graduateObj;
-  res.locals.businessObj = businessObj;
-  res.locals.storyObj = storyObj;
-  // console.log("STORY", storyObj);
-  // console.log("BUSINESS", businessObj);
-  // console.log("GRADUATE", graduateObj);
   next();
 }
-
 
 function validateStoryObj(req, res, next){
   const stor = res.locals.storyObj.story;
   const jobTitle = res.locals.storyObj.job_title;
-  const error = _validateProperties({
+  const invalidProp = _validateProperties({
     stor,
     jobTitle
   })
-  if(error){
+  if(invalidProp){
     next({
       status: 400,
-      message: `Property for ${error} is invalid.`
+      message: `Property for ${invalidProp} is invalid.`
     })
   }
   next();
 }
 
-
 function validateGradObj(req, res, next){
-  for(let field in res.locals.graduateObj){
-    if(!res.locals.graduateObj[field]){
-      return next({
-        status: 400,
-        message: `You are missing the ${field} property`
-      })
-    }
+  const invalidProp = _validateProperties(res.locals.graduateObj);
+  if(invalidProp){
+    next({
+      status: 400,
+      message: `Property for ${invalidProp} is invalid.`
+    })
   }
   next();
 }
@@ -99,11 +91,11 @@ function validateGradObj(req, res, next){
 function validateAllDates(req, res, next){
   const gradDate = res.locals.graduateObj.graduation_date;
   const hireDate = res.locals.storyObj.hire_date;
-  let error = _areDates({gradDate, hireDate});
-  if(error){
+  const invalidDate = _areDates({gradDate, hireDate});
+  if(invalidDate){
     next({
       status: 400,
-      message: `The date for ${error} is invalid.`
+      message: `The date for ${invalidDate} is invalid.`
     })
   }
   next();
@@ -116,8 +108,7 @@ async function geocodeAddress(req, res, next){
     formatter: null // 'gpx', 'string', ...
   };
   const geocoder = NodeGeocoder(options);
-  const givenAddress = res.locals.businessObj.address;
-  const result = await geocoder.geocode(givenAddress);
+  const result = await geocoder.geocode(res.locals.businessObj.address);
   
   const {
     formattedAddress,
@@ -127,10 +118,8 @@ async function geocodeAddress(req, res, next){
     administrativeLevels: {level1short},
   } = result[0];
 
-  const business_name = res.locals.businessObj.business_name;
-
   const businessObj = {
-    business_name,
+    business_name: res.locals.businessObj.business_name,
     business_location:{
       address: formattedAddress,
       lat: latitude,
@@ -145,13 +134,12 @@ async function geocodeAddress(req, res, next){
 
 async function post(req, res){
   const bizz = await bizzService.queryForBizzAddress(res.locals.businessObj.business_location.address);
-  if(bizz[0]?.business_id){
-    await service.createStoryWithExistingBizz(res.locals.storyObj, res.locals.graduateObj, bizz[0].business_id);
+  if(bizz?.business_id){
+    await service.createStoryWithExistingBizz(res.locals.storyObj, res.locals.graduateObj, bizz.business_id);
     return res.sendStatus(204);
   }
   await service.createStoryWithNewBizz(res.locals.storyObj, res.locals.graduateObj, res.locals.businessObj);
   return res.sendStatus(204);
-
 }
 
 function _areDates(testDates){ // returns the date property that failed
@@ -161,7 +149,7 @@ function _areDates(testDates){ // returns the date property that failed
       return date;
     }
   }
-  return "";
+  return null;
 }
 
 
@@ -171,7 +159,7 @@ function _validateProperties(properties){
       return prop;
     }
   }
-  return "";
+  return null;
 }
 
 module.exports = {
