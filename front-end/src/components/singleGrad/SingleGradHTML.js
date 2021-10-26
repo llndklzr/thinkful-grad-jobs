@@ -68,8 +68,8 @@ export default function SingleGradHTML({grad, setWhichModal, createMode = false,
         {createMode ? <span onClick={()=>setFormPage(2)} className="edit-button"><BsPencil />&nbsp;</span> : null}
         <span className="story my-story-header">My Hiring Essentials</span>
         <div className="hiring-essentials">
-          <a onClick={() => setWhichModal("resume")} className={disableAnchor(grad.resumeTitle)}>My Resume</a>
-          <a href={grad.portfolioUrl} className={disableAnchor(grad.portfolioUrl)}>My Portfolio/Projects</a>
+          <a href={grad.resumeTitle} className={disableAnchor(grad.resumeTitle)}>My Resume</a>
+          <a href={grad.portfolioUrl} target="blank" className={disableAnchor(grad.portfolioUrl)}>My Portfolio/Projects</a>
           <a href={grad.coverLetterTitle} className={disableAnchor(grad.coverLetterTitle)}>My Cover Letter</a>
         </div>
       </div>

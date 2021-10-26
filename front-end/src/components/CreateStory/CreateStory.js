@@ -13,7 +13,6 @@ export default function CreateStory() {
   const initialFormData = {
     first_name: "",
     last_name: "",
-    course: "",
     job_title: "",
     graduate_career_field: "",
     storyDetails: {
@@ -40,6 +39,9 @@ export default function CreateStory() {
       },
     },
     linkedInUrl: "",
+    portfolioUrl: "",
+    resumeTitle: "",
+    coverLetterTitle: "",
     graduation_date: "",
     business_name: "",
     address: "",
@@ -71,8 +73,8 @@ export default function CreateStory() {
         [target.name]: target.value,
       });
     }
-    
   };
+  console.log("GRAD FORM", formData)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -160,7 +162,6 @@ export default function CreateStory() {
             <StoryFormPage2
               handleChange={handleChange}
               formData={formData}
-              setFormPage={setFormPage}
             />
           </div>
           <div className="btn-wrapper bottom split">

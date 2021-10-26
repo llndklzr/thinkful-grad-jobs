@@ -1,22 +1,14 @@
 import React from "react";
 
-export default function StoryFormPage2({ setFormPage }) {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormPage((prev) => prev + 1);
-  };
+export default function StoryFormPage2({ formData, handleChange }) {
 
-  const goBack = (e) =>{
-    e.preventDefault();
-    setFormPage((prev) => prev - 1);
-  }
   return (
     <div className="form-group">
       <p>
         Add links to your Hiring Essentials so fellow grads can see what worked
         for you.
       </p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleChange}>
         <div className="form-grid-container">
           <div className="form-grid-item grid-item-full-width">
             <label className="form-label" htmlFor="resume">
@@ -48,9 +40,11 @@ export default function StoryFormPage2({ setFormPage }) {
             </label>
             <input
               className="form-control"
+              value={formData.portfolioUrl || ""}
               type="url"
               id="portfolioUrl"
               name="portfolioUrl"
+              onChange={handleChange}
             />
           </div>
         </div>
