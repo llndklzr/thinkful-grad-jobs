@@ -20,11 +20,17 @@ function getBizByGradId(gradId){
     .join("graduates as g", "s.graduate_id", "g.graduate_id")
     .where("g.graduate_id", gradId)
     .then(grad=>grad[0])
+}
 
+function queryForBizzAddress(address){
+  return knex(`${tableName} as b`)
+    .select("*")
+    .whereRaw(`business_location ->> 'address' = '${address}'`)
 }
 
 module.exports = {
   list,
   getGradsByBusinessId,
-  getBizByGradId
+  getBizByGradId,
+  queryForBizzAddress
 }

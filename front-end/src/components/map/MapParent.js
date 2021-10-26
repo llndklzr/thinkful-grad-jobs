@@ -14,6 +14,7 @@ export default function MapParent(){
   let [businesses, setBusinesses] = useState([]);
   let [errors, setErrors] = useState(null);
   const abortController = new AbortController();
+  console.log("BUSINESSES", businesses)
 
   const retrieveFilters = async (e)=> {
     e.preventDefault();

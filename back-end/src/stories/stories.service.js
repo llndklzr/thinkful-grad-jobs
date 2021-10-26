@@ -20,7 +20,7 @@ function getStoryByGradId(gradId){
     .then(grad=>grad[0])
 }
 
-function createStory(story, grad, bizz){
+function createStoryWithNewBizz(story, grad, bizz){
   let gradId;
   let bizzId;
   return knex.transaction(trx =>{
@@ -46,9 +46,30 @@ function createStory(story, grad, bizz){
   })
 }
 
+function createStoryWithExistingBizz(story, grad, bizzId){
+  let gradId;
+  return knex.transaction(trx =>{
+    return trx
+      .insert(grad, "graduate_id")
+      .into("graduates")
+      .then(id => {
+        gradId = id
+        return trx.insert({
+          ...story,
+          business_id: Number(bizzId),
+          graduate_id: Number(gradId)
+        })
+        .into("stories")
+        .then(trx.commit)
+        .catch(trx.rollback)
+      })
+  })
+}
+
 module.exports = {
   list,
   getStoryByGradId,
   listWithGrads,
-  createStory
+  createStoryWithNewBizz,
+  createStoryWithExistingBizz
 };

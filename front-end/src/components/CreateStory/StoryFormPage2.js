@@ -1,5 +1,4 @@
 import React from "react";
-import DLBtn from "../DLBtn";
 
 export default function StoryFormPage2({ setFormPage }) {
   const handleSubmit = (e) => {

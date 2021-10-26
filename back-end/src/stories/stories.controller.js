@@ -1,5 +1,8 @@
 const service = require("./stories.service");
+const bizzService = require("../businesses/businesses.service")
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
+const NodeGeocoder = require("node-geocoder");
+const { AuditManager } = require("aws-sdk");
 
 //! <<------- CRUDL ------->>
 
@@ -14,7 +17,7 @@ function parseData(req, res, next){
     graduation_date,
     graduate_career_field,
     business_name,
-    business_location,
+    address,
     graduate_id,
     hire_date,
     story,
@@ -37,7 +40,7 @@ function parseData(req, res, next){
   }
   const businessObj = {
     business_name,
-    business_location
+    address
   }
   const storyObj = {
     graduate_id,
@@ -63,15 +66,6 @@ function parseData(req, res, next){
   next();
 }
 
-function _validateProperties(properties){
-  for(let prop in properties){
-    if(!properties[prop]){
-      console.log(`PROPERTY FAILED`)
-      return prop
-    }
-  }
-  return "";
-}
 
 function validateStoryObj(req, res, next){
   const stor = res.locals.storyObj.story;
@@ -115,6 +109,51 @@ function validateAllDates(req, res, next){
   next();
 }
 
+async function geocodeAddress(req, res, next){
+  const options = {
+    provider: 'google',
+    apiKey: process.env.GOOGLE_MAPS_API_KEY,
+    formatter: null // 'gpx', 'string', ...
+  };
+  const geocoder = NodeGeocoder(options);
+  const givenAddress = res.locals.businessObj.address;
+  const result = await geocoder.geocode(givenAddress);
+  
+  const {
+    formattedAddress,
+    latitude,
+    longitude,
+    city,
+    administrativeLevels: {level1short},
+  } = result[0];
+
+  const business_name = res.locals.businessObj.business_name;
+
+  const businessObj = {
+    business_name,
+    business_location:{
+      address: formattedAddress,
+      lat: latitude,
+      lng: longitude,
+      city: city,
+      state: level1short
+    }
+  }
+  res.locals.businessObj = businessObj;
+  next();
+}
+
+async function post(req, res){
+  const bizz = await bizzService.queryForBizzAddress(res.locals.businessObj.business_location.address);
+  if(bizz[0]?.business_id){
+    await service.createStoryWithExistingBizz(res.locals.storyObj, res.locals.graduateObj, bizz[0].business_id);
+    return res.sendStatus(204);
+  }
+  await service.createStoryWithNewBizz(res.locals.storyObj, res.locals.graduateObj, res.locals.businessObj);
+  return res.sendStatus(204);
+
+}
+
 function _areDates(testDates){ // returns the date property that failed
   const date_regex = /^\d{4}\-\d{2}\-\d{2}$/;
   for(let date in testDates){
@@ -125,14 +164,17 @@ function _areDates(testDates){ // returns the date property that failed
   return "";
 }
 
-async function post(req, res){
-  await service.createStory(res.locals.storyObj, res.locals.graduateObj, res.locals.businessObj);
-  res.sendStatus(204);
+
+function _validateProperties(properties){
+  for(let prop in properties){
+    if(!properties[prop]){
+      return prop;
+    }
+  }
+  return "";
 }
-
-
 
 module.exports = {
   list: [asyncErrorBoundary(list)],
-  create: [parseData, validateGradObj, validateAllDates, validateStoryObj, post],
+  create: [parseData, validateGradObj, validateAllDates, validateStoryObj, geocodeAddress, post],
 };

@@ -142,15 +142,15 @@ export default function StoryFormPage1({
             />
           </div>
           <div className="form-grid-item">
-            {/* <label className="form-label" htmlFor="location">
+            {/* <label className="form-label" htmlFor="address">
               Job Location
             </label> */}
             <input
               className="form-control"
               type="text"
-              id="location"
-              name="location"
-              value={formData.location || ""}
+              id="address"
+              name="address"
+              value={formData.address || ""}
               onChange={handleChange}
               placeholder="Job Location"
               required
