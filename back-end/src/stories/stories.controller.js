@@ -132,6 +132,16 @@ async function geocodeAddress(req, res, next){
   next();
 }
 
+function validateLengthOfStory(req, res, next){
+  if(res.locals.storyObj.story.length > 1000){
+    next({
+      status: 400,
+      message: `The story is longer than 1000 characters.`
+    })
+  }
+  next();
+}
+
 async function post(req, res){
   const bizz = await bizzService.queryForBizzAddress(res.locals.businessObj.business_location.address);
   if(bizz?.business_id){
@@ -164,5 +174,12 @@ function _validateProperties(properties){
 
 module.exports = {
   list: [asyncErrorBoundary(list)],
-  create: [parseData, validateGradObj, validateAllDates, validateStoryObj, geocodeAddress, post],
+  create: [
+    parseData, 
+    validateGradObj, 
+    validateAllDates, 
+    validateStoryObj, 
+    geocodeAddress,
+    validateLengthOfStory,
+    post],
 };

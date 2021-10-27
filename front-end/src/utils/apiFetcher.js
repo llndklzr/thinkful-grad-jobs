@@ -151,7 +151,7 @@ export async function filterResultsForMap(filters, signal){
   );
 }
 
-export async function filterResultsForStories(filters, signal){
+export async function filterResultsForStories(filters, limits, signal){
   const url = new URL(`${API_BASE_URL}/filters/stories`);
   return await fetchJson(
     url,
@@ -160,7 +160,7 @@ export async function filterResultsForStories(filters, signal){
       credentials: "include",
       headers: myHeaders,
       method: "POST",
-      body: JSON.stringify({data: filters}),
+      body: JSON.stringify({data: {filters, limits}}),
     },
     []
   );

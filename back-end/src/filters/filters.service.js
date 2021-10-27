@@ -19,7 +19,7 @@ function filterFromMap(filters){
     )
 }
 
-function filterFromStories(filters){
+function filterFromStories(filters, queryLimits){
   return knex("businesses as b")
     .join("stories as s", "s.business_id", "b.business_id")
     .join("graduates as g", "g.graduate_id", "s.graduate_id")
@@ -32,6 +32,7 @@ function filterFromStories(filters){
       "s.*"
     )
     .orderBy("s.created_at", "desc")
+    .limit(queryLimits)
 }
 
 module.exports = {filterFromMap, filterFromStories}

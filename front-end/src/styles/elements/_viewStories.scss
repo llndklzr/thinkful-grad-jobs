@@ -66,3 +66,13 @@
   display: flex;
   justify-content: space-between;
 }
+
+.no-more-grads{
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  background-color: $cool-mint;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+}

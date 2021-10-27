@@ -15,9 +15,9 @@ export default function StoryFormPage1({
       <form onSubmit={handleSubmit}>
         <div className="form-grid-container">
           <div className="form-grid-item">
-            {/* <label className="form-label" htmlFor="first_name">
+            <label className="form-label" htmlFor="first_name">
               First Name
-            </label> */}
+            </label>
             <input
               className="form-control"
               type="text"
@@ -31,9 +31,9 @@ export default function StoryFormPage1({
             />
           </div>
           <div className="form-grid-item">
-            {/* <label className="form-label" htmlFor="first_name">
+            <label className="form-label" htmlFor="first_name">
               First Name
-            </label> */}
+            </label>
             <input
               className="form-control"
               type="text"
@@ -47,9 +47,9 @@ export default function StoryFormPage1({
             />
           </div>
           <div className="form-grid-item">
-            {/* <label className="form-label" htmlFor="linkedInUrl">
+            <label className="form-label" htmlFor="linkedInUrl">
               LinkedIn (optional)
-            </label> */}
+            </label>
             <input
               className="form-control"
               type="url"
@@ -62,9 +62,9 @@ export default function StoryFormPage1({
             />
           </div>
           <div className="form-grid-item">
-            {/* <label className="form-label" htmlFor="graduate_career_field">
+            <label className="form-label" htmlFor="graduate_career_field">
               Thinkful Course
-            </label> */}
+            </label>
             <select
               className="form-control"
               id="graduate_career_field"
@@ -95,6 +95,7 @@ export default function StoryFormPage1({
               name="graduation_date"
               value={formData.graduation_date || ""}
               onChange={handleChange}
+              placeholder="Graduation Date"
               required
             />
           </div>
@@ -113,9 +114,9 @@ export default function StoryFormPage1({
             />
           </div>
           <div className="form-grid-item">
-            {/* <label className="form-label" htmlFor="graduation_date">
+            <label className="form-label" htmlFor="graduation_date">
               Company
-            </label> */}
+            </label>
             <input
               className="form-control"
               type="text"
@@ -128,9 +129,9 @@ export default function StoryFormPage1({
             />
           </div>
           <div className="form-grid-item">
-            {/* <label className="form-label" htmlFor="job_title">
+            <label className="form-label" htmlFor="job_title">
               Job Title
-            </label> */}
+            </label>
             <input
               className="form-control"
               type="text"
@@ -142,9 +143,9 @@ export default function StoryFormPage1({
             />
           </div>
           <div className="form-grid-item">
-            {/* <label className="form-label" htmlFor="address">
+            <label className="form-label" htmlFor="address">
               Job Location
-            </label> */}
+            </label>
             <input
               className="form-control"
               type="text"

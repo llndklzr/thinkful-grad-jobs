@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef, useCallback} from "react";
 import StoriesFilter from "./StoriesFilter";
 import Stories from "./Stories";
 import {filterResultsForStories} from "../../utils/apiFetcher";
@@ -16,24 +16,43 @@ export default function StoriesParent(){
   const [filters, setFiters] = useState({...intitialFilters});
   const [stories, setStories] = useState([]);
   const [loadingState, setLoadingState] = useState(true);
+  const [hasMore, setHasMore] = useState(true);
+  const [queryLimit, setQueryLimit] = useState(6);
+  const [lengthOfRes, setLengthOfRes] = useState(6);
+  const observer = useRef();
 
-  useEffect(()=>{
-    async function loadStories(){
-      return await filterResultsForStories(filters, abortController.signal).then(setStories)
+  async function loadStories(){
+    if(hasMore){
+      return await filterResultsForStories(filters, queryLimit, abortController.signal)
+        .then(res=>{
+          setLengthOfRes(res.length);
+          setHasMore(queryLimit === res.length);
+          setStories(res);
+        })
         .then(()=>setLoadingState(false))
     }
+  }
+  
 
+  useEffect(()=>{
     loadStories();
-  },[])
+  },[queryLimit])
 
   const retrieveGrads = async (e) =>{
     e.preventDefault();
-    setLoadingState(true);
-    return await filterResultsForStories(filters, abortController.signal)
-      .then((res)=>setStories(res))
-      .then(()=>setLoadingState(false));
+    loadStories();
   }
-  console.log(document.documentElement.offsetHeight, window.pageYOffset)
+
+  const lastElementObserver = useCallback(node =>{
+    if(loadingState){return};
+    if(observer.current){observer.current.disconnect()};
+    observer.current = new IntersectionObserver( entries =>{
+      if(entries[0].isIntersecting && hasMore){
+        setQueryLimit(prevState => prevState += 6);
+      }
+    })
+    if(node) observer.current.observe(node);
+  }, [loadingState])
 
   return (
     <>
@@ -43,7 +62,7 @@ export default function StoriesParent(){
           <StoriesFilter filters={filters} setFilters={setFiters} retrieveGrads={retrieveGrads}/>
         </div>
         <div className="stories-wrapper-in-parent">
-          <Stories stories={stories} loadingState={loadingState}/>
+          <Stories hasMore={hasMore} lastElementObserver={lastElementObserver} stories={stories} loadingState={loadingState}/>
         </div>
         <div className="stories-spacer-wrapper-in-parent"></div>
       </div>

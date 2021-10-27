@@ -12,8 +12,8 @@ async function listMatchesForMapFilter(req, res) {
 }
 
 async function listMatchesForStoryFilter(req, res){
-  const filters = req.body.data;
-  const results = await service.filterFromStories(filters);
+  const {filters, limits} = req.body.data;
+  const results = await service.filterFromStories(filters, limits);
   res.json({data: results});
 }
 

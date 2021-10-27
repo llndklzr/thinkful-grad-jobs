@@ -18,7 +18,7 @@ export default function StoriesFilter({filters, setFilters, retrieveGrads}){
             <option value="Full Stack Development">Engineering</option>
             <option value="UX/UI"> UX/UI</option>
             <option value="Data Analytics">Data Analytics</option>
-            <option value="Data Science"> Date Science</option>
+            <option value="Data Science"> Data Science</option>
             <option value="Digital Marketing">Digital Marketing</option>
             <option value="Project Management">Project Management</option>
           </select>

@@ -3,14 +3,14 @@ import DLBtn from "../DLBtn";
 import {useHistory} from "react-router-dom";
 import LoadingScreen from "../LoadingScreen"
 
-function Stories({stories, loadingState}){
+function Stories({stories, loadingState, lastElementObserver, hasMore}){
 
   const history = useHistory();
-  const [sliceVal, setSliceVal] = useState(6);
-  const grads = stories.map((story) => {
+  const grads = stories.map((story, index) => {
     const { first_name, last_name, job_title, business_name } = story;
-    return (
-      <div key={story.graduate_id} className="grad-div">
+    if(stories.length === index + 1){
+      return(
+        <div ref={lastElementObserver} key={story.graduate_id} className="grad-div">
         <span className="story-name">{first_name} {last_name}</span> &nbsp;
         <div className="story-grad-job-details">
           <span className="story-title">{job_title},&nbsp;</span>
@@ -18,7 +18,19 @@ function Stories({stories, loadingState}){
           <DLBtn  clickHandler={()=>history.push(`/graduates/${story.graduate_id}`)}/>
         </div>
       </div>
-    );
+      )
+    } else{
+      return (
+        <div key={story.graduate_id} className="grad-div">
+          <span className="story-name">{first_name} {last_name}</span> &nbsp;
+          <div className="story-grad-job-details">
+            <span className="story-title">{job_title},&nbsp;</span>
+            <span className="story-biz-name">{business_name}&nbsp;</span>
+            <DLBtn  clickHandler={()=>history.push(`/graduates/${story.graduate_id}`)}/>
+          </div>
+        </div>
+      );
+    }
   })
 
   const noResults = <div className="no-results">No results matching your search</div>
@@ -30,6 +42,7 @@ function Stories({stories, loadingState}){
       <div className="stories-wrapper">
         <h4 className="recent-stories-title">Recent Stories</h4>
         {loadingState ? <LoadingScreen classname="small"/> : container}
+        {!loadingState && !hasMore ? <span className="no-more-grads">That's all the grads</span> : null}
       </div>
     </div>
   ) 
