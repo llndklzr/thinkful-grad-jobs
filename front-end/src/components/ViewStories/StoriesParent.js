@@ -9,6 +9,7 @@ export default function StoriesParent(){
     company: "",
     name: "",
   }
+  let queryVal = 6;
 
   const abortController = new AbortController();
 
@@ -17,19 +18,21 @@ export default function StoriesParent(){
   const [stories, setStories] = useState([]);
   const [loadingState, setLoadingState] = useState(true);
   const [hasMore, setHasMore] = useState(true);
-  const [queryLimit, setQueryLimit] = useState(6);
-  const [lengthOfRes, setLengthOfRes] = useState(6);
+  const [queryLimit, setQueryLimit] = useState(queryVal);
   const observer = useRef();
 
   async function loadStories(){
     if(hasMore){
       return await filterResultsForStories(filters, queryLimit, abortController.signal)
         .then(res=>{
-          setLengthOfRes(res.length);
+          console.log("THE RES", res);
           setHasMore(queryLimit === res.length);
           setStories(res);
         })
-        .then(()=>setLoadingState(false))
+        .then(()=>{
+          console.log("SETTING LOADING STATE"); 
+          setLoadingState(false)
+        });
     }
   }
   
@@ -40,6 +43,9 @@ export default function StoriesParent(){
 
   const retrieveGrads = async (e) =>{
     e.preventDefault();
+    setHasMore(true);
+    setQueryLimit(queryVal);
+    setLoadingState(true);
     loadStories();
   }
 
@@ -48,7 +54,7 @@ export default function StoriesParent(){
     if(observer.current){observer.current.disconnect()};
     observer.current = new IntersectionObserver( entries =>{
       if(entries[0].isIntersecting && hasMore){
-        setQueryLimit(prevState => prevState += 6);
+        setQueryLimit(prevState => prevState += queryVal);
       }
     })
     if(node) observer.current.observe(node);

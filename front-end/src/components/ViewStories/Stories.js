@@ -35,6 +35,12 @@ function Stories({stories, loadingState, lastElementObserver, hasMore}){
 
   const noResults = <div className="no-results">No results matching your search</div>
 
+  const noMoreGrads = (
+    <span className="no-more-grads-wrapper">
+      <span className="no-more-grads">That's all the grads</span>
+    </span>
+  )
+
   const container = stories.length !== 0 ? grads : noResults;
 
   return (
@@ -42,7 +48,7 @@ function Stories({stories, loadingState, lastElementObserver, hasMore}){
       <div className="stories-wrapper">
         <h4 className="recent-stories-title">Recent Stories</h4>
         {loadingState ? <LoadingScreen classname="small"/> : container}
-        {!loadingState && !hasMore ? <span className="no-more-grads">That's all the grads</span> : null}
+        {stories.length!==0 && !hasMore ? noMoreGrads : null}
       </div>
     </div>
   ) 

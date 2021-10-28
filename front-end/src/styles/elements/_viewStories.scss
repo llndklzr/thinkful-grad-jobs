@@ -67,12 +67,19 @@
   justify-content: space-between;
 }
 
+// .no-more-grads-wrapper{
+//   display: flex;
+//   align-items: flex-end;
+//   height: 1000px;
+// }
+
 .no-more-grads{
   display: flex;
   font-size: 24px;
+  align-items: flex-end;
   justify-content: center;
+  height: 35px;
   background-color: $cool-mint;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-
+  border-bottom-left-radius: 19px;
+  border-bottom-right-radius: 19px;
 }
