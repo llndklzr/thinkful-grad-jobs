@@ -34,7 +34,7 @@ export default function CoachingModal({grad, createMode = false, setFormData, se
         <br/>
         Whether techinal knowledge or inspiration, tell your fellow grads how
         someone in a position ahead of you impacted your job search.</p> : null}
-      {createMode ? <textarea name="blurb" onChange={handleChange} value={topic.blurb} className="modal-textarea"/> : <p className="modal-blurb">
+      {createMode ? <textarea name="blurb" onChange={handleChange} value={topic?.blurb} className="modal-textarea"/> : <p className="modal-blurb">
         {grad.storyDetails["Coaching/Mentorship"].blurb}
       </p>}
       <form onSubmit={handleSubmit}>

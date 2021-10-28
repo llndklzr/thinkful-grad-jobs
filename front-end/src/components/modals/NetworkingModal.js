@@ -35,7 +35,7 @@ export default function NetworkingModal({grad, createMode = false, setFormData, 
         <br/>
         Please mention if your job was avaible ONLY through your 
         professional network, or if you were just pointed in the right direction.</p> : null}
-      {createMode ? <textarea name="blurb" onChange={handleChange} value={networking.blurb} className="modal-textarea"/> : <p className="modal-blurb">
+      {createMode ? <textarea name="blurb" onChange={handleChange} value={networking?.blurb} className="modal-textarea"/> : <p className="modal-blurb">
         {grad.storyDetails.Networking.blurb}
       </p>}
       <form>

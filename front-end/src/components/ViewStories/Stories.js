@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import DLBtn from "../DLBtn";
 import {useHistory} from "react-router-dom";
-import LoadingScreen from "../LoadingScreen"
+import LoadingScreen from "../LoadingScreen";
+import errorHandler from "../errorHandler";
 
-function Stories({stories, loadingState, lastElementObserver, hasMore}){
+function Stories({stories, loadingState, lastElementObserver, hasMore, error}){
 
   const history = useHistory();
   const grads = stories.map((story, index) => {
@@ -35,20 +36,15 @@ function Stories({stories, loadingState, lastElementObserver, hasMore}){
 
   const noResults = <div className="no-results">No results matching your search</div>
 
-  const noMoreGrads = (
-    <span className="no-more-grads-wrapper">
-      <span className="no-more-grads">That's all the grads</span>
-    </span>
-  )
-
   const container = stories.length !== 0 ? grads : noResults;
+  
 
   return (
     <div>
       <div className="stories-wrapper">
         <h4 className="recent-stories-title">Recent Stories</h4>
         {loadingState ? <LoadingScreen classname="small"/> : container}
-        {stories.length!==0 && !hasMore ? noMoreGrads : null}
+        {stories.length!==0 && !hasMore ? <span className="no-more-grads">That's all the grads</span> : null}
       </div>
     </div>
   ) 

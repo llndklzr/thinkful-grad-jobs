@@ -9,7 +9,7 @@ export default function StoriesParent(){
     company: "",
     name: "",
   }
-  let queryVal = 6;
+  const queryVal = 6;
 
   const abortController = new AbortController();
 
@@ -19,29 +19,29 @@ export default function StoriesParent(){
   const [loadingState, setLoadingState] = useState(true);
   const [hasMore, setHasMore] = useState(true);
   const [queryLimit, setQueryLimit] = useState(queryVal);
+  const [error, setError] = useState(null);
   const observer = useRef();
 
   async function loadStories(){
     if(hasMore){
       return await filterResultsForStories(filters, queryLimit, abortController.signal)
         .then(res=>{
-          console.log("THE RES", res);
           setHasMore(queryLimit === res.length);
           setStories(res);
         })
         .then(()=>{
-          console.log("SETTING LOADING STATE"); 
-          setLoadingState(false)
-        });
+          setLoadingState(false);
+        })
+        .catch((err)=>setError(err));
     }
   }
   
 
   useEffect(()=>{
     loadStories();
-  },[queryLimit])
+  }, [queryLimit, hasMore])
 
-  const retrieveGrads = async (e) =>{
+  const retrieveGrads = (e) =>{
     e.preventDefault();
     setHasMore(true);
     setQueryLimit(queryVal);
@@ -49,7 +49,7 @@ export default function StoriesParent(){
     loadStories();
   }
 
-  const lastElementObserver = useCallback(node =>{
+  const lastElementObserver = useCallback(node =>{ // from tutorial https://www.youtube.com/watch?v=NZKUirTtxcg
     if(loadingState){return};
     if(observer.current){observer.current.disconnect()};
     observer.current = new IntersectionObserver( entries =>{
@@ -58,7 +58,7 @@ export default function StoriesParent(){
       }
     })
     if(node) observer.current.observe(node);
-  }, [loadingState])
+  }, [loadingState]);
 
   return (
     <>
@@ -68,7 +68,7 @@ export default function StoriesParent(){
           <StoriesFilter filters={filters} setFilters={setFiters} retrieveGrads={retrieveGrads}/>
         </div>
         <div className="stories-wrapper-in-parent">
-          <Stories hasMore={hasMore} lastElementObserver={lastElementObserver} stories={stories} loadingState={loadingState}/>
+          <Stories error={error} hasMore={hasMore} lastElementObserver={lastElementObserver} stories={stories} loadingState={loadingState}/>
         </div>
         <div className="stories-spacer-wrapper-in-parent"></div>
       </div>

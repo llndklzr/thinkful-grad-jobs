@@ -39,7 +39,7 @@ export default function LocationModal({grad, createMode = false, setFormData, se
           adjustments to your mindset in order to get hired.</p> : null}
         <form>
 
-      {createMode ? <textarea name="blurb" onChange={handleChange} value={location.blurb} className="modal-textarea"/> : <p className="modal-blurb">
+      {createMode ? <textarea name="blurb" onChange={handleChange} value={location?.blurb} className="modal-textarea"/> : <p className="modal-blurb">
         {grad.storyDetails.Location.blurb}
       </p>}
         <div className="topic-parent">

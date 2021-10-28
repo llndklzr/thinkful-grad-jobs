@@ -35,7 +35,7 @@ export default function InterviewingModal({grad, createMode = false, setFormData
         If there were any mistakes you’d do differently, or smooth moves that
         worked, let your fellow grads know. </p> : null}
       <form>
-        {createMode ? <textarea name="blurb" onChange={handleChange} value={interviewing.blurb} className="modal-textarea"/> : <p className="modal-blurb">
+        {createMode ? <textarea name="blurb" onChange={handleChange} value={interviewing?.blurb} className="modal-textarea"/> : <p className="modal-blurb">
           {grad.storyDetails.Location.blurb}
         </p>}
         <div className="topic-parent">

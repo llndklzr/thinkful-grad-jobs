@@ -39,7 +39,7 @@ export default function TransferedSkills({grad, createMode = false, setFormData,
         fellow grads how your old life impacts your current profession.</p> : null}
         <form>
 
-      {createMode ? <textarea name="blurb" onChange={handleChange} value={skills.blurb} className="modal-textarea"/> : <p className="modal-blurb">
+      {createMode ? <textarea name="blurb" onChange={handleChange} value={skills?.blurb} className="modal-textarea"/> : <p className="modal-blurb">
         {grad.storyDetails["Transferred Skills"].blurb}
       </p>}
         {createMode ? 
