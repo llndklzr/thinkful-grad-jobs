@@ -2,7 +2,7 @@ import React from "react";
 import DLBtn from "../DLBtn";
 import {useHistory} from "react-router-dom";
 import LoadingScreen from "../LoadingScreen";
-import errorHandler from "../errorHandler";
+import ErrorHandler from "../ErrorHandler";
 
 function Stories({stories, loadingState, lastElementObserver, hasMore, error}){
 
@@ -43,8 +43,9 @@ function Stories({stories, loadingState, lastElementObserver, hasMore, error}){
     <div>
       <div className="stories-wrapper">
         <h4 className="recent-stories-title">Recent Stories</h4>
-        {loadingState ? <LoadingScreen classname="small"/> : container}
+        {loadingState && !error ? <LoadingScreen classname="small"/> : container}
         {stories.length!==0 && !hasMore ? <span className="no-more-grads">That's all the grads</span> : null}
+        {error && <ErrorHandler wrapperClassName="view-stories" error={error} />}
       </div>
     </div>
   ) 

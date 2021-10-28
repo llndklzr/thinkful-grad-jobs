@@ -4,6 +4,14 @@ import DLBtn from "../DLBtn";
 
 export default function StoriesFilter({filters, setFilters, retrieveGrads}){
 
+  const changeHandler=(e) =>{
+    setFilters({
+      ...filters,
+      [e.target.name]: e.target.value,
+    });
+    retrieveGrads(e);
+  }
+
   return (
     <form className="stories-filter" onSubmit={retrieveGrads}>
       <label className="story-filter-labels">
@@ -11,7 +19,8 @@ export default function StoriesFilter({filters, setFilters, retrieveGrads}){
         <br/>
         <select 
             value={filters.fieldFilter}
-            onChange={(e)=>setFilters({...filters, field: e.target.value})}
+            onChange={changeHandler}
+            name="field"
             className="search select drop-shadow"
           >
             <option value="">Career Field</option>
@@ -33,10 +42,14 @@ export default function StoriesFilter({filters, setFilters, retrieveGrads}){
           </div>
           <input
             className="search input"
-            onChange={(e)=>setFilters({...filters, company: e.target.value})}
+            name="company"
+            onChange={changeHandler}
             value={filters.company}
           />
-          <div className="icon-wrapper cancel" onClick={()=>setFilters({...filters, company: ""})}>
+          <div 
+            className="icon-wrapper cancel" 
+            onClick={(e)=>{setFilters({...filters, company: ""}); retrieveGrads(e)}}
+          >
             <BsX />
           </div>
         </div>
@@ -51,10 +64,14 @@ export default function StoriesFilter({filters, setFilters, retrieveGrads}){
           </div>
           <input 
             className="search input"
-            onChange={(e)=>setFilters({...filters, name: e.target.value})}
+            name="name"
+            onChange={changeHandler}
             value={filters.name}
           />
-          <div className="icon-wrapper cancel" onClick={()=>setFilters({...filters, name: ""})}>
+          <div 
+            className="icon-wrapper cancel" 
+            onClick={(e)=>{setFilters({...filters, name: ""}); retrieveGrads(e)}}
+          >
             <BsX />
           </div>
         </div>

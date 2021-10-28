@@ -5,7 +5,6 @@
 @import"./elements/buttons";
 @import"./elements/map";
 @import"./elements/navbar";
-//@import"./elements/cards";
 @import"./elements/variables";
 @import"./elements/storyForm";
 @import"./elements/dragNDrop";
@@ -70,6 +69,19 @@ footer{
   display: flex;
   justify-content: center;
 }
+.error-wrapper{
+  display: flex;
+  justify-content: center;
+  background-color: $danger-red;
+  &.view-stories{
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+  }
+  .error-message{
+    font-size: 24px;
+  }
+}
+
 
 
 body{

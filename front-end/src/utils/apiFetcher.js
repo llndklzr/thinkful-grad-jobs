@@ -1,7 +1,7 @@
 // make API calls from here
 
 const API_BASE_URL =
-  process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
+  process.env.REACT_APP_API_BASE_URL || "http://localhost:5001";
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Access-Control-Allow-Origin", "http://localhost:3000");
@@ -85,7 +85,7 @@ export async function postStory(story, signal){
   );
 }
 
-export async function registerUser(credentials, signal) {
+export async function registerUser(userCredentials, signal) {
   const url = new URL(`${API_BASE_URL}/graduates/register`);
   return await fetchJson(
     url,
@@ -94,7 +94,7 @@ export async function registerUser(credentials, signal) {
       headers: myHeaders,
       method: "POST",
       credentials: "include",
-      body: JSON.stringify(credentials),
+      body: JSON.stringify(userCredentials),
     },
     []
   );

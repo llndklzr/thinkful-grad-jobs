@@ -31,8 +31,11 @@ export default function StoriesParent(){
         })
         .then(()=>{
           setLoadingState(false);
+          setError(null);
         })
-        .catch((err)=>setError(err));
+        .catch((err)=>{
+          setError(err);
+        });
     }
   }
   
@@ -43,6 +46,7 @@ export default function StoriesParent(){
 
   const retrieveGrads = (e) =>{
     e.preventDefault();
+    setStories([]);
     setHasMore(true);
     setQueryLimit(queryVal);
     setLoadingState(true);
@@ -70,7 +74,7 @@ export default function StoriesParent(){
         <div className="stories-wrapper-in-parent">
           <Stories error={error} hasMore={hasMore} lastElementObserver={lastElementObserver} stories={stories} loadingState={loadingState}/>
         </div>
-        <div className="stories-spacer-wrapper-in-parent"></div>
+        <div className="stories-spacer-wrapper-in-parent"/>
       </div>
     </>
   )
