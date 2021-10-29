@@ -18,19 +18,19 @@ export default function StoriesFilter({filters, setFilters, retrieveGrads}){
         Search by field
         <br/>
         <select 
-            value={filters.fieldFilter}
-            onChange={changeHandler}
-            name="field"
-            className="search select drop-shadow"
-          >
-            <option value="">Career Field</option>
-            <option value="Full Stack Development">Engineering</option>
-            <option value="UX/UI"> UX/UI</option>
-            <option value="Data Analytics">Data Analytics</option>
-            <option value="Data Science"> Data Science</option>
-            <option value="Digital Marketing">Digital Marketing</option>
-            <option value="Project Management">Project Management</option>
-          </select>
+          value={filters.fieldFilter}
+          onChange={changeHandler}
+          name="field"
+          className="search select drop-shadow"
+        >
+          <option value="">Career Field</option>
+          <option value="Full Stack Development">Engineering</option>
+          <option value="UX/UI"> UX/UI</option>
+          <option value="Data Analytics">Data Analytics</option>
+          <option value="Data Science"> Data Science</option>
+          <option value="Digital Marketing">Digital Marketing</option>
+          <option value="Project Management">Project Management</option>
+        </select>
       </label>
       <br/>
       <label className="story-filter-labels">
@@ -48,7 +48,7 @@ export default function StoriesFilter({filters, setFilters, retrieveGrads}){
           />
           <div 
             className="icon-wrapper cancel" 
-            onClick={(e)=>{setFilters({...filters, company: ""}); retrieveGrads(e)}}
+            onClick={(e)=>{setFilters({...filters, company: ""}); retrieveGrads(e);}}
           >
             <BsX />
           </div>
@@ -70,7 +70,7 @@ export default function StoriesFilter({filters, setFilters, retrieveGrads}){
           />
           <div 
             className="icon-wrapper cancel" 
-            onClick={(e)=>{setFilters({...filters, name: ""}); retrieveGrads(e)}}
+            onClick={(e)=>{setFilters({...filters, name: ""}); retrieveGrads(e);}}
           >
             <BsX />
           </div>

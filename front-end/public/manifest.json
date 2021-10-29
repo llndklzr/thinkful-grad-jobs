@@ -1,0 +1,16 @@
+{
+  "short_name": "Storified",
+  "name": "This is our name",
+  "icons": [
+      {
+          "src": "/favicon.ico",
+          "type": "image/png",
+          "sizes": "128x128"
+      }
+  ],
+  "start_url": "/",
+  "background_color": "#D4DBE6",
+  "display": "standalone",
+  "scope": "/app/",
+  "theme_color": "#6CE344"
+}

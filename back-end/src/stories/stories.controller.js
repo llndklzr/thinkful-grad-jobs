@@ -2,6 +2,7 @@ const service = require("./stories.service");
 const bizzService = require("../businesses/businesses.service")
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 const NodeGeocoder = require("node-geocoder");
+const isAuth = require("../authUtils/isAuth");
 const { AuditManager } = require("aws-sdk");
 
 //! <<------- CRUDL ------->>
@@ -34,14 +35,14 @@ function parseData(req, res, next){
     application_count
   } = req.body.data;
   res.locals.graduateObj = {
-    first_name,
-    last_name,
-    graduation_date,
-    graduate_career_field
+    first_name, // validate
+    last_name, // validate
+    graduation_date, // validate
+    graduate_career_field // validate
   }
   res.locals.businessObj = {
-    business_name,
-    address
+    business_name, // validate
+    address // validate
   }
   res.locals.storyObj = {
     graduate_id,
@@ -175,6 +176,7 @@ function _validateProperties(properties){
 module.exports = {
   list: [asyncErrorBoundary(list)],
   create: [
+    isAuth,
     parseData, 
     validateGradObj, 
     validateAllDates, 
