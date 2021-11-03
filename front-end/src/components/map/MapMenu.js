@@ -23,7 +23,6 @@ export default function MapMenu({filters, setFilters, retrieveFilters}){
     retrieveFilters(e);
   }
 
-  //()=>setFilters({...filters, companyFilter: ""})
 
   
   return (

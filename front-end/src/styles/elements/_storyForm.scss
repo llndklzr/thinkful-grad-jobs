@@ -83,6 +83,9 @@
       float: right;
       font-size: 18px;
     }
+    .file-form-control{
+      border: none;
+    }
     .story-aspect-wrapper {
       max-width: 300px;
       display: flex;
@@ -101,7 +104,6 @@
         font-weight: bold;
         margin-top: 5px;
         border-style: solid;
-        //border-color: $dark-shades;
         border-width: 2px;
         border-radius: 15px;
         cursor: pointer;

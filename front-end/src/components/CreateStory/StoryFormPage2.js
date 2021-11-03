@@ -1,6 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
+import { BsPlusCircle } from "react-icons/bs";
 
-export default function StoryFormPage2({ formData, handleChange }) {
+export default function StoryFormPage2({ formData, handleChange }){
+
+  const [resumeFile, setResumeFile] = useState({});
+  const [coverLetterFile, setCoverLetterFile] = useState({});
+  // const handleFiles = (e) => {
+  //   console.log(e.target.files[0])
+  //   setFiles(e.target.files);
+  // }
+
+  console.log("RESUME", resumeFile)
+  console.log("COVER LETTER", coverLetterFile)
 
   return (
     <div className="form-group">
@@ -15,11 +26,12 @@ export default function StoryFormPage2({ formData, handleChange }) {
               My Resume
             </label>
             <input
-              className="form-control"
+              className="file-form-control"
               type="file"
               id="resume"
               name="resume"
               accept=".pdf"
+              onChange={(e)=>{setResumeFile(e.target.files[0])}}
             />
           </div>
           <div className="form-grid-item grid-item-full-width">
@@ -27,15 +39,16 @@ export default function StoryFormPage2({ formData, handleChange }) {
               My Cover Letter
             </label>
             <input
-              className="form-control"
+              className="file-form-control"
               type="file"
               id="coverLetter"
               name="coverLetter"
               accept=".pdf"
+              onChange={(e)=>{setCoverLetterFile(e.target.files[0])}}
             />
           </div>
           <div className="form-grid-item grid-item-full-width">
-            <label className="form-label" htmlFor="portfolioUrl">
+            <label className="file-form-label" htmlFor="portfolioUrl">
               My Portfolio/Projects
             </label>
             <input

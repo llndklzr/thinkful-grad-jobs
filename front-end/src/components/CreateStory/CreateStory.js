@@ -62,7 +62,6 @@ export default function CreateStory() {
   const history = useHistory();
   const handleChange = ({ target }) => {
     if(target.name === "story" && formData.story.length < 1000){
-      console.log("BOOL CHECK")
       setFormData({
         ...formData,
         [target.name]: target.value,
@@ -74,7 +73,6 @@ export default function CreateStory() {
       });
     }
   };
-  console.log("GRAD FORM", formData)
 
   const handleSubmit = (e) => {
     e.preventDefault();
